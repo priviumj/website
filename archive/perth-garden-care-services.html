@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perth Garden Care Services | Premium Lawn & Garden Maintenance | Privium</title>
+    <meta name="description" content="Professional garden care services in Perth's inner suburbs. Reliable lawn maintenance, hedge trimming, fertilising & pest management. Cottesloe, South Perth, Victoria Park. Call 0490 841 667.">
+    <meta name="keywords" content="Perth garden care, garden maintenance Perth, lawn care services Perth, garden services Perth WA, professional gardening Perth">
+    <meta property="og:title" content="Perth Garden Care Services | Privium Garden Services">
+    <meta property="og:description" content="Transform your garden with science-based maintenance solutions. Professional garden care throughout Perth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/perth-garden-care-services/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #244419 0%, #6B8250 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .header-cta {
+            background: #A58062;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .header-cta:hover {
+            background: #8d6d52;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(36, 68, 25, 0.85), rgba(107, 130, 80, 0.85)), url('lawn-mowing.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #A3B583;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #A58062;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            background: #8d6d52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Main Content */
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        h2 {
+            font-size: 36px;
+            color: #244419;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 28px;
+            color: #6B8250;
+            margin: 30px 0 20px;
+        }
+        
+        h4 {
+            font-size: 22px;
+            color: #244419;
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #6B8250;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .feature-card h4 {
+            color: #244419;
+            margin-bottom: 15px;
+        }
+        
+        /* Service Packages */
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .package-card.premium {
+            border: 3px solid #A58062;
+        }
+        
+        .package-card.premium::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #A58062;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .package-title {
+            font-size: 28px;
+            color: #244419;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .package-subtitle {
+            color: #6B8250;
+            text-align: center;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .package-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .package-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6B8250;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* Service Areas */
+        .service-areas {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .suburbs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .suburb-tag {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .suburb-tag:hover {
+            background: #6B8250;
+            color: white;
+            border-color: #6B8250;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 60px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border-left: 4px solid #A58062;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #244419;
+            text-align: right;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .faq-question {
+            background: #6B8250;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #5a6e42;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            background: white;
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #244419 0%, #6B8250 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            font-size: 24px;
+            margin: 30px 0;
+        }
+        
+        .contact-info a {
+            color: #A3B583;
+            text-decoration: none;
+        }
+        
+        /* Lists */
+        ul {
+            list-style-position: inside;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        /* Subscription Box */
+        .subscription-box {
+            background: linear-gradient(135deg, #A3B583 0%, #6B8250 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .subscription-box h3 {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .subscription-box h4 {
+            font-size: 20px;
+            color: #244419;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+        
+        .subscription-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .subscription-features li {
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .subscription-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #244419;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .subscription-cta {
+            background: #244419;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .subscription-cta:hover {
+            background: #1a3012;
+            transform: translateY(-2px);
+        }
+        
+        /* Photo Gallery */
+        .photo-section {
+            margin: 40px 0;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .photo-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-caption {
+            padding: 15px;
+            background: white;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">PRIVIUM Garden Services</a>
+                <a href="tel:0490841667" class="header-cta">Call Now: 0490 841 667</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Garden Care Services in Perth</h1>
+            <p class="hero-subtitle">Careful, Reliable Garden Maintenance You Can Trust</p>
+            <p class="hero-description">
+                At Privium Garden Services, we understand that your garden is an extension of your home. We provide meticulous, 
+                dependable garden care services throughout Perth's inner suburbs, western suburbs, and riverside communities. 
+                Our approach combines careful attention to detail with horticultural expertise and premium products, 
+                ensuring your garden receives the thoughtful care it deserves. We listen to your needs, work reliably 
+                to your schedule, and deliver consistently beautiful results.
+            </p>
+            <a href="tel:0490841667" class="cta-button">Get Your Free Garden Assessment Today - Call 0490 841 667</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Privium -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Why Choose Privium for Your Perth Garden Care?</h2>
+            <p>
+                Perth gardens require careful, knowledgeable maintenance to look their best year-round. From sandy soils to water restrictions, 
+                we understand the unique challenges your garden faces. What sets us apart is our commitment to reliability, attention to detail, 
+                and genuine care for your garden's health. We take the time to understand your specific needs and preferences, 
+                delivering consistent, quality results you can depend on.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Reliable & Punctual</h4>
+                    <p>We arrive on schedule, every time. Your garden maintenance runs like clockwork with automated reminders before each visit.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Attention to Detail</h4>
+                    <p>Careful, meticulous work that respects your property. Clean edges, proper pruning techniques, and thorough cleanup every visit.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Client-Focused Approach</h4>
+                    <p>We listen to your preferences and adapt our service to meet your specific needs and garden goals.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Professional Products</h4>
+                    <p>Premium fertilisers and bio-stimulants applied with precision for optimal lawn and plant health.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Horticultural Expertise</h4>
+                    <p>Knowledgeable team that understands Perth conditions, including soil testing and tailored nutrient programs when needed.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Complete Garden Care</h4>
+                    <p>From lawn mowing to pest management, we handle every aspect of your garden maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Services -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Comprehensive Garden Services for Perth Properties</h2>
+            
+            <h3>Premium Lawn Care Services</h3>
+            <p>Your lawn is the foundation of a beautiful garden. Our Perth lawn care services go beyond simple mowing to deliver golf-course quality results:</p>
+            <ul>
+                <li><strong>Professional Lawn Mowing:</strong> Standard and cylinder mowing options for perfect finish</li>
+                <li><strong>Edge Trimming:</strong> Blade and string line techniques for crisp, clean borders</li>
+                <li><strong>Fertiliser Programs:</strong> Calculated nutrient schedules specific to Perth's sandy soils</li>
+                <li><strong>Weed Management:</strong> Pre and post-emergent treatments for bindii, clover, and winter grass</li>
+                <li><strong>Lawn Renovation:</strong> Vertimowing, top dressing, and aeration services</li>
+                <li><strong>Turf Installation:</strong> New lawn laying and establishment for Perth conditions</li>
+            </ul>
+            
+            <h3>Garden Maintenance & Plant Care</h3>
+            <p>Keep your entire garden thriving with our comprehensive maintenance services:</p>
+            <ul>
+                <li><strong>Hedge Trimming:</strong> Professional shaping including large hedges (with specialized tripod ladder equipment)</li>
+                <li><strong>Tree Pruning:</strong> Aesthetic shaping, fruit production optimization, and safety trimming</li>
+                <li><strong>Garden Bed Care:</strong> Mulching, deadheading, and seasonal plant maintenance</li>
+                <li><strong>Disease Diagnosis:</strong> Early detection and treatment of common Perth garden diseases</li>
+                <li><strong>Pest Control:</strong> Integrated management for aphids, caterpillars, and scale insects</li>
+                <li><strong>Seasonal Programs:</strong> Winter pruning, spring preparation, and autumn leaf management</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Service Packages Designed for Perth Gardens</h2>
+            
+            <div class="packages-container">
+                <div class="package-card">
+                    <h3 class="package-title">Standard Garden Care</h3>
+                    <p class="package-subtitle">Perfect for maintaining your garden's appearance and health</p>
+                    <ul class="package-features">
+                        <li>Fortnightly or monthly lawn mowing and edging</li>
+                        <li>Hedge trimming and shaping</li>
+                        <li>Leaf collection and removal</li>
+                        <li>Garden bed maintenance</li>
+                        <li>Green waste removal (2 bags included)</li>
+                        <li>Basic weed control</li>
+                    </ul>
+                    <p style="text-align: center;"><strong>Ideal for:</strong> Established gardens requiring regular maintenance</p>
+                </div>
+                
+                <div class="package-card premium">
+                    <h3 class="package-title">Premium Garden Excellence</h3>
+                    <p class="package-subtitle">Complete garden transformation with science-based care</p>
+                    <ul class="package-features">
+                        <li>Everything in Standard Package</li>
+                        <li>Premium liquid bio-stimulant applications (every second visit)</li>
+                        <li>Comprehensive soil testing and monitoring</li>
+                        <li>Calculated fertiliser programs</li>
+                        <li>Advanced pest and disease management</li>
+                        <li>Seasonal assessment reports</li>
+                        <li>Irrigation system checks and optimization</li>
+                        <li>Priority scheduling and response</li>
+                    </ul>
+                    <p style="text-align: center;"><strong>Ideal for:</strong> Properties wanting exceptional garden health and appearance</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3 class="package-title">Garden Rejuvenation</h3>
+                    <p class="package-subtitle">Intensive one-day service to revive tired gardens</p>
+                    <ul class="package-features">
+                        <li>Complete garden assessment</li>
+                        <li>Soil testing and treatment</li>
+                        <li>Deep lawn care (aeration, fertilising, top dressing)</li>
+                        <li>Comprehensive pruning and trimming</li>
+                        <li>Garden bed restoration</li>
+                        <li>Mulch application with stabilizer</li>
+                        <li>Irrigation system overhaul</li>
+                    </ul>
+                    <p style="text-align: center;"><strong>Perfect for:</strong> Spring preparation, property sales, or neglected gardens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Our Service Areas</h2>
+            <p>We specialise in providing premium garden care services to Perth's most prestigious suburbs. 
+            Our service area covers the exclusive western suburbs along the coast, the leafy riverside communities 
+            south of the river, and the established inner-city areas. These suburbs are home to Perth's most 
+            beautiful gardens, where quality maintenance and attention to detail are paramount.</p>
+            
+            <div class="service-areas">
+                <h4>Premium Service Suburbs</h4>
+                <div class="suburbs-grid">
+                    <div class="suburb-tag">Dalkeith</div>
+                    <div class="suburb-tag">Nedlands</div>
+                    <div class="suburb-tag">Shenton Park</div>
+                    <div class="suburb-tag">Mount Claremont</div>
+                    <div class="suburb-tag">Claremont</div>
+                    <div class="suburb-tag">Peppermint Grove</div>
+                    <div class="suburb-tag">Mosman Park</div>
+                    <div class="suburb-tag">Cottesloe</div>
+                    <div class="suburb-tag">Swanbourne</div>
+                    <div class="suburb-tag">Kensington</div>
+                    <div class="suburb-tag">South Perth</div>
+                    <div class="suburb-tag">Como</div>
+                    <div class="suburb-tag">Applecross</div>
+                    <div class="suburb-tag">Attadale</div>
+                    <div class="suburb-tag">Bicton</div>
+                    <div class="suburb-tag">Mount Pleasant</div>
+                    <div class="suburb-tag">Salter Point</div>
+                    <div class="suburb-tag">City Beach</div>
+                    <div class="suburb-tag">Floreat</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Behind -->
+    <section class="content-section">
+        <div class="container">
+            <h2>The Science Behind Beautiful Perth Gardens</h2>
+            
+            <h3>Soil Management for WA Conditions</h3>
+            <p>Perth's sandy, hydrophobic soils require specialized treatment:</p>
+            <ul>
+                <li><strong>pH Testing:</strong> Regular monitoring to maintain optimal 6.0-7.0 range</li>
+                <li><strong>Nutrient Analysis:</strong> Identifying deficiencies in nitrogen, phosphorus, and trace elements</li>
+                <li><strong>Wetting Agents:</strong> Professional-grade surfactants for water penetration</li>
+                <li><strong>Organic Matter:</strong> Building soil structure with quality amendments</li>
+            </ul>
+            
+            <h3>Water-Wise Garden Care</h3>
+            <p>Working within Perth's water restrictions while maintaining garden health:</p>
+            <ul>
+                <li><strong>Irrigation Audits:</strong> Checking coverage, pressure, and scheduling</li>
+                <li><strong>Hydrozoning:</strong> Grouping plants by water requirements</li>
+                <li><strong>Mulching Programs:</strong> Reducing evaporation and soil temperature</li>
+                <li><strong>Drought-Tolerant Solutions:</strong> Recommending appropriate plant selections</li>
+            </ul>
+            
+            <h3>Seasonal Garden Care Calendar</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Spring (Sep-Nov)</h4>
+                    <ul>
+                        <li>Lawn renovation and fertilising</li>
+                        <li>Pre-emergent weed control</li>
+                        <li>Pruning for spring growth</li>
+                        <li>Pest monitoring and treatment</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>Summer (Dec-Feb)</h4>
+                    <ul>
+                        <li>Increased mowing frequency</li>
+                        <li>Deep watering programs</li>
+                        <li>Heat stress management</li>
+                        <li>Disease prevention</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>Autumn (Mar-May)</h4>
+                    <ul>
+                        <li>Leaf management programs</li>
+                        <li>Winter grass prevention</li>
+                        <li>Fertiliser applications</li>
+                        <li>Garden bed preparation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h4>Winter (Jun-Aug)</h4>
+                    <ul>
+                        <li>Reduced mowing schedule</li>
+                        <li>Winter pruning programs</li>
+                        <li>Moss and algae control</li>
+                        <li>Irrigation system maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Trust Privium -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Why Perth Properties Trust Privium</h2>
+            
+            <h3>Professional Equipment & Expertise</h3>
+            <ul>
+                <li><strong>Specialized Tools:</strong> Cylinder mowers, professional edgers, tripod ladders for tall hedges</li>
+                <li><strong>Premium Products:</strong> Commercial-grade fertilisers and bio-stimulants not available to consumers</li>
+                <li><strong>Qualified Team:</strong> Experienced professionals who understand Perth gardens</li>
+                <li><strong>Safety Compliance:</strong> Fully insured and licensed for all garden care services</li>
+            </ul>
+            
+            <h3>Our Simple Service Process</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>1. Free Garden Assessment</h4>
+                    <p>Call 0490 841 667 to schedule your complimentary property evaluation. We'll inspect your garden, test your soil, and discuss your goals.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>2. Customized Service Plan</h4>
+                    <p>Receive a detailed quote through our client portal with recommended services and scheduling options.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>3. Regular Service Delivery</h4>
+                    <p>Our team arrives on schedule with automated reminders sent 3 days and 1 day before each visit.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>4. Ongoing Communication</h4>
+                    <p>Seasonal reports, service updates, and recommendations to keep your garden at its best.</p>
+                </div>
+            </div>
+            
+            <!-- Subscription Service Box -->
+            <div class="subscription-box">
+                <h3>Set-and-Forget Subscription Service</h3>
+                <h4>Never Think About Garden Care Again</h4>
+                <p>Join our subscription service for complete peace of mind. Your garden maintenance runs automatically with:</p>
+                
+                <ul class="subscription-features">
+                    <li><strong>Fixed Monthly Pricing</strong> - No surprises, just consistent, predictable costs</li>
+                    <li><strong>Priority Scheduling</strong> - Your regular spot is reserved and protected</li>
+                    <li><strong>Automatic Renewals</strong> - Seamless service continuation without interruption</li>
+                    <li><strong>Flexible Frequency</strong> - Choose fortnightly or monthly visits</li>
+                    <li><strong>Seasonal Adjustments</strong> - We automatically adapt service to seasonal needs</li>
+                    <li><strong>Direct Debit Convenience</strong> - Set up once and never worry about payments</li>
+                    <li><strong>Pause Anytime</strong> - Going on holiday? Pause service with 7 days notice</li>
+                    <li><strong>Exclusive Member Benefits</strong> - Priority response and 10% off extra services</li>
+                </ul>
+                
+                <p style="margin-top: 25px;">Perfect for busy professionals and property investors who want beautiful gardens without the hassle. Your garden stays immaculate year-round while you focus on what matters most to you.</p>
+                
+                <a href="tel:0490841667" class="subscription-cta">Start Your Subscription Today - Call 0490 841 667</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Our Services Showcase</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <img src="lawn-mowing.jpg" alt="Premium lawn mowing service Perth Cottesloe Dalkeith">
+                    <div class="photo-caption"><strong>Lawn Mowing & Care</strong><br>Pristine lawn maintenance with professional cylinder mowing</div>
+                </div>
+                <div class="photo-card">
+                    <img src="hedge-trimming.jpg" alt="Professional hedge trimming service Perth western suburbs">
+                    <div class="photo-caption"><strong>Hedge Trimming</strong><br>Perfectly shaped hedges with clean, precise lines</div>
+                </div>
+                <div class="photo-card">
+                    <img src="lawn-edging.jpg" alt="Lawn edging service Perth South Perth Applecross">
+                    <div class="photo-caption"><strong>Edge Trimming</strong><br>Crisp, clean edges along paths and garden beds</div>
+                </div>
+                <div class="photo-card">
+                    <img src="garden-beds.jpg" alt="Garden bed maintenance Perth Peppermint Grove Nedlands">
+                    <div class="photo-caption"><strong>Garden Bed Care</strong><br>Well-maintained shrubs and seasonal plantings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Client Success Stories</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <h4>Outstanding Results in Cottesloe</h4>
+                    <p class="testimonial-text">
+                        "The transformation in our garden has been remarkable. The bio-stimulant program has made our lawn thicker 
+                        and greener than ever. After struggling with patchy grass for years, Privium's scientific approach finally 
+                        solved our problems."
+                    </p>
+                    <p class="testimonial-author">- Sarah M., Cottesloe</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <h4>Professional Service in Joondalup</h4>
+                    <p class="testimonial-text">
+                        "Their attention to detail is exceptional. The seasonal reports help us understand our garden's needs, 
+                        and the results speak for themselves. Our property has never looked better."
+                    </p>
+                    <p class="testimonial-author">- James T., Joondalup</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <h4>Set-and-Forget Convenience in Mount Lawley</h4>
+                    <p class="testimonial-text">
+                        "We love not having to think about garden care. Privium handles everything from fertilising schedules 
+                        to pest control. Our garden is thriving, and we just enjoy it."
+                    </p>
+                    <p class="testimonial-author">- Angela K., Mount Lawley</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What areas of Perth do you service?</div>
+                <div class="faq-answer">
+                    We specialise in servicing Perth's most prestigious suburbs including Dalkeith, Nedlands, Shenton Park, 
+                    Mount Claremont, Claremont, Peppermint Grove, Mosman Park, Cottesloe, Swanbourne, City Beach, Floreat, 
+                    and the riverside communities of South Perth, Como, Kensington, Applecross, Attadale, Bicton, Mount Pleasant, 
+                    and Salter Point. These established areas are where quality garden care is most valued.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How often should my lawn be mowed in Perth?</div>
+                <div class="faq-answer">
+                    During Perth's growing season (spring/summer), we recommend fortnightly mowing. In winter, 
+                    monthly service is usually sufficient depending on rainfall and grass type.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you work with Perth's water restrictions?</div>
+                <div class="faq-answer">
+                    Absolutely. We optimize irrigation systems to work within current water restrictions while 
+                    maintaining garden health through proper scheduling and water-wise practices.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What makes your service different from other Perth gardeners?</div>
+                <div class="faq-answer">
+                    Our science-based approach includes soil testing, calculated nutrient programs, and premium 
+                    bio-stimulants. We don't just maintain gardens – we transform them using horticultural science.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you help with reticulation repairs?</div>
+                <div class="faq-answer">
+                    Yes, we perform minor reticulation repairs and system optimization as part of our service. 
+                    For major installations, we can recommend trusted Perth contractors.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Special Offers for Perth Properties</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Spring Garden Revival Package</h4>
+                    <p>Transform your garden from winter dormancy to spring glory:</p>
+                    <ul>
+                        <li>Complete garden assessment</li>
+                        <li>Soil testing and treatment</li>
+                        <li>Lawn aeration and fertilising</li>
+                        <li>Comprehensive pruning</li>
+                        <li>Mulch application</li>
+                        <li>First month's maintenance included</li>
+                    </ul>
+                    <p><strong>Limited Time Offer - Book Before October 31st</strong></p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>New Client Special</h4>
+                    <ul>
+                        <li><strong>FREE</strong> soil testing and analysis (valued at $150)</li>
+                        <li><strong>FREE</strong> first bio-stimulant application</li>
+                        <li><strong>10% OFF</strong> first three months of service</li>
+                    </ul>
+                    <p><strong>Call 0490 841 667 to claim this offer</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get Started with Perth's Premium Garden Care Service</h2>
+            <p>Ready to transform your garden with science-based care? Contact Privium Garden Services today:</p>
+            
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:0490841667">0490 841 667</a> (Ask for Jarod)</p>
+                <p><strong>Email:</strong> <a href="mailto:office@privium.com.au">office@privium.com.au</a></p>
+                <p><strong>Service Hours:</strong> Monday-Saturday, 7:00 AM - 5:00 PM</p>
+            </div>
+            
+            <a href="tel:0490841667" class="cta-button">Book Your Free Garden Assessment Today</a>
+            
+            <p style="margin-top: 30px;">
+                Don't let another season pass with a struggling garden. Join hundreds of Perth property owners 
+                who trust Privium for exceptional garden care results.
+            </p>
+        </div>
+    </section>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Privium Garden Services",
+        "description": "Professional garden care services in Perth. Science-based lawn maintenance, hedge trimming, fertilising & pest management.",
+        "url": "https://privium.com.au",
+        "telephone": "+61490841667",
+        "email": "office@privium.com.au",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Perth",
+            "addressRegion": "WA",
+            "addressCountry": "AU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -31.9505,
+            "longitude": 115.8605
+        },
+        "areaServed": [
+            "Joondalup", "Hillarys", "Cottesloe", "Mount Lawley", "Floreat", 
+            "City Beach", "Claremont", "Subiaco", "Scarborough", "Stirling"
+        ],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "07:00",
+            "closes": "17:00"
+        },
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "47"
+        }
+    }
+    </script>
+</body>
+</html>

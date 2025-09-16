@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Privium Garden Services | Perth's Premium Garden Care Professionals</title>
+    <meta name="description" content="Learn about Privium Garden Services - Perth's trusted garden care professionals. Quality service, experienced team, servicing premium suburbs since 2009.">
+    <meta name="keywords" content="about Privium, Perth gardeners, professional garden services, garden care team Perth">
+    <meta property="og:title" content="About Privium Garden Services | Perth Garden Care">
+    <meta property="og:description" content="Discover why Perth's finest properties trust Privium for their garden care needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/about/">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 5px solid #244419;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #6B8250;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(36, 68, 25, 0.9), rgba(36, 68, 25, 0.9)), url('garden-work-1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            line-height: 1em;
+            color: #fff;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #A3B583;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 10px;
+            line-height: 1em;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #333;
+            margin: 40px 0 20px;
+            line-height: 1em;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Story Section */
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .story-text {
+            padding: 20px;
+        }
+
+        .story-image {
+            background: #244419;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .story-stat {
+            margin: 20px 0;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #244419;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin: 0 auto 20px;
+        }
+
+        .value-card h4 {
+            font-size: 22px;
+            color: #244419;
+            margin-bottom: 15px;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            background: #6B8250;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 24px;
+            color: #244419;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #6B8250;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Why Choose Section */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .why-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #6B8250;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .why-content h4 {
+            font-size: 20px;
+            color: #244419;
+            margin-bottom: 10px;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: #6B8250;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-item:not(:last-child) .timeline-marker::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: #ddd;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Certification Badges */
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .cert-badge h4 {
+            color: #244419;
+            margin-bottom: 5px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #244419;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #244419;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #1a3014;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: #244419;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #A3B583;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #A3B583;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #A3B583;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 100px 1fr;
+            }
+
+            .timeline-content:first-child {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html" class="active">About</a>
+                <a href="quote.html" class="nav-cta">Get Quote</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Privium Garden Services</h1>
+            <p class="hero-subtitle">
+                Perth's trusted garden care professionals, delivering exceptional results
+                by putting your preferences first, backed by expertise and genuine care for your outdoor spaces.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Our Story</h2>
+
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Building Beautiful Gardens Since 2009</h3>
+                    <p>
+                        Privium Garden Services began with a simple vision: to provide Perth property owners
+                        with garden care that goes beyond basic maintenance. We saw a gap in the market for
+                        a service that truly listens to clients and delivers tailored solutions with meticulous attention to detail.
+                    </p>
+                    <p>
+                        Founded by Jarod, who brings over 10 years of experience in horticulture and
+                        landscape management, Privium has grown from a single operator to a trusted team
+                        serving Perth's most prestigious suburbs.
+                    </p>
+                    <p>
+                        What sets us apart is our commitment to quality and understanding what makes gardens thrive.
+                        We don't just cut grass and trim hedges – we assess your garden's needs, apply the right
+                        treatments at the right time, and use premium products that transform ordinary gardens into
+                        extraordinary outdoor spaces.
+                    </p>
+                    <p>
+                        Today, we're proud to maintain over 500 properties across Perth, from heritage homes
+                        in Cottesloe to modern estates in Dalkeith, each receiving the same level of care
+                        and expertise that has become our hallmark.
+                    </p>
+                </div>
+
+                <div class="story-image">
+                    <div class="story-stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="story-stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="story-stat">
+                        <span class="stat-number">10,000+</span>
+                        <span class="stat-label">Gardens Transformed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Our Values</h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h4>Excellence in Every Detail</h4>
+                    <p>We believe that perfection lies in the details. Every edge, every cut, every treatment
+                    is executed with precision and care.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4>Trust & Reliability</h4>
+                    <p>Your property is your sanctuary. We honor that trust by delivering consistent,
+                    dependable service you can count on.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h4>Environmental Stewardship</h4>
+                    <p>We care for your garden while protecting our environment through water-wise practices
+                    and responsible pest management.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📚</div>
+                    <h4>Continuous Improvement</h4>
+                    <p>Garden care evolves, and so do we. We stay current with the latest techniques
+                    and products to deliver superior results.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💬</div>
+                    <h4>Clear Communication</h4>
+                    <p>We listen to your needs, provide honest advice, and keep you informed about
+                    your garden's health and our service schedule.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h4>Quality Without Compromise</h4>
+                    <p>We never cut corners. Your garden receives the full benefit of our expertise,
+                    premium products, and professional equipment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Experienced professionals dedicated to your garden's success
+            </p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🌾</div>
+                    <h3 class="member-name">Jarod</h3>
+                    <p class="member-role">Founder & Head Gardener</p>
+                    <p>With over 10 years in the industry, Jarod leads our team with expertise
+                    in garden care, plant health, and sustainable garden management.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💼</div>
+                    <h3 class="member-name">Office Team</h3>
+                    <p class="member-role">Client Relations & Scheduling</p>
+                    <p>Our dedicated office team ensures smooth scheduling, prompt communication,
+                    and exceptional customer service for all our clients.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">👨‍🔧</div>
+                    <h3 class="member-name">Field Specialists</h3>
+                    <p class="member-role">Garden Care Experts</p>
+                    <p>Our trained field team brings years of experience in lawn care, pruning,
+                    and garden maintenance to every property we service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Privium -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Why Perth Properties Choose Privium</h2>
+
+            <div class="why-choose-grid">
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Fully Insured & Licensed</h4>
+                        <p>Complete public liability insurance and all required licenses for your peace of mind.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Professional Equipment</h4>
+                        <p>Commercial-grade mowers, specialized tools, and safety equipment for superior results.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Professional Methods</h4>
+                        <p>Comprehensive assessments, quality fertilizer programs, and premium treatments for optimal health.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Consistent Team</h4>
+                        <p>The same experienced professionals service your property, understanding its unique needs.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Flexible Scheduling</h4>
+                        <p>Weekly, fortnightly, or monthly services tailored to your garden's requirements.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-content">
+                        <h4>Fair Pricing</h4>
+                        <p>Competitive quotes with no hidden fees. Quality service at fair rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Our Service Process</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Simple, transparent, and designed for your convenience
+            </p>
+
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Initial Consultation</h4>
+                        <p>Free property assessment including comprehensive garden health evaluation.</p>
+                    </div>
+                    <div class="timeline-marker">1</div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h4>Customized Plan</h4>
+                        <p>Detailed service proposal with recommended treatments and scheduling options.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Regular Service</h4>
+                        <p>Consistent, scheduled visits with automated reminders 3 days and 1 day before.</p>
+                    </div>
+                    <div class="timeline-marker">3</div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Ongoing Care</h4>
+                        <p>Seasonal reports, service updates, and recommendations for optimal garden health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Proudly Servicing Perth's Premier Suburbs</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                We specialize in maintaining gardens in Perth's most prestigious neighborhoods
+            </p>
+
+            <div style="background: linear-gradient(135deg, #f8f9fa, #fff); padding: 50px; border-radius: 15px;">
+                <h3 style="text-align: center;">Western Suburbs & Coastal</h3>
+                <p style="text-align: center; margin-bottom: 30px;">
+                    Cottesloe • Dalkeith • Nedlands • Claremont • Peppermint Grove • Mosman Park<br>
+                    Swanbourne • City Beach • Floreat • Mount Claremont • Shenton Park
+                </p>
+
+                <h3 style="text-align: center;">Riverside & Southern Suburbs</h3>
+                <p style="text-align: center;">
+                    South Perth • Como • Kensington • Applecross • Mount Pleasant<br>
+                    Attadale • Bicton • Salter Point • Victoria Park • East Perth
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Professional Standards</h2>
+
+            <div class="certifications">
+                <div class="cert-badge">
+                    <h4>Fully Insured</h4>
+                    <p>Public Liability Coverage</p>
+                </div>
+
+                <div class="cert-badge">
+                    <h4>Licensed Operator</h4>
+                    <p>All Required Permits</p>
+                </div>
+
+                <div class="cert-badge">
+                    <h4>Safety Compliant</h4>
+                    <p>OH&S Certified</p>
+                </div>
+
+                <div class="cert-badge">
+                    <h4>Eco-Friendly</h4>
+                    <p>Waterwise Endorsed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience the Privium Difference</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">
+                Discover why discerning property owners trust us with their gardens
+            </p>
+            <div>
+                <a href="quote.html" class="cta-button">Get Your Free Quote</a>
+                <a href="tel:0490841667" class="cta-button" style="background: white; color: #244419;">Call 0490 841 667</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Privium</h4>
+                    <p>Perth's premium garden care service, delivering science-based maintenance solutions to the city's finest properties.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="quote.html">Get Quote</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:0490841667">0490 841 667</a></p>
+                    <p>✉️ <a href="mailto:office@privium.com.au">office@privium.com.au</a></p>
+                    <p>📍 Servicing Perth Metro</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Hours</h4>
+                    <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Privium Garden Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privium Garden Services | Premium Garden Care Perth</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Fonts from your site */
+        @font-face {
+            font-family: "Halis R Light";
+            font-display: swap;
+            src: url("https://privium.com.au/wp-content/uploads/et-fonts/Ahmet-Altun-HalisRLight.otf") format("opentype");
+        }
+
+        @font-face {
+            font-family: "Miami Regular";
+            font-display: swap;
+            src: url("https://privium.com.au/wp-content/uploads/et-fonts/Miamo-Regular.otf") format("opentype");
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base Divi Styles */
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+            line-height: 1.7em;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #page-container {
+            position: relative;
+            background: #fff;
+        }
+
+        /* EXACT Header from Live Site */
+        .et-l--header {
+            position: sticky;
+            top: 0;
+            z-index: 999999;
+        }
+
+        .et_pb_section_0_tb_header {
+            background-image: linear-gradient(180deg, #244419 0%, #244419 99%);
+            border-radius: 0 0 94px 0;
+            border-top: 4px solid #A58062;
+            margin-bottom: -85px;
+            padding: 0;
+            background-color: #244419 !important;
+        }
+
+        .et_pb_row_0_tb_header {
+            width: 95%;
+            max-width: 1622px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding-bottom: 0;
+        }
+
+        /* Logo Column (25%) */
+        .et_pb_column_0_tb_header {
+            width: 25%;
+            transform: translateX(0px) translateY(-23%);
+        }
+
+        .et_pb_image_0_tb_header {
+            text-align: left;
+            margin-left: 0;
+            width: 18%;
+        }
+
+        .et_pb_image_0_tb_header img {
+            width: auto;
+            height: auto;
+        }
+
+        /* Menu Column (50%) */
+        .et_pb_column_1_tb_header {
+            width: 50%;
+        }
+
+        .et_pb_menu_0_tb_header ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .et_pb_menu_0_tb_header ul li a {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            color: #FFFFFF !important;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .et_pb_menu_0_tb_header ul li.current-menu-item a,
+        .et_pb_menu_0_tb_header ul li a:hover {
+            color: #A58062 !important;
+        }
+
+        /* Button Column (25%) */
+        .et_pb_column_2_tb_header {
+            width: 25%;
+            text-align: center;
+        }
+
+        .et_pb_button_0_tb_header_wrapper {
+            margin-top: -5% !important;
+        }
+
+        .et_pb_button_0_tb_header {
+            color: #FFFFFF !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 20px 0px 20px 0px;
+            transform: translateX(46px) translateY(0px);
+            transition: all 300ms ease;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .et_pb_button_0_tb_header:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section - EXACT from Live Site */
+        .et_pb_section_0 {
+            border-radius: 0 0 94px 0;
+            overflow: hidden;
+            z-index: 999;
+            position: relative;
+            background-color: rgba(200, 210, 198, 0.76) !important;
+        }
+
+        .et_pb_fullwidth_header_0 {
+            border-radius: 0 0 0 94px;
+            overflow: hidden;
+            padding-top: 262px;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-top: -95px;
+            margin-right: -40px;
+            margin-left: -40px;
+            background-size: 11% auto;
+            background-position: right 10% bottom 0px;
+            background-image: url(https://privium.com.au/wp-content/uploads/2025/08/Green-Stem-.svg);
+            text-align: center;
+        }
+
+        .header-logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .et_pb_fullwidth_header_subhead {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 22px;
+            color: #A3B583 !important;
+            display: block;
+            margin-top: 5%;
+            margin-bottom: 3%;
+        }
+
+        .et_pb_header_content_wrapper {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 22px;
+            color: #244419 !important;
+            margin-bottom: 2%;
+        }
+
+        .et_pb_header_content_wrapper h1 {
+            font-family: 'Miami Regular', Helvetica, Arial, Lucida, sans-serif;
+            text-transform: uppercase;
+            font-size: 34px;
+            color: #244419 !important;
+        }
+
+        /* Divi Buttons */
+        .et_pb_button {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0.3em 1em;
+            line-height: 1.7em !important;
+            background-color: transparent;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            border: 2px solid;
+            border-radius: 3px;
+            transition-duration: 0.2s;
+            transition-property: all !important;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .et_pb_button:hover {
+            border: 2px solid transparent;
+            padding: 0.3em 2em 0.3em 0.7em;
+        }
+
+        .et_pb_button:after {
+            font-size: 32px;
+            line-height: 1em;
+            content: "\35";
+            opacity: 0;
+            position: absolute;
+            margin-left: -1em;
+            transition: all .2s;
+            font-family: ETmodules !important;
+        }
+
+        .et_pb_button:hover:after {
+            opacity: 1;
+            margin-left: 0;
+        }
+
+        .et_pb_button_one {
+            color: #5E483A !important;
+            border-color: #5E483A;
+            border-radius: 20px 0px 10px 0px;
+        }
+
+        .et_pb_button_two {
+            color: #A3B583 !important;
+            border-radius: 10px 0px 20px 0px;
+        }
+
+        /* Content Sections */
+        .et_pb_section {
+            padding: 4% 0;
+            position: relative;
+        }
+
+        .et_pb_row {
+            width: 80%;
+            max-width: 1080px;
+            margin: auto;
+            position: relative;
+            padding: 27px 0;
+        }
+
+        /* Welcome Section */
+        .et_pb_section_1 {
+            background-size: initial;
+            background-position: left bottom 0px;
+            background-image: url(https://privium.com.au/wp-content/uploads/2025/08/Watermark.svg) !important;
+            border-radius: 0 94px 0 94px;
+            overflow: hidden;
+        }
+
+        .et_pb_text_0 {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 21px;
+            color: #244419 !important;
+        }
+
+        .et_pb_text_0 h3 {
+            text-transform: uppercase;
+        }
+
+        .et_pb_text_0 h3 span {
+            color: #A58062;
+        }
+
+        .et_pb_text_0 h1 {
+            text-transform: uppercase;
+            color: #244419 !important;
+            font-size: 40px;
+        }
+
+        .et_pb_button_0 {
+            color: #244419 !important;
+            border-color: #244419;
+            box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+            border-radius: 20px 0px 10px 0px;
+        }
+
+        .et_pb_image_0 .et_pb_image_wrap {
+            border-radius: 0 78px 0 78px;
+            overflow: hidden;
+            border: 6px solid #A3B583;
+            box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Service Section */
+        .et_pb_section_2 {
+            border-radius: 94px 0 94px 0;
+            overflow: hidden;
+            border-top-color: #A58062;
+            background-color: rgba(200, 210, 198, 0.69) !important;
+        }
+
+        .et_pb_text_1 h2 {
+            font-family: 'Miami Regular', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 30px;
+            color: #244419 !important;
+            text-align: center;
+        }
+
+        .et_pb_blurb {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 16px;
+            color: #244419 !important;
+            background: #fff;
+            padding: 40px;
+            border-radius: 3px;
+            text-align: center;
+            box-shadow: 0 2px 18px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .et_pb_blurb:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 40px rgba(0,0,0,0.15);
+        }
+
+        .et_pb_blurb h4 {
+            font-family: 'Halis R Light', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 20px;
+            color: #244419 !important;
+            text-align: center;
+        }
+
+        /* Two Column Layout */
+        .et_pb_equal_columns {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .et_pb_column_1_2 {
+            width: 50%;
+        }
+
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .et_pb_row_0_tb_header {
+                width: 94%;
+            }
+
+            .et_pb_equal_columns {
+                flex-direction: column;
+            }
+
+            .et_pb_column_1_2 {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .et_pb_fullwidth_header_0 {
+                padding-top: 100px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-container">
+        <!-- Header EXACTLY like Live Site -->
+        <header class="et-l et-l--header">
+            <div class="et_pb_section et_pb_section_0_tb_header">
+                <div class="et_pb_row et_pb_row_0_tb_header">
+                    <!-- Logo Column -->
+                    <div class="et_pb_column et_pb_column_1_4 et_pb_column_0_tb_header">
+                        <div class="et_pb_module et_pb_image et_pb_image_0_tb_header">
+                            <img src="privium-long-logo.png" alt="Privium Garden Services" />
+                        </div>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <div class="et_pb_column et_pb_column_1_2 et_pb_column_1_tb_header">
+                        <div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header">
+                            <nav>
+                                <ul>
+                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services.html">Our Services</a></li>
+                                    <li><a href="#contact">Contact us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Header Button -->
+                    <div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_header">
+                        <div class="et_pb_button_module_wrapper et_pb_button_0_tb_header_wrapper">
+                            <a class="et_pb_button et_pb_button_0_tb_header" href="quote.html">Book Online</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="et-main-area">
+            <div id="main-content">
+                <!-- Hero Section -->
+                <div class="et_pb_section et_pb_section_0">
+                    <section class="et_pb_fullwidth_header et_pb_fullwidth_header_0">
+                        <div class="et_pb_fullwidth_header_container">
+                            <div class="header-content">
+                                <img src="privium-long-logo.png" class="header-logo" alt="Privium Garden Services" />
+                                <span class="et_pb_fullwidth_header_subhead">Science-Based Garden Care That Just Works</span>
+                                <div class="et_pb_header_content_wrapper">
+                                    <h1></h1>
+                                    <p>Comprehensive, Set-and-Forget Garden Maintenance – Enjoy Your Beautiful Garden Without the Hassle</p>
+                                </div>
+                                <a class="et_pb_button et_pb_more_button et_pb_button_one" href="services.html">Our Services</a>
+                                <a class="et_pb_button et_pb_more_button et_pb_button_two" href="quote.html">Book Online</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Welcome Section -->
+                <div class="et_pb_section et_pb_section_1">
+                    <div class="et_pb_row et_pb_row_0 et_pb_equal_columns">
+                        <div class="et_pb_column et_pb_column_1_2 et_pb_column_0">
+                            <div class="et_pb_module et_pb_text et_pb_text_0">
+                                <div class="et_pb_text_inner">
+                                    <h3><span>Welcome to</span></h3>
+                                    <h1>Privium Garden Services</h1>
+                                    <p>At Privium Garden Services, we take care of everything in your garden using proven, professional methods that deliver exceptional results.</p>
+                                    <p>From premium treatments to comprehensive maintenance programs, our approach doesn't just maintain your garden – it transforms it into the healthiest, most beautiful version of itself.</p>
+                                    <p>We measure our success by the quality of outcomes: lusher lawns, healthier plants, and gardens that become the pride of your property.</p>
+                                    <p>We are experts in Perth gardens. If you are in the Northern, Central or Western Suburbs, contact us to see how we can help.</p>
+                                </div>
+                            </div>
+                            <div class="et_pb_button_module_wrapper">
+                                <a class="et_pb_button et_pb_button_0" href="about.html">Our Story</a>
+                            </div>
+                        </div>
+
+                        <div class="et_pb_column et_pb_column_1_2 et_pb_column_1">
+                            <div class="et_pb_module et_pb_image et_pb_image_0">
+                                <span class="et_pb_image_wrap">
+                                    <img src="https://privium.com.au/wp-content/uploads/2025/08/Garden-Services-Perth.jpg" alt="Perth gardener" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Packages Section -->
+                <div class="et_pb_section et_pb_section_2">
+                    <div class="et_pb_row et_pb_row_1">
+                        <div class="et_pb_column et_pb_column_4_4">
+                            <div class="et_pb_module et_pb_text et_pb_text_1">
+                                <div class="et_pb_text_inner">
+                                    <h2>Our Garden Service Packages</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="et_pb_row et_pb_row_2">
+                        <div class="service-grid">
+                            <div class="et_pb_blurb">
+                                <div class="et_pb_blurb_content">
+                                    <div class="et_pb_main_blurb_image">
+                                        <span style="font-size: 48px; color: #A58062;">🌿</span>
+                                    </div>
+                                    <div class="et_pb_blurb_container">
+                                        <h4>Essential Garden Care</h4>
+                                        <div class="et_pb_blurb_description">
+                                            <p>Regular lawn mowing, edging, and basic garden maintenance to keep your outdoor space looking neat and tidy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="et_pb_blurb">
+                                <div class="et_pb_blurb_content">
+                                    <div class="et_pb_main_blurb_image">
+                                        <span style="font-size: 48px; color: #A58062;">⭐</span>
+                                    </div>
+                                    <div class="et_pb_blurb_container">
+                                        <h4>Premium Garden Care</h4>
+                                        <div class="et_pb_blurb_description">
+                                            <p>Comprehensive garden maintenance including fertilising, pest management, and seasonal treatments for optimal garden health.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="et_pb_blurb">
+                                <div class="et_pb_blurb_content">
+                                    <div class="et_pb_main_blurb_image">
+                                        <span style="font-size: 48px; color: #A58062;">📅</span>
+                                    </div>
+                                    <div class="et_pb_blurb_container">
+                                        <h4>Set & Forget Service</h4>
+                                        <div class="et_pb_blurb_description">
+                                            <p>Hassle-free scheduled maintenance with automatic booking and seasonal adjustments for year-round garden perfection.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

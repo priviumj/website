@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privium Garden Services | Premium Garden Care Perth</title>
+    <meta name="description" content="Perth's trusted garden care professionals. Premium lawn maintenance, hedge trimming & garden services. Call 0490 841 667.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base - Matching Live Site */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+            font-size: 14px;
+            color: #244419;
+            background: #fff;
+            line-height: 1.7em;
+            font-weight: 400;
+        }
+
+        /* Main Container - Like Live Site */
+        #page-container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background: #fff url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMTAwIDAgTCAwIDAgMCAxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+') repeat;
+            background-size: 100px 100px;
+        }
+
+        /* Centered Content Layout */
+        .et_pb_section {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .et_pb_row {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 27px 0;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .logo-section img {
+            width: 51%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Typography - Matching Live Site Exactly */
+        h1, h2, h3, h4, p, li {
+            color: #244419 !important;
+            font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+        }
+
+        h1 {
+            font-size: 27px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 23px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 23px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Under Construction Banner */
+        .construction-banner {
+            background: #244419;
+            color: #fff !important;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Service List - Exactly Like Live Site */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 21px;
+            color: #244419;
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #A58062;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: rgba(36, 68, 25, 0.05);
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .contact-section h2 {
+            color: #244419;
+            margin-bottom: 20px;
+        }
+
+        .phone-number {
+            font-size: 27px;
+            font-weight: 700;
+            color: #244419;
+            margin: 20px 0;
+        }
+
+        .phone-number a {
+            color: #244419;
+            text-decoration: none;
+        }
+
+        .phone-number a:hover {
+            color: #A58062;
+        }
+
+        .email {
+            font-size: 21px;
+            color: #244419;
+            margin: 10px 0;
+        }
+
+        .email a {
+            color: #244419;
+            text-decoration: none;
+        }
+
+        .email a:hover {
+            color: #A58062;
+        }
+
+        /* Icons */
+        .icon {
+            color: #A58062;
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        /* Call to Action Button */
+        .cta-button {
+            display: inline-block;
+            background: #244419;
+            color: #fff !important;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 10px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #A58062;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #244419;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: #fff !important;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .et_pb_row {
+                width: 94%;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-section img {
+                width: 80%;
+            }
+
+            ul li {
+                font-size: 18px;
+            }
+
+            .phone-number {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .logo-section img {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-container">
+
+        <!-- Construction Banner -->
+        <div class="construction-banner">
+            FULL WEBSITE COMING SOON
+        </div>
+
+        <!-- Logo Section -->
+        <div class="et_pb_section">
+            <div class="et_pb_row">
+                <div class="logo-section">
+                    <img src="privium-long-logo.png" alt="Privium Garden Services">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="et_pb_section">
+            <div class="et_pb_row">
+                <h1>Premium Garden Care Services for Perth</h1>
+
+                <div class="two-column">
+                    <!-- Services Column -->
+                    <div>
+                        <h2>Our Services</h2>
+                        <ul>
+                            <li>Regular lawn mowing</li>
+                            <li>Regular garden maintenance</li>
+                            <li>Mulching</li>
+                            <li>Pruning</li>
+                            <li>Small & large hedging</li>
+                            <li>Weeding</li>
+                            <li>Soft landscaping and more</li>
+                            <li>Garden clean up & restoration</li>
+                            <li>Fertilising & lawn treatments</li>
+                            <li>Pest & disease management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Areas Column -->
+                    <div>
+                        <h2>Service Areas</h2>
+                        <ul>
+                            <li>Cottesloe</li>
+                            <li>Dalkeith</li>
+                            <li>Nedlands</li>
+                            <li>Claremont</li>
+                            <li>Peppermint Grove</li>
+                            <li>South Perth</li>
+                            <li>Como</li>
+                            <li>Applecross</li>
+                            <li>Mount Pleasant</li>
+                            <li>City Beach</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-section">
+                    <h2>SPEAK WITH JAROD or JASON</h2>
+                    <div class="icon">📞</div>
+                    <div class="phone-number">
+                        <a href="tel:0490841667">0490 841 667</a>
+                    </div>
+                    <div class="email">
+                        <a href="mailto:office@privium.com.au">office@privium.com.au</a>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <a href="quote.html" class="cta-button">Get Free Quote</a>
+                        <a href="tel:0490841667" class="cta-button">Call Now</a>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div style="margin-top: 60px; text-align: center;">
+                    <h2>Quality Garden Care You Can Trust</h2>
+                    <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
+                        Privium Garden Services delivers professional garden maintenance to Perth's finest properties.
+                        With over 10 years of experience, we provide reliable, high-quality garden care tailored to your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Privium Garden Services</p>
+            <p>Professional Garden Care Throughout Perth</p>
+            <p>ABN: 81 618 934 619</p>
+        </footer>
+    </div>
+</body>
+</html>

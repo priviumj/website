@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Proposition Demo - Privium Garden Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=block" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Value Proposition Section - Version 1 */
+        .value-prop-section {
+            background: rgb(215, 221, 213);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-headline {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .value-headline h2 {
+            color: #244419;
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .value-headline p {
+            color: #A58062;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        /* Three Pillars Layout */
+        .value-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .pillar {
+            text-align: center;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px 5px 20px 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+            border-top: 4px solid #A58062;
+        }
+        
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: #A58062;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .pillar h3 {
+            color: #244419;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .pillar p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        /* Comparison Table Section */
+        .comparison-section {
+            background: #F5F3F0;
+            padding: 80px 0;
+            border-bottom-right-radius: 70px;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 20px 5px 20px 5px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th {
+            background: #244419;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .comparison-table th:first-child {
+            width: 35%;
+        }
+        
+        .comparison-table th.highlight {
+            background: #A58062;
+            position: relative;
+        }
+        
+        .comparison-table th.highlight::after {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #244419;
+            color: white;
+            padding: 3px 10px;
+            font-size: 10px;
+            border-radius: 10px;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .check {
+            color: #28a745;
+            font-size: 20px;
+        }
+        
+        .cross {
+            color: #dc3545;
+            font-size: 20px;
+        }
+        
+        /* Trust Indicators */
+        .trust-section {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .trust-item {
+            padding: 20px;
+        }
+        
+        .trust-number {
+            font-size: 36px;
+            color: #A58062;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .trust-label {
+            color: #244419;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Alternative Card-Based Design */
+        .value-cards-section {
+            background: linear-gradient(135deg, rgb(215, 221, 213) 0%, #F5F3F0 100%);
+            padding: 80px 0;
+            margin-top: 80px;
+        }
+        
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .value-card-icon {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #244419, #6B8250);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .value-card-content h4 {
+            color: #244419;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .value-card-content p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        /* Guarantee Badge */
+        .guarantee-badge {
+            background: white;
+            border: 3px solid #A58062;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        
+        .guarantee-badge::before {
+            content: "✓";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #A58062;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .guarantee-badge h3 {
+            color: #244419;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .guarantee-badge p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            background: #A58062;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .cta-button:hover {
+            background: #8d6d52;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .value-pillars {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .value-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Version 1: Three Pillars Approach -->
+    <section class="value-prop-section">
+        <div class="container">
+            <div class="value-headline">
+                <h2>Why Perth's Premier Properties Choose Privium</h2>
+                <p>We're not just gardeners – we're your garden's personal caretakers</p>
+            </div>
+            
+            <div class="value-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">🏡</div>
+                    <h3>Set & Forget Service</h3>
+                    <p>No more scheduling hassles or missed appointments. Our subscription model means your garden is always perfect without you lifting a finger or making a call.</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">💎</div>
+                    <h3>True Full Service</h3>
+                    <p>One simple monthly fee covers everything: professional equipment, green waste removal, fertilisers, treatments, and expert care. No hidden costs, ever.</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">🛡️</div>
+                    <h3>Owner's Guarantee</h3>
+                    <p>Jarod personally oversees every property. We catch problems before they start, ensuring your garden always looks its absolute best for your family and guests.</p>
+                </div>
+            </div>
+            
+            <div class="guarantee-badge">
+                <h3>The Privium Promise</h3>
+                <p>If you're not completely satisfied with any visit, we'll return within 48 hours to make it right – no questions asked. That's our personal commitment to excellence.</p>
+                <a href="quote.html" class="cta-button">Get Your Free Assessment</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #244419; margin-bottom: 40px; font-size: 32px; font-weight: 300;">See The Privium Difference</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service Aspect</th>
+                            <th class="highlight">Privium Gardens</th>
+                            <th>Typical Gardeners</th>
+                            <th>DIY Approach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Scheduling Required</strong></td>
+                            <td><span class="check">✓</span> Never - Automatic</td>
+                            <td><span class="cross">✗</span> Every visit</td>
+                            <td><span class="cross">✗</span> Constant planning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equipment Provided</strong></td>
+                            <td><span class="check">✓</span> Professional grade</td>
+                            <td><span class="check">✓</span> Basic only</td>
+                            <td><span class="cross">✗</span> $3000+ investment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waste Removal</strong></td>
+                            <td><span class="check">✓</span> Always included</td>
+                            <td><span class="cross">✗</span> Often extra</td>
+                            <td><span class="cross">✗</span> Your problem</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treatments & Fertiliser</strong></td>
+                            <td><span class="check">✓</span> Included & scheduled</td>
+                            <td><span class="cross">✗</span> Additional cost</td>
+                            <td><span class="cross">✗</span> Easy to forget</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proactive Problem Solving</strong></td>
+                            <td><span class="check">✓</span> Before you notice</td>
+                            <td><span class="cross">✗</span> Only if asked</td>
+                            <td><span class="cross">✗</span> After it's too late</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consistent Results</strong></td>
+                            <td><span class="check">✓</span> Same expert team</td>
+                            <td>? Varies by contractor</td>
+                            <td>? Depends on time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monthly Investment</strong></td>
+                            <td>From $352 all-inclusive</td>
+                            <td>$300+ hidden extras</td>
+                            <td>Time + equipment + supplies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <h2 style="color: #244419; font-size: 28px; font-weight: 300; margin-bottom: 10px;">Trusted Across Perth's Finest Suburbs</h2>
+            
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-number">200+</div>
+                    <div class="trust-label">Happy Families</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">15+</div>
+                    <div class="trust-label">Years Experience</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">98%</div>
+                    <div class="trust-label">Client Retention</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">24hr</div>
+                    <div class="trust-label">Response Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Alternative Version: Card-Based Benefits -->
+    <section class="value-cards-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #244419; margin-bottom: 40px; font-size: 32px; font-weight: 300;">What Makes Privium Different</h2>
+            
+            <div class="value-cards">
+                <div class="value-card">
+                    <div class="value-card-icon">📅</div>
+                    <div class="value-card-content">
+                        <h4>Never Think About It Again</h4>
+                        <p>While others require constant booking and rescheduling, we show up like clockwork. Your garden stays perfect without a single phone call.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">👨‍🔧</div>
+                    <div class="value-card-content">
+                        <h4>The Same Expert, Every Time</h4>
+                        <p>No random contractors. Jarod and his trained team know your garden intimately, ensuring consistent, exceptional results.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">💰</div>
+                    <div class="value-card-content">
+                        <h4>True Flat-Rate Pricing</h4>
+                        <p>One monthly fee covers absolutely everything. No fuel surcharges, no disposal fees, no treatment costs. Ever.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">🔍</div>
+                    <div class="value-card-content">
+                        <h4>Problems Solved Before They Start</h4>
+                        <p>We don't wait for you to notice issues. We identify and fix problems during routine visits, keeping your garden in peak condition.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">🏆</div>
+                    <div class="value-card-content">
+                        <h4>Premium Suburb Specialists</h4>
+                        <p>We exclusively service Perth's finest neighborhoods, understanding the higher standards and discretion required.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">📱</div>
+                    <div class="value-card-content">
+                        <h4>Direct Owner Access</h4>
+                        <p>No call centers or account managers. You have Jarod's direct number for immediate response to any concerns.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: #666; font-size: 16px; margin-bottom: 20px;">Join 200+ Perth families who never worry about their gardens</p>
+                <a href="quote.html" class="cta-button">Start Your Free Assessment</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Quote | Free Garden Care Assessment Perth | Privium Garden Services</title>
+    <meta name="description" content="Request a free quote for garden care services in Perth. Professional lawn mowing, hedge trimming, and garden maintenance. Quick response, competitive rates.">
+    <meta name="keywords" content="garden services quote Perth, free garden assessment, lawn care quote, garden maintenance pricing">
+    <meta property="og:title" content="Get a Free Quote | Privium Garden Services Perth">
+    <meta property="og:description" content="Request your free garden care quote. Professional service for Perth's premium suburbs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/quote/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        body.fonts-loaded {
+            opacity: 1;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        header .container {
+            width: 95%;
+            max-width: 1400px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 28px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-phone {
+            margin-left: 60px;
+            margin-right: auto;
+            color: #A58062;
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        
+        .header-phone .call-text {
+            color: #244419;
+            font-weight: 300;
+            font-size: 12px;
+        }
+        
+        .header-phone .phone-number {
+            font-size: 16px;
+        }
+        
+        /* Hamburger Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #244419;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Responsive Navigation */
+        @media (max-width: 1200px) {
+            .nav-links {
+                gap: 20px;
+            }
+            .nav-links a {
+                padding: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                padding: 5px 8px;
+                font-size: 14px;
+            }
+            .header-phone {
+                margin-left: 30px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                padding: 5px 6px;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 5px;
+            }
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            padding: 5px 15px;
+            border-radius: 15px 3px 15px 3px;
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #6B8250;
+            border: 1px solid rgba(107, 130, 80, 0.3);
+            background: rgba(107, 130, 80, 0.05);
+        }
+        
+        .nav-links a.active {
+            color: #A58062;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px 5px 20px 5px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Page Hero with Parallax */
+        .hero {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: -80px;
+            margin-bottom: 0;
+        }
+        
+        .hero-top-wrapper {
+            background: rgb(215, 221, 213);
+        }
+        
+        .hero-top {
+            position: relative;
+            width: 100%;
+            height: 456px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid #A58062;
+            border-bottom-right-radius: 70px;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: rgb(215, 221, 213);
+            overflow: hidden;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .hero-img.active {
+            opacity: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .hero-taglines {
+            position: relative;
+            z-index: 3;
+            padding: 120px 20px 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            background: rgb(215, 221, 213);
+            padding: 60px 0;
+            border-bottom-right-radius: 70px;
+            position: relative;
+            overflow: visible;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 34px;
+            margin-bottom: 20px;
+            line-height: 1em;
+            color: white;
+            font-weight: 100;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 300;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .green-bg {
+            background: rgb(215, 221, 213);
+            border-radius: 0 0 70px 0;
+        }
+        
+        .cream-bg {
+            background: #F5F3F0;
+            border-radius: 0 0 70px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #244419;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #244419;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* Form Styles */
+        .quote-form-container {
+            margin-top: 40px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px 5px 20px 5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid rgba(36, 68, 25, 0.1);
+        }
+
+        .form-title {
+            font-size: 22px;
+            color: #244419;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #244419;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d5ddd5;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #A58062;
+            box-shadow: 0 0 0 3px rgba(165, 128, 98, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .checkbox-item:hover {
+            border-color: #A58062;
+            background: white;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: #244419;
+            color: white;
+            padding: 15px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px 5px 25px 5px;
+            cursor: pointer;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            background: #A58062;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Sidebar Info */
+        .sidebar-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px 5px 20px 5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            border: 1px solid rgba(36, 68, 25, 0.1);
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            color: #244419;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #5E483A;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #5E483A;
+            border-bottom: 1px solid #f0f0f0;
+            font-weight: 300;
+        }
+
+        .info-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Messages */
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-group input:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: #dc3545;
+        }
+        
+        .form-group input:valid:not(:focus):not(:placeholder-shown) {
+            border-color: #28a745;
+        }
+
+        .success-message h3 {
+            margin-bottom: 10px;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .service-item:hover {
+            background: #f0f7f0 !important;
+            border-color: #6B8250 !important;
+        }
+
+        /* Phone Link */
+        .phone-link {
+            display: inline-block;
+            background: #A58062;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .phone-link:hover {
+            background: #8d6d52;
+            transform: translateY(-2px);
+        }
+
+        /* Why Choose Grid */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            background: #A58062;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .why-item h4 {
+            font-size: 16px;
+            color: #244419;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: #5E483A;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #F5F3F0;
+            color: #244419;
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 0;
+            border-bottom-right-radius: 70px;
+            border-bottom: 5px solid #A58062;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #5E483A;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #244419;
+            color: white;
+            padding: 10px 25px;
+            font-size: 14px;
+            border-radius: 20px 5px 20px 5px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #1a3014;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .cta-button.secondary {
+            background: white;
+            border: 1px solid #A58062;
+            color: #A58062;
+        }
+
+        .cta-button.secondary:hover {
+            background: #A58062;
+            color: white;
+        }
+
+        .cta-phone-link {
+            color: #244419;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .cta-phone-link:hover {
+            color: #A58062;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #244419;
+            padding: 40px 0 15px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+
+        .footer-brand h4 {
+            font-size: 16px;
+            color: #244419;
+            margin-bottom: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h5 {
+            font-size: 13px;
+            color: #244419;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #A58062;
+        }
+
+        .footer-phone {
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            color: #244419 !important;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .sidebar-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-phone {
+                font-size: 14px !important;
+                margin-left: 20px !important;
+                margin-right: 10px !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 60px;
+                right: 0;
+                background: white;
+                width: 250px;
+                height: 100vh;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+            
+            .contact-fields {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <a href="tel:0490841667" class="header-phone">
+                <span class="call-text">Call Jarod</span>
+                <span class="phone-number">0490 841 667</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html" class="nav-cta" style="background: white; color: #A58062; border-color: #A58062;">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: 80px;"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-top-wrapper">
+        <div class="hero-top">
+            <div class="hero-image">
+                <img src="hedge-trimming.jpg" alt="Professional hedge trimming service" class="hero-img active">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-taglines container">
+                <div class="tagline-set" style="display: block; opacity: 1;">
+                    <h1>Get Your Free Quote</h1>
+                    <p class="hero-subtitle">Professional garden care tailored to your property's needs</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div style="background: #F5F3F0;">
+        <div class="hero-content" style="position: relative;">
+            <img src="green-stem.svg" alt="Decorative leaf" class="decorative-leaf" style="position: absolute; bottom: 20px; left: 20px; width: 120px; opacity: 0.1; transform: rotate(15deg);">
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="color: #A58062; font-size: 24px; font-weight: 300; margin-bottom: 20px; margin-top: -20px; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Quick & Easy Process</h2>
+                <div style="font-size: 15px; max-width: 900px; margin: 0 auto 40px; line-height: 1.8; color: #666; text-align: center;">
+                    <p>Get your personalised quote in 3 simple steps: Submit your details below, we'll arrange a free property assessment, and receive your custom quote.</p>
+                    <p>No obligations, just honest pricing and expert advice.</p>
+                    <p>Call us, text us, email us or submit the form below and we'll contact you.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: center; margin-top: 30px;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #244419; font-size: 16px; margin-bottom: 10px; font-weight: 500;">Call Us</h3>
+                        <a href="tel:0490841667" style="display: inline-block; background: transparent; color: #244419; padding: 10px 20px; border: 1px solid #244419; border-radius: 20px 5px 20px 5px; text-decoration: none; font-weight: 400; font-size: 14px; transition: all 0.3s;">0490 841 667</a>
+                    </div>
+                    <div style="text-align: center; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;">
+                        <h3 style="color: #244419; font-size: 16px; margin-bottom: 10px; font-weight: 500;">Text Us</h3>
+                        <a href="sms:0490841667" style="display: inline-block; background: transparent; color: #244419; padding: 10px 20px; border: 1px solid #244419; border-radius: 20px 5px 20px 5px; text-decoration: none; font-weight: 400; font-size: 14px; transition: all 0.3s;">Send SMS</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <h3 style="color: #244419; font-size: 16px; margin-bottom: 10px; font-weight: 500;">Email Us</h3>
+                        <a href="mailto:office@privium.com.au" style="display: inline-block; background: transparent; color: #244419; padding: 10px 20px; border: 1px solid #244419; border-radius: 20px 5px 20px 5px; text-decoration: none; font-weight: 400; font-size: 14px; transition: all 0.3s;">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <div style="background: rgb(215, 221, 213);">
+    <section class="content-section cream-bg" style="border-bottom-right-radius: 70px;">
+        <div class="container">
+            <h2>Request Your Personalised Quote</h2>
+            <p style="text-align: center; font-size: 16px; color: #5E483A; margin-bottom: 40px; font-weight: 300;">
+                Tell us about your garden and we'll provide a detailed quote
+            </p>
+
+            <!-- Main Form -->
+            <div class="form-section">
+                    <div class="success-message" id="successMessage" style="display: none;">
+                        <h3>Thank You!</h3>
+                        <p>We'll contact you within 24 hours with a quote.</p>
+                    </div>
+
+                    <div class="error-message" id="errorMessage" style="display: none;">
+                        Please fill in all required fields.
+                    </div>
+
+                    <form id="bookingForm" method="POST" action="#" onsubmit="handleSubmit(event)">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name *" required>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="form-group">
+                            <label>Contact Information</label>
+                            <div class="contact-fields" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                                <input type="email" id="email" name="email" placeholder="Email Address">
+                            </div>
+                            <div style="margin-top: 15px; display: flex; align-items: center; gap: 20px;">
+                                <label style="font-size: 14px;">Preferred Contact Method:</label>
+                                <label class="radio-label" style="display: flex; align-items: center; gap: 5px;">
+                                    <input type="radio" name="contactMethod" value="phone" checked>
+                                    <span>Phone</span>
+                                </label>
+                                <label class="radio-label" style="display: flex; align-items: center; gap: 5px;">
+                                    <input type="radio" name="contactMethod" value="email">
+                                    <span>Email</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Property Address -->
+                        <div class="form-group">
+                            <textarea id="address" name="address" placeholder="Property Address" rows="2" style="resize: vertical; min-height: 60px;"></textarea>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your request"></textarea>
+                        </div>
+
+                        <!-- Services Needed -->
+                        <div class="form-group">
+                            <label>Select Any Needed</label>
+                            <div class="services-grid" style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="lawn-care">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Lawn Care</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Complete lawn maintenance including mowing, edging, fertilizing, weed control & premium treatments</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="lawn-renovation">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Lawn Renovation</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Vertimowing, scalping, top dressing, aeration, turf laying & restoration services</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="garden-maintenance">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Garden Maintenance</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Regular weeding, pruning, mulching, hedge trimming, leaf removal & garden bed care</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="tree-shrub-care">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Tree & Shrub Care</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Professional pruning, hedge reduction, topiary work, disease treatment & pest management</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="irrigation-water">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Irrigation & Water</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">System checks, repairs, optimization, winter shutdown & water management</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="soil-plant-health">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Soil & Plant Health</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Comprehensive testing, pH analysis, cultivation, plant recommendations & treatment programs</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="specialized-services">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Specialized Services</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Hard surface cleaning, waste removal, repotting, pool skimming & custom requests</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="complete-property-care">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Complete Property Care</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">All-inclusive regular maintenance package with seasonal reports & documentation</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                    <input type="checkbox" name="services" value="tennis-court-services">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Tennis Court Services</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Synthetic & grass court maintenance, moss treatment, sand infill, line marking & restoration</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Service Preference -->
+                        <div class="form-group">
+                            <label>Service Preference</label>
+                            <div class="subscription-option">
+                                <label style="display: flex; gap: 10px; padding: 15px; background: #f0f7f0; border: 1px solid #6B8250; border-radius: 8px; cursor: pointer;">
+                                    <input type="checkbox" name="subscription" value="set-and-forget">
+                                    <div class="service-content">
+                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Set & Forget Subscription</div>
+                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">I'm interested in a regular subscription model for automated, scheduled service with predictable monthly billing with direct debit</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+            </div>
+
+            <!-- Info Cards Below Form -->
+            <div class="sidebar-info">
+                    <!-- Trust Badges -->
+                    <div class="info-card">
+                        <h3>Why Choose Privium</h3>
+                        <div class="trust-badges" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">10+</div>
+                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Years Experience</div>
+                            </div>
+                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">100%</div>
+                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Insured</div>
+                            </div>
+                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">5★</div>
+                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Service Quality</div>
+                            </div>
+                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">24hr</div>
+                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Response Time</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Why Choose Section -->
+    <div style="background: #F5F3F0;">
+    <section class="content-section green-bg" style="border-bottom-right-radius: 70px;">
+        <div class="container">
+            <h2>Our Process</h2>
+            
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">1</div>
+                    <h4>Submit Request</h4>
+                    <p>Fill out the form below, call us directly at 0490 841 667, or send a text message with your property details and service requirements</p>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">2</div>
+                    <h4>Property Assessment</h4>
+                    <p>We'll schedule a free on-site visit to evaluate your garden's specific needs</p>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">3</div>
+                    <h4>Custom Quote</h4>
+                    <p>Receive a detailed quote tailored to your property</p>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">4</div>
+                    <h4>Schedule Service</h4>
+                    <p>Once approved, we'll lock in your regular service slot</p>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">5</div>
+                    <h4>Service Reminders</h4>
+                    <p>Automated reminders sent before each visit for your convenience</p>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">6</div>
+                    <h4>Ongoing Excellence</h4>
+                    <p>Enjoy a beautiful garden with our reliable, professional care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- CTA Section Wrapper -->
+    <div style="background: white;">
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px;">Ready to Transform Your Garden?</h2>
+            <p style="font-size: 16px; margin-bottom: 25px; font-weight: 300;">
+                Experience the difference that professional garden care makes
+            </p>
+            <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <a href="tel:0490841667" class="cta-phone-link">0490 841 667</a>
+                <a href="quote.html" class="cta-button secondary" style="margin: 0;">Get Your Free Quote</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 13px; color: #666; font-weight: 300;">Speak with Jarod about your garden needs</p>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="privium-long-logo.png" alt="Privium Garden Services" style="height: 32px; margin-bottom: 15px;">
+                    <p style="color: #666; font-weight: 300; line-height: 1.5; max-width: 280px; font-size: 13px;">Creating and maintaining Perth's most beautiful gardens with professional care and attention to detail.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Contact</h5>
+                        <a href="tel:0490841667" class="footer-phone">0490 841 667</a>
+                        <a href="mailto:office@privium.com.au">office@privium.com.au</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Hours</h5>
+                        <p style="color: #666; margin: 0; font-size: 13px; line-height: 1.8;">Mon-Fri: 7am-5pm<br>Sat: By request<br>Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Privium Garden Services | ABN: 58 685 448 800 | Fully Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Font loading detection
+        document.fonts.ready.then(function() {
+            document.body.classList.add('fonts-loaded');
+        });
+        
+        // Fallback for browsers that don't support document.fonts
+        setTimeout(function() {
+            document.body.classList.add('fonts-loaded');
+        }, 1000);
+        
+        // Simple parallax effect for hero images
+        const heroImages = document.querySelectorAll('.hero-img');
+        const heroTop = document.querySelector('.hero-top');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroRect = heroTop.getBoundingClientRect();
+            
+            // Only apply when hero is visible
+            if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                const speed = 0.3; // Positive value, less than 1 = slower
+                const yPos = scrolled * speed;
+                
+                heroImages.forEach(img => {
+                    // Move image down slower when scrolling down
+                    img.style.transform = `translateY(${yPos}px)`;
+                });
+            }
+        });
+        
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
+            
+            // Add visual feedback
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            // Check if preferred contact method is selected
+            const contactMethod = formData.get('contactMethod');
+            const phone = formData.get('phone');
+            const email = formData.get('email');
+            
+            // Validate that if a contact method is selected, the corresponding field has data
+            if (contactMethod === 'phone' && !phone) {
+                document.getElementById('errorMessage').textContent = 'Please provide a phone number for your preferred contact method.';
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                return false;
+            }
+            
+            if (contactMethod === 'email' && !email) {
+                document.getElementById('errorMessage').textContent = 'Please provide an email address for your preferred contact method.';
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                return false;
+            }
+
+
+            // Hide error message if shown
+            document.getElementById('errorMessage').style.display = 'none';
+
+            // Show success message with animation
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset button
+            submitButton.textContent = '✓ Sent Successfully!';
+            submitButton.style.background = '#28a745';
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                form.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.style.background = '';
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+            }, 2000);
+
+            // In production, you would send the form data to your server here
+            console.log('Form submitted with data:', Object.fromEntries(formData));
+
+            return false;
+        }
+    </script>
+</body>
+</html>

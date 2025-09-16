@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privium Garden Services | Premium Garden Care Perth | Professional Lawn & Garden Maintenance</title>
+    <meta name="description" content="Perth's trusted garden care professionals. Premium lawn maintenance, hedge trimming & garden services for Cottesloe, Dalkeith, South Perth & surrounding suburbs. Call 0490 841 667.">
+    <meta name="keywords" content="garden services Perth, lawn care Perth, garden maintenance, professional gardening Perth, Cottesloe gardener">
+    <meta property="og:title" content="Privium Garden Services | Premium Garden Care Perth">
+    <meta property="og:description" content="Professional garden care services throughout Perth's finest suburbs. Quality, reliability, exceptional results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 5px solid #244419;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #6B8250;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(36, 68, 25, 0.9), rgba(36, 68, 25, 0.9)), url('hero-lawn.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            line-height: 1em;
+            color: #fff;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #A3B583;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #244419;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            background: #1a3014;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: #244419;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #f8f9fa;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trust-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #244419;
+        }
+
+        .trust-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #333;
+            padding-bottom: 10px;
+            line-height: 1em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h3 {
+            font-size: 32px;
+            color: #6B8250;
+            margin: 40px 0 20px;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #6B8250;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: #244419;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6B8250;
+            font-weight: bold;
+        }
+
+        /* Value Props */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .value-prop {
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6B8250, #A3B583);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin: 0 auto 20px;
+        }
+
+        .value-prop h4 {
+            font-size: 22px;
+            color: #244419;
+            margin-bottom: 15px;
+        }
+
+        /* Service Areas */
+        .suburbs-showcase {
+            background: #244419;
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+        }
+
+        .suburbs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .suburb-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .suburb-tag:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Testimonial */
+        .testimonial-feature {
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 24px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #244419;
+            font-size: 18px;
+        }
+
+        .stars {
+            color: #A58062;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #244419;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .phone-large {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+        .phone-large a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #244419;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #A3B583;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #A3B583;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #A3B583;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html" class="nav-cta">Get Quote</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Vision, Our Expertise - Premium Garden Care for Perth</h1>
+            <p class="hero-subtitle">Tailored Garden Solutions for Perth's Finest Properties</p>
+            <p class="hero-description">
+                Privium Garden Services delivers meticulous garden care to Perth's most prestigious suburbs.
+                We listen to your vision, understand your needs, and combine our expertise with premium products
+                to ensure your garden remains exactly as you want it year-round. From Cottesloe to Dalkeith,
+                South Perth to Applecross, we're the trusted choice for discerning property owners.
+            </p>
+            <div class="hero-buttons">
+                <a href="quote.html" class="cta-button">Get Your Free Quote</a>
+                <a href="tel:0490841667" class="cta-button secondary">Call 0490 841 667</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Core Services -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Complete Garden Care Solutions</h2>
+            <p class="section-subtitle">
+                From weekly lawn maintenance to seasonal garden care,
+                we provide every service your garden needs to thrive in Perth's unique climate.
+            </p>
+
+            <div class="services-grid">
+                <a href="services.html#lawn-care" class="service-card">
+                    <h3>Lawn Care Excellence</h3>
+                    <p>Professional mowing, edging, and fertilising programs tailored to Perth's conditions.
+                    Our premium treatments create thick, healthy lawns that withstand our harsh summers.</p>
+                    <ul class="service-list">
+                        <li>Cylinder & rotary mowing</li>
+                        <li>Precision edge trimming</li>
+                        <li>Fertiliser programs</li>
+                        <li>Weed & pest management</li>
+                    </ul>
+                </a>
+
+                <a href="services.html#garden-maintenance" class="service-card">
+                    <h3>Garden Maintenance</h3>
+                    <p>Complete garden care including hedge trimming, pruning, and garden bed maintenance.
+                    We keep every aspect of your garden looking pristine throughout the year.</p>
+                    <ul class="service-list">
+                        <li>Professional hedge shaping</li>
+                        <li>Tree & shrub pruning</li>
+                        <li>Garden bed care</li>
+                        <li>Mulching & soil improvement</li>
+                    </ul>
+                </a>
+
+                <a href="services.html#specialized" class="service-card">
+                    <h3>Specialized Services</h3>
+                    <p>Advanced garden care including comprehensive lawn treatments, pest management,
+                    and irrigation optimization for superior results.</p>
+                    <ul class="service-list">
+                        <li>Garden health assessment</li>
+                        <li>Integrated pest management</li>
+                        <li>Irrigation system care</li>
+                        <li>Disease diagnosis & treatment</li>
+                    </ul>
+                </a>
+
+                <a href="#subscription" class="service-card">
+                    <h3>Set-and-Forget Subscription</h3>
+                    <p>Your garden stays immaculate year-round while you focus on what matters most.
+                    Automated scheduling with regular reports keeps you informed.</p>
+                    <ul class="service-list">
+                        <li>Fixed monthly pricing</li>
+                        <li>Priority scheduling</li>
+                        <li>Regular progress reports</li>
+                        <li>Zero mental load</li>
+                    </ul>
+                </a>
+            </div>
+
+            <!-- Complete Services List -->
+            <div style="margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 15px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">All Our Services</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div>
+                        <h4 style="color: #6B8250; margin-bottom: 15px;">Lawn Care</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0;">• Professional lawn mowing</li>
+                            <li style="padding: 5px 0;">• Edge trimming & definition</li>
+                            <li style="padding: 5px 0;">• Fertilising programs</li>
+                            <li style="padding: 5px 0;">• Weed control & prevention</li>
+                            <li style="padding: 5px 0;">• Lawn renovation & repair</li>
+                            <li style="padding: 5px 0;">• Aeration & dethatching</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #6B8250; margin-bottom: 15px;">Garden Maintenance</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0;">• Hedge trimming & shaping</li>
+                            <li style="padding: 5px 0;">• Tree & shrub pruning</li>
+                            <li style="padding: 5px 0;">• Garden bed maintenance</li>
+                            <li style="padding: 5px 0;">• Mulching & top dressing</li>
+                            <li style="padding: 5px 0;">• Leaf & debris removal</li>
+                            <li style="padding: 5px 0;">• Green waste removal</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #6B8250; margin-bottom: 15px;">Specialized Care</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0;">• Pest & disease management</li>
+                            <li style="padding: 5px 0;">• Irrigation system checks</li>
+                            <li style="padding: 5px 0;">• Seasonal programs</li>
+                            <li style="padding: 5px 0;">• Garden health assessments</li>
+                            <li style="padding: 5px 0;">• Premium treatments</li>
+                            <li style="padding: 5px 0;">• One-off garden cleanups</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="services.html" class="cta-button">View All Service Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Privium -->
+    <section class="content-section">
+        <div class="container">
+            <h2>The Privium Difference</h2>
+            <p class="section-subtitle">
+                Why Perth's finest properties choose Privium Garden Services
+            </p>
+
+            <div class="value-props">
+                <div class="value-prop">
+                    <div class="value-icon">🤝</div>
+                    <h4>Client-Centered Approach</h4>
+                    <p>We listen to your needs, adapt to your preferences, and work
+                    around your schedule. Your satisfaction is our priority.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-icon">⭐</div>
+                    <h4>Premium Quality Service</h4>
+                    <p>Professional-grade products, expert techniques, and years of experience
+                    ensure your garden receives the best possible care.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-icon">⏰</div>
+                    <h4>Reliable & Punctual</h4>
+                    <p>We arrive on time, every time. Automated scheduling with
+                    reminders sent before each visit ensures no surprises.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-icon">💚</div>
+                    <h4>Environmental Responsibility</h4>
+                    <p>Water-wise practices, organic options, and integrated pest management
+                    protect your garden and the environment.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-icon">👨‍🌾</div>
+                    <h4>Expert Knowledge</h4>
+                    <p>Our team understands Perth's unique conditions - sandy soils,
+                    water restrictions, and Mediterranean climate challenges.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-icon">✨</div>
+                    <h4>Premium Products</h4>
+                    <p>Commercial-grade fertilisers and treatments not available to
+                    consumers deliver superior results for your garden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="content-section">
+        <div class="container">
+            <div class="suburbs-showcase">
+                <h2 style="color: white;">Servicing Perth's Premier Suburbs</h2>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 30px;">
+                    We specialize in providing exceptional garden care to Perth's most prestigious neighborhoods
+                </p>
+                <div class="suburbs-grid">
+                    <div class="suburb-tag">Cottesloe</div>
+                    <div class="suburb-tag">Dalkeith</div>
+                    <div class="suburb-tag">Nedlands</div>
+                    <div class="suburb-tag">Claremont</div>
+                    <div class="suburb-tag">Peppermint Grove</div>
+                    <div class="suburb-tag">Mosman Park</div>
+                    <div class="suburb-tag">South Perth</div>
+                    <div class="suburb-tag">Como</div>
+                    <div class="suburb-tag">Applecross</div>
+                    <div class="suburb-tag">Mount Pleasant</div>
+                    <div class="suburb-tag">City Beach</div>
+                    <div class="suburb-tag">Floreat</div>
+                    <div class="suburb-tag">Shenton Park</div>
+                    <div class="suburb-tag">Mount Claremont</div>
+                    <div class="suburb-tag">Swanbourne</div>
+                    <div class="suburb-tag">Attadale</div>
+                    <div class="suburb-tag">Bicton</div>
+                    <div class="suburb-tag">Salter Point</div>
+                    <div class="suburb-tag">Kensington</div>
+                    <div class="suburb-tag">Victoria Park</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="content-section">
+        <div class="container">
+            <div class="testimonial-feature">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Privium transformed our garden completely. Their attention to detail is exceptional,
+                    and the bio-stimulant program has made our lawn the envy of the street.
+                    Professional, reliable, and truly knowledgeable about Perth gardens."
+                </p>
+                <p class="testimonial-author">— Sarah Mitchell, Cottesloe</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Garden?</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">
+                Experience the difference that professional garden care makes
+            </p>
+            <div class="phone-large">
+                <a href="tel:0490841667">📞 0490 841 667</a>
+            </div>
+            <p style="margin-bottom: 30px;">Speak with Jarod about your garden needs</p>
+            <a href="quote.html" class="cta-button" style="background: white; color: #244419;">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Privium</h4>
+                    <p>Perth's premium garden care service, delivering science-based maintenance solutions to the city's finest properties.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="quote.html">Get Quote</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:0490841667">0490 841 667</a></p>
+                    <p>✉️ <a href="mailto:office@privium.com.au">office@privium.com.au</a></p>
+                    <p>📍 Servicing Perth Metro</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Hours</h4>
+                    <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Privium Garden Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

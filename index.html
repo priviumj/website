@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privium Garden Services | Premium Garden Care Perth | Professional Lawn & Garden Maintenance</title>
+    <meta name="description" content="Perth's trusted garden care professionals. Premium lawn maintenance, hedge trimming & garden services for Cottesloe, Dalkeith, South Perth & surrounding suburbs. Call 0490 841 667.">
+    <meta name="keywords" content="garden services Perth, lawn care Perth, garden maintenance, professional gardening Perth, Cottesloe gardener">
+    <meta property="og:title" content="Privium Garden Services | Premium Garden Care Perth">
+    <meta property="og:description" content="Professional garden care services throughout Perth's finest suburbs. Quality, reliability, exceptional results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/">
+
+    <!-- Preload Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=block" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=block" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        body.fonts-loaded {
+            opacity: 1;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        header .container {
+            width: 95%;
+            max-width: 1400px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 28px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-phone {
+            margin-left: 60px;
+            margin-right: auto;
+            color: #A58062;
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        
+        .header-phone .call-text {
+            color: #244419;
+            font-weight: 300;
+            font-size: 12px;
+        }
+        
+        .header-phone .phone-number {
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            padding: 5px 15px;
+            border-radius: 15px 3px 15px 3px;
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #6B8250;
+            border: 1px solid rgba(107, 130, 80, 0.3);
+            background: rgba(107, 130, 80, 0.05);
+        }
+        
+        .nav-links a.active {
+            color: #A58062;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px 5px 20px 5px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: -80px; /* Pull hero up behind header */
+            margin-bottom: 0;
+        }
+        
+        .hero-top-wrapper {
+            background: rgb(215, 221, 213);
+        }
+        
+        .hero-top {
+            position: relative;
+            width: 100%;
+            height: 456px; /* Increased by 20% from 380px */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid #A58062;
+            border-bottom-right-radius: 70px;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: rgb(215, 221, 213);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .hero-img.active {
+            opacity: 1;
+        }
+        
+        .hero-img.active:first-child {
+            animation: fadeInFromGreen 3s ease-out;
+        }
+        
+        @keyframes fadeInFromGreen {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .hero-taglines {
+            position: relative;
+            z-index: 3;
+            padding: 120px 20px 40px; /* Added top padding for header space */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tagline-set {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            display: none;
+        }
+        
+        .tagline-set.active {
+            opacity: 1;
+            display: block;
+        }
+        
+        .hero-content {
+            background: rgb(215, 221, 213);
+            padding: 60px 0;
+            border-bottom-right-radius: 70px;
+            position: relative;
+            overflow: visible; /* Changed from hidden to visible */
+            margin-top: 0;
+        }
+        
+        .hero-frond {
+            position: absolute;
+            right: 70px;
+            bottom: 0;
+            width: 120px;
+            height: auto;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 34px;
+            margin-bottom: 20px;
+            line-height: 1em;
+            color: white;
+            font-weight: 100;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 15px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: #244419;
+            font-weight: 300;
+        }
+        
+        .hero-description p {
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #244419;
+            color: white;
+            padding: 10px 25px;
+            font-size: 14px;
+            border-radius: 20px 5px 20px 5px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background: #1a3014;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .cta-button.secondary {
+            background: white;
+            border: 1px solid #A58062;
+            color: #A58062;
+        }
+
+        .cta-button.secondary:hover {
+            background: #A58062;
+            color: white;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #f8f9fa;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trust-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #244419;
+        }
+
+        .trust-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            background: #F5F3F0;
+            border-bottom-right-radius: 70px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #333;
+            padding-bottom: 10px;
+            line-height: 1em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h3 {
+            font-size: 32px;
+            color: #6B8250;
+            margin: 40px 0 20px;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px 5px 20px 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #6B8250;
+            text-decoration: none;
+            color: inherit;
+            font-weight: 300;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(165, 128, 98, 0.25);
+            border-top: 4px solid #A58062;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: #244419;
+            margin: 10px 0 15px 0;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-list li {
+            padding: 4px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6B8250;
+            font-weight: bold;
+        }
+
+        /* The Privium Difference Section */
+        .difference-section {
+            padding: 80px 20px;
+            background: rgb(215, 221, 213);
+            border-bottom-right-radius: 70px;
+        }
+        
+        .difference-section h2 {
+            text-align: center;
+            color: #A58062;
+            margin-bottom: 60px;
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+        
+        .difference-montage {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr 1.5fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 4px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        /* First row: wide left (spans 2 cols), narrow right */
+        .montage-item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        
+        .montage-item:nth-child(2) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        
+        /* Second row: narrow left, wide right (spans 2 cols) */
+        .montage-item:nth-child(3) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .montage-item:nth-child(4) {
+            grid-column: 2 / 4;
+            grid-row: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .difference-montage {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            
+            .montage-item:nth-child(1),
+            .montage-item:nth-child(2),
+            .montage-item:nth-child(3),
+            .montage-item:nth-child(4) {
+                grid-column: 1;
+                grid-row: auto;
+            }
+        }
+        
+        .montage-item {
+            position: relative;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* Top-left wide photo - round top-left corner */
+        .montage-item:nth-child(1) .montage-image {
+            border-top-left-radius: 25px;
+        }
+        
+        /* Top-right narrow photo - NO rounding needed */
+        
+        /* Bottom-left narrow photo - NO rounding needed */
+        
+        /* Bottom-right wide photo - round bottom-right corner */
+        .montage-item:nth-child(4) {
+            border-bottom-right-radius: 25px !important;
+        }
+        
+        .montage-item {
+            z-index: 1;
+        }
+        
+        .montage-image {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        /* Ensure images are larger to accommodate parallax movement */
+        .montage-image img {
+            min-height: 120%;
+            height: 120%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
+            top: -10%; /* Center the extra height */
+        }
+        
+        .montage-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .montage-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(36, 68, 25, 0.95), transparent);
+            padding: 40px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .montage-overlay h3 {
+            color: white;
+            font-size: 22px;
+            font-weight: 300;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .montage-text {
+            color: #666;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 15px;
+            line-height: 1.5em;
+            font-weight: 300;
+            font-size: 13px;
+            margin: 0;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Service Areas */
+        .service-areas-section {
+            padding: 80px 20px;
+            background: #F5F3F0;
+            border-bottom-right-radius: 70px;
+        }
+        
+        .suburbs-showcase {
+            padding: 50px 0;
+        }
+
+        .suburbs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .suburb-tag {
+            background: white;
+            padding: 12px 8px;
+            border-radius: 15px 3px 15px 3px;
+            text-align: center;
+            border: 1px solid #A3B583;
+            transition: all 0.3s;
+            color: #244419;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        .suburb-tag:hover {
+            background: #A58062;
+            color: white;
+            border-color: #A58062;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(165, 128, 98, 0.2);
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 60px 20px;
+            background: rgb(215, 221, 213);
+            border-bottom-right-radius: 70px;
+        }
+        
+        .testimonials-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            border-left: 2px solid #A58062;
+            min-width: 200px;
+            max-width: 240px;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-text {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-weight: 400;
+            color: #666;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .testimonial-author::before {
+            content: "✓";
+            background: #A58062;
+            color: white;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+        }
+
+        .stars {
+            color: #FBBC04;
+            font-size: 11px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #F5F3F0;
+            color: #244419;
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 0;
+            border-bottom-right-radius: 70px;
+            border-bottom: 5px solid #A58062;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 15px;
+        }
+        
+        .cta-phone-link {
+            color: #244419;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .cta-phone-link:hover {
+            color: #A58062;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #244419;
+            padding: 40px 0 15px;
+            margin-top: 0;
+        }
+        
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(36, 68, 25, 0.1);
+        }
+        
+        .footer-brand {
+            flex: 1;
+            max-width: 350px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .footer-column {
+            min-width: 150px;
+        }
+        
+        .footer-column h5 {
+            color: #A58062;
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: #244419;
+        }
+        
+        .footer-phone {
+            color: #244419 !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-main {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        /* Responsive */
+        /* Hamburger Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #244419;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Responsive Navigation */
+        @media (max-width: 1200px) {
+            .nav-links {
+                gap: 20px;
+            }
+            .nav-links a {
+                padding: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                padding: 5px 8px;
+                font-size: 14px;
+            }
+            .header-phone {
+                margin-left: 30px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                padding: 5px 6px;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 5px;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+            
+            .header-phone {
+                font-size: 14px !important;
+                margin-left: 20px !important;
+                margin-right: 10px !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 60px;
+                right: 0;
+                background: white;
+                width: 250px;
+                height: 100vh;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <a href="tel:0490841667" class="header-phone">
+                <span class="call-text">Call Jarod</span>
+                <span class="phone-number">0490 841 667</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html" class="nav-cta">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: 80px;"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-top-wrapper">
+        <div class="hero-top">
+            <div class="hero-image">
+                <img src="PXL_20250416_032902603.jpg" alt="Beautiful maintained garden lawn" class="hero-img active">
+                <img src="IMG_3456.jpg" alt="Beautiful garden landscape" class="hero-img" loading="lazy">
+                <img src="rn_image_picker_lib_temp_832fab1a-f7.jpg" alt="Garden entertainment space" class="hero-img" loading="lazy">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-taglines container">
+                <div class="tagline-set" style="display: block; opacity: 1;">
+                    <h1>Beautiful Lawns for Every Lifestyle</h1>
+                    <p class="hero-subtitle">From Children's Play Areas to Entertainment Spaces – Your Lawn, Perfectly Maintained for How You Live</p>
+                </div>
+                <div class="tagline-set">
+                    <h1>Science-Based Garden Care That Just Works</h1>
+                    <p class="hero-subtitle">Comprehensive, Set-and-Forget Garden Maintenance – Enjoy Your Beautiful Garden Without the Hassle</p>
+                </div>
+                <div class="tagline-set">
+                    <h1>Your Perfect Entertainment Space</h1>
+                    <p class="hero-subtitle">Creating Garden Spaces Where Memories Are Made – From Family Gatherings to Children's Adventures</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div style="background: #F5F3F0;">
+        <div class="hero-content">
+            <img src="green-stem.svg" alt="Decorative frond" class="hero-frond">
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="color: #A58062; font-size: 24px; font-weight: 300; margin-bottom: 20px; margin-top: -20px; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Exceptional Garden Care</h2>
+                <div class="hero-description">
+                    <p>At Privium Garden Services, we take care of everything in your garden using proven, science-based methods 
+                    that deliver exceptional results.</p>
+                    
+                    <p>We listen to your vision, understand your concerns, and proactively communicate anything that helps 
+                    achieve the garden you want. From premium liquid bio-stimulants to integrated pest management, our comprehensive 
+                    approach transforms your garden into its healthiest, most beautiful version.</p>
+                    
+                    <p>We measure success by meeting your goals—whether that's lusher lawns, healthier plants, perfectly 
+                    manicured edges and hedges, or simply a garden that becomes the pride of your property.</p>
+                    
+                    <p>With reliable, responsive service across Perth's western suburbs and riverside communities, you can 
+                    trust us to deliver consistently while keeping you informed—without you having to chase or worry.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="services.html" class="cta-button">Our Services</a>
+                    <a href="quote.html" class="cta-button secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Core Services Wrapper -->
+    <div style="background: rgb(215, 221, 213);">
+    <section class="content-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center;">Complete Garden Care Solutions</h2>
+            <p class="section-subtitle" style="font-weight: 300;">
+                Everything your garden needs, handled with care and expertise
+            </p>
+
+            <div class="services-grid">
+                <a href="services.html#lawn-care" class="service-card">
+                    <h3 style="font-weight: 300;">Lawn Care</h3>
+                    <p>Your lawn maintained to perfection. Regular mowing, precise edging, and 
+                    thoughtful care that keeps your grass lush and healthy year-round.</p>
+                    <ul class="service-list">
+                        <li>Cylinder & rotary mowing</li>
+                        <li>Precision edge trimming</li>
+                        <li>Fertiliser programs</li>
+                        <li>Weed & pest management</li>
+                    </ul>
+                </a>
+
+                <a href="services.html#garden-maintenance" class="service-card">
+                    <h3 style="font-weight: 300;">Garden Maintenance</h3>
+                    <p>Every detail attended to with care. From perfectly shaped hedges to healthy garden beds,
+                    we ensure your entire garden looks its absolute best.</p>
+                    <ul class="service-list">
+                        <li>Professional hedge shaping</li>
+                        <li>Tree & shrub pruning</li>
+                        <li>Garden bed care</li>
+                        <li>Mulching & soil improvement</li>
+                    </ul>
+                </a>
+
+                <a href="services.html#specialized" class="service-card">
+                    <h3 style="font-weight: 300;">Specialized Services</h3>
+                    <p>Expert solutions for specific needs. Whether it's pest issues, irrigation concerns,
+                    or plant health, we have the knowledge and tools to help.</p>
+                    <ul class="service-list">
+                        <li>Garden health assessment</li>
+                        <li>Integrated pest management</li>
+                        <li>Irrigation system care</li>
+                        <li>Disease diagnosis & treatment</li>
+                    </ul>
+                </a>
+
+                <a href="#subscription" class="service-card">
+                    <h3 style="font-weight: 300;">Subscription Service</h3>
+                    <p>Consistent, reliable care on your schedule. Never worry about maintenance
+                    timing—we handle everything and keep you informed along the way.</p>
+                    <ul class="service-list">
+                        <li>Fixed monthly pricing</li>
+                        <li>Priority scheduling</li>
+                        <li>Regular progress reports</li>
+                        <li>Zero mental load</li>
+                    </ul>
+                </a>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 18px; color: #244419; margin-bottom: 25px; font-weight: 300;">
+                    Want to learn more about our specific services?
+                </p>
+                <a href="services.html" class="cta-button" style="margin-right: 20px;">View All Services</a>
+                <a href="quote.html" class="cta-button secondary">Get Started</a>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- The Privium Difference Section Wrapper -->
+    <div style="background: #F5F3F0;">
+    <section class="difference-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center;">Why Choose Privium</h2>
+            <div class="difference-montage">
+                <div class="montage-item">
+                    <div class="montage-image">
+                        <img src="PXL_20250416_032902603.jpg" alt="Beautiful lawn results" loading="lazy">
+                        <div class="montage-overlay">
+                            <h3>Results You Can See</h3>
+                        </div>
+                    </div>
+                    <p class="montage-text">Thicker lawns, manicured edges, and gardens that become the pride of your street</p>
+                </div>
+                <div class="montage-item">
+                    <div class="montage-image">
+                        <img src="garden-beds.jpg" alt="Complete garden care" loading="lazy">
+                        <div class="montage-overlay">
+                            <h3>Complete Care</h3>
+                        </div>
+                    </div>
+                    <p class="montage-text">From premium fertilisation to pest management - we can handle every aspect of garden health</p>
+                </div>
+                <div class="montage-item">
+                    <div class="montage-image">
+                        <img src="rn_image_picker_lib_temp_832fab1a-f7.jpg" alt="Entertainment ready gardens" loading="lazy">
+                        <div class="montage-overlay">
+                            <h3>Your Schedule, Our Priority</h3>
+                        </div>
+                    </div>
+                    <p class="montage-text">Reliable service that works around your lifestyle and entertaining needs</p>
+                </div>
+                <div class="montage-item">
+                    <div class="montage-image">
+                        <img src="IMG_3456.jpg" alt="Perth garden specialists" loading="lazy">
+                        <div class="montage-overlay">
+                            <h3>Perth's Garden Specialists</h3>
+                        </div>
+                    </div>
+                    <p class="montage-text">10+ years perfecting gardens in Cottesloe, Nedlands, Dalkeith and beyond</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Service Areas Wrapper -->
+    <div style="background: rgb(215, 221, 213);">
+    <section class="service-areas-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 20px;">Service Areas</h2>
+            <p style="text-align: center; font-size: 16px; margin-bottom: 50px; color: #666; font-weight: 300;">
+                Trusted garden care throughout Perth's most beautiful suburbs
+            </p>
+            <div class="suburbs-showcase">
+                <div class="suburbs-grid">
+                    <div class="suburb-tag">Cottesloe</div>
+                    <div class="suburb-tag">Dalkeith</div>
+                    <div class="suburb-tag">Nedlands</div>
+                    <div class="suburb-tag">Claremont</div>
+                    <div class="suburb-tag">Peppermint Grove</div>
+                    <div class="suburb-tag">Mosman Park</div>
+                    <div class="suburb-tag">South Perth</div>
+                    <div class="suburb-tag">Como</div>
+                    <div class="suburb-tag">Applecross</div>
+                    <div class="suburb-tag">Mount Pleasant</div>
+                    <div class="suburb-tag">City Beach</div>
+                    <div class="suburb-tag">Floreat</div>
+                    <div class="suburb-tag">Shenton Park</div>
+                    <div class="suburb-tag">Mount Claremont</div>
+                    <div class="suburb-tag">Swanbourne</div>
+                    <div class="suburb-tag">Attadale</div>
+                    <div class="suburb-tag">Bicton</div>
+                    <div class="suburb-tag">Salter Point</div>
+                    <div class="suburb-tag">Kensington</div>
+                    <div class="suburb-tag">Victoria Park</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Featured Testimonial Wrapper -->
+    <div style="background: #F5F3F0;">
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 40px;">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The difference in our lawn since switching to Privium is incredible. The bio-stimulant applications have made our grass thicker and greener than it's ever been."
+                    </p>
+                    <p class="testimonial-author">Sarah M., Cottesloe</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Professional, knowledgeable, and completely focused on results. Their seasonal reports help us understand what's happening in our garden."
+                    </p>
+                    <p class="testimonial-author">James T., Dalkeith</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We love the set-and-forget approach. Everything looks lusher, healthier, and more vibrant. You can see the quality in every detail."
+                    </p>
+                    <p class="testimonial-author">Angela K., Mount Lawley</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+
+    <!-- CTA Section Wrapper -->
+    <div style="background: white;">
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px;">Ready to Transform Your Garden?</h2>
+            <p style="font-size: 16px; margin-bottom: 25px; font-weight: 300;">
+                Experience the difference that professional garden care makes
+            </p>
+            <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <a href="tel:0490841667" class="cta-phone-link">0490 841 667</a>
+                <a href="quote.html" class="cta-button secondary" style="margin: 0;">Get Your Free Quote</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 13px; color: #666; font-weight: 300;">Speak with Jarod about your garden needs</p>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="privium-long-logo.png" alt="Privium Garden Services" style="height: 32px; margin-bottom: 15px;">
+                    <p style="color: #666; font-weight: 300; line-height: 1.5; max-width: 280px; font-size: 13px;">Creating and maintaining Perth's most beautiful gardens with professional care and attention to detail.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Contact</h5>
+                        <a href="tel:0490841667" class="footer-phone">0490 841 667</a>
+                        <a href="mailto:office@privium.com.au">office@privium.com.au</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Hours</h5>
+                        <p style="color: #666; margin: 0; font-size: 13px; line-height: 1.8;">Mon-Fri: 7am-5pm<br>Sat: By request<br>Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Privium Garden Services | ABN: 58 685 448 800 | Fully Insured</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Show body once fonts are loaded
+        document.fonts.ready.then(function() {
+            document.body.classList.add('fonts-loaded');
+        });
+        
+        // Rotate hero content
+        let currentSlide = 0;
+        const taglines = document.querySelectorAll('.tagline-set');
+        const images = document.querySelectorAll('.hero-img');
+        
+        // Initialize first tagline properly
+        window.addEventListener('DOMContentLoaded', () => {
+            taglines[0].classList.add('active');
+            taglines[0].style.display = '';
+            taglines[0].style.opacity = '';
+        });
+        
+        function rotateHeroContent() {
+            // Remove active class from current tagline
+            taglines[currentSlide].classList.remove('active');
+            
+            // Remove active class from all images
+            images.forEach(img => img.classList.remove('active'));
+            
+            // Move to next slide
+            currentSlide = (currentSlide + 1) % taglines.length;
+            
+            // Add active class to new current tagline
+            taglines[currentSlide].classList.add('active');
+            
+            // Add active class to corresponding image
+            if (currentSlide < images.length) {
+                images[currentSlide].classList.add('active');
+            }
+        }
+        
+        // Start rotation after 5 seconds, then every 5 seconds
+        setTimeout(() => {
+            rotateHeroContent();
+            setInterval(rotateHeroContent, 5000);
+        }, 5000);
+        
+        // Simple parallax effect for hero images
+        const heroImages = document.querySelectorAll('.hero-img');
+        const heroTop = document.querySelector('.hero-top');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroRect = heroTop.getBoundingClientRect();
+            
+            // Only apply when hero is visible
+            if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                const speed = 0.3; // Positive value, less than 1 = slower
+                const yPos = scrolled * speed;
+                
+                heroImages.forEach(img => {
+                    // Move image down slower when scrolling down
+                    img.style.transform = `translateY(${yPos}px)`;
+                });
+            }
+        });
+        
+        // Smooth parallax effect for montage images
+        const montageImages = document.querySelectorAll('.montage-image img');
+        
+        if (montageImages.length > 0) {
+            // Add smooth transition to images
+            montageImages.forEach(img => {
+                img.style.transition = 'transform 0.1s ease-out';
+                img.style.willChange = 'transform';
+            });
+            
+            let ticking = false;
+            function updateMontageParallax() {
+                const scrolled = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                
+                montageImages.forEach(img => {
+                    const imgContainer = img.closest('.montage-image');
+                    if (imgContainer) {
+                        const rect = imgContainer.getBoundingClientRect();
+                        
+                        // Check if image is in viewport with buffer
+                        if (rect.bottom >= -100 && rect.top <= windowHeight + 100) {
+                            // Calculate progress through viewport (0 = top, 1 = bottom)
+                            // When rect.top = windowHeight, progress = 0 (entering from bottom)
+                            // When rect.bottom = 0, progress = 1 (exiting from top)
+                            const progress = 1 - ((rect.top + rect.height / 2) / (windowHeight + rect.height / 2));
+                            
+                            // Clamp progress between 0 and 1
+                            const clampedProgress = Math.max(0, Math.min(1, progress));
+                            
+                            // Apply parallax based on progress
+                            // Start at 15px down, move to -15px up as we scroll
+                            const speed = 30; // Total movement range
+                            const yPos = 15 - (clampedProgress * speed);
+                            
+                            img.style.transform = `translateY(${yPos}px)`;
+                        }
+                    }
+                });
+                ticking = false;
+            }
+            
+            // Use requestAnimationFrame for smoother scrolling
+            function requestTick() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateMontageParallax);
+                    ticking = true;
+                }
+            }
+            
+            // Initial call and optimized scroll listener
+            updateMontageParallax();
+            window.addEventListener('scroll', requestTick, { passive: true });
+        }
+    </script>
+</body>
+</html>

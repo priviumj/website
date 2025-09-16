@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Care Services Perth | Lawn Mowing, Hedge Trimming & More | Privium</title>
+    <meta name="description" content="Comprehensive garden care services in Perth. Professional lawn mowing, hedge trimming, fertilising, pest control & garden maintenance. Servicing Cottesloe, Dalkeith & premium suburbs.">
+    <meta name="keywords" content="garden services Perth, lawn mowing Perth, hedge trimming, garden maintenance Perth, fertilising services">
+    <meta property="og:title" content="Garden Care Services | Privium Garden Services Perth">
+    <meta property="og:description" content="Full range of professional garden care services for Perth's finest properties.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/services/">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 5px solid #244419;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #6B8250;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(36, 68, 25, 0.9), rgba(36, 68, 25, 0.9)), url('lawn-mowing.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #A3B583;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Quick Navigation */
+        .service-nav {
+            background: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .service-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .service-nav-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #244419;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .service-nav-item:hover {
+            background: #6B8250;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 38px;
+            color: #244419;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #6B8250;
+            margin: 40px 0 20px;
+        }
+
+        h4 {
+            font-size: 22px;
+            color: #244419;
+            margin: 25px 0 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Service Details */
+        .service-detail {
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 40px 0;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .feature-check {
+            color: #6B8250;
+            font-size: 20px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Service Packages */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-card.featured {
+            border: 3px solid #A58062;
+        }
+
+        .package-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #A58062;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .package-title {
+            font-size: 28px;
+            color: #244419;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .package-price {
+            font-size: 20px;
+            color: #A58062;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .package-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6B8250;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .package-cta {
+            display: block;
+            background: #6B8250;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .package-cta:hover {
+            background: #5a6e42;
+        }
+
+        /* Service Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #6B8250;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        /* Subscription Box */
+        .subscription-highlight {
+            background: #244419;
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .subscription-highlight h3 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .subscription-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .subscription-benefits li {
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .subscription-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #6B8250;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* Seasonal Services */
+        .seasonal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .season-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .season-card h4 {
+            font-size: 24px;
+            color: #244419;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .season-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #244419;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #A58062;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #8d6d52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: #244419;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #A3B583;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #A3B583;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #A3B583;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+
+            .seasonal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html" class="nav-cta">Get Quote</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Comprehensive Garden Care Services</h1>
+            <p class="hero-subtitle">
+                From regular lawn maintenance to seasonal garden care,
+                we tailor every service to match your specific requirements and preferences
+            </p>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="service-nav">
+        <div class="container">
+            <div class="service-nav-grid">
+                <a href="#lawn-care" class="service-nav-item">Lawn Care</a>
+                <a href="#garden-maintenance" class="service-nav-item">Garden Maintenance</a>
+                <a href="#specialized" class="service-nav-item">Specialized Services</a>
+                <a href="#packages" class="service-nav-item">Service Packages</a>
+                <a href="#seasonal" class="service-nav-item">Seasonal Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lawn Care Services -->
+    <section class="content-section" id="lawn-care">
+        <div class="container">
+            <h2>Premium Lawn Care Services</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Your lawn is the foundation of a beautiful garden. We deliver golf-course quality results.
+            </p>
+
+            <div class="service-detail">
+                <h3>Complete Lawn Care Solutions</h3>
+                <p>
+                    Our comprehensive lawn care services go beyond simple mowing. We work with you to understand
+                    exactly how you want your lawn to look and feel, then apply our expertise to Perth's unique
+                    sandy soils and Mediterranean climate to achieve and maintain your ideal lawn.
+                </p>
+
+                <div class="service-features">
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Professional Mowing:</strong> Cylinder and rotary mowing options with height
+                            adjustment specific to your grass type and season
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Precision Edging:</strong> Blade and string line techniques for crisp,
+                            clean borders along paths, driveways, and garden beds
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Fertiliser Programs:</strong> Calculated nutrient schedules using premium
+                            slow-release fertilisers tailored to Perth's sandy soils
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Premium Treatments:</strong> Professional-grade liquid applications
+                            every second visit for superior lawn thickness and health
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Weed Management:</strong> Pre and post-emergent treatments for bindii,
+                            clover, winter grass, and broadleaf weeds
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Lawn Renovation:</strong> Vertimowing, dethatching, aeration, and
+                            top dressing services for lawn rejuvenation
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Pest Control:</strong> Treatment for lawn grubs, beetles, and other
+                            common Perth lawn pests
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <strong>Disease Management:</strong> Diagnosis and treatment of fungal diseases,
+                            brown patch, and dollar spot
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garden Maintenance -->
+    <section class="content-section" id="garden-maintenance">
+        <div class="container">
+            <h2>Garden Maintenance Services</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Complete care for every aspect of your garden
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Hedge Trimming & Shaping</h3>
+                    <p>Professional hedge maintenance including:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• Formal hedge shaping</li>
+                        <li style="padding: 5px 0;">• Large hedge trimming (tripod ladder equipment)</li>
+                        <li style="padding: 5px 0;">• Topiary maintenance</li>
+                        <li style="padding: 5px 0;">• Privacy screen trimming</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Tree & Shrub Pruning</h3>
+                    <p>Expert pruning services including:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• Aesthetic shaping</li>
+                        <li style="padding: 5px 0;">• Deadwood removal</li>
+                        <li style="padding: 5px 0;">• Fruit tree pruning</li>
+                        <li style="padding: 5px 0;">• Rose pruning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Garden Bed Care</h3>
+                    <p>Comprehensive bed maintenance:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• Weed removal</li>
+                        <li style="padding: 5px 0;">• Mulch application</li>
+                        <li style="padding: 5px 0;">• Deadheading</li>
+                        <li style="padding: 5px 0;">• Plant health monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Leaf & Debris Management</h3>
+                    <p>Keep your property pristine:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• Leaf collection & removal</li>
+                        <li style="padding: 5px 0;">• Gutter cleaning</li>
+                        <li style="padding: 5px 0;">• Path & driveway sweeping</li>
+                        <li style="padding: 5px 0;">• Green waste removal</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Irrigation Management</h3>
+                    <p>Optimize your water usage:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• System checks & adjustments</li>
+                        <li style="padding: 5px 0;">• Minor repairs</li>
+                        <li style="padding: 5px 0;">• Seasonal programming</li>
+                        <li style="padding: 5px 0;">• Water efficiency audits</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Plant Health Care</h3>
+                    <p>Keep plants thriving:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="padding: 5px 0;">• Disease diagnosis</li>
+                        <li style="padding: 5px 0;">• Pest identification</li>
+                        <li style="padding: 5px 0;">• Targeted treatments</li>
+                        <li style="padding: 5px 0;">• Nutritional programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section class="content-section" id="specialized">
+        <div class="container">
+            <h2>Specialized Garden Services</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Advanced solutions using professional expertise
+            </p>
+
+            <div class="service-detail">
+                <h3>Professional Garden Care</h3>
+
+                <h4>Garden Health Assessment</h4>
+                <p>
+                    Understanding your garden's needs is crucial for success. Our comprehensive assessments identify
+                    issues and opportunities for improvement. We provide detailed recommendations for
+                    treatments and maintenance programs tailored to your garden's specific requirements.
+                </p>
+
+                <h4>Premium Treatment Programs</h4>
+                <p>
+                    Our exclusive treatment programs use professional-grade products not available to consumers.
+                    These applications enhance root development, improve stress tolerance, and create
+                    thicker, healthier lawns that withstand Perth's harsh conditions.
+                </p>
+
+                <h4>Integrated Pest Management</h4>
+                <p>
+                    We employ environmentally responsible pest control strategies that protect beneficial insects
+                    while effectively managing harmful pests. Our approach includes monitoring, prevention,
+                    and targeted treatments only when necessary.
+                </p>
+
+                <h4>Water Management Solutions</h4>
+                <p>
+                    Working within Perth's water restrictions, we optimize irrigation systems for maximum efficiency.
+                    This includes coverage testing, pressure adjustments, seasonal programming, and recommendations
+                    for drought-tolerant plant selections.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="content-section" id="packages">
+        <div class="container">
+            <h2>Service Packages</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Choose the perfect package for your garden's needs
+            </p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3 class="package-title">Essential Care</h3>
+                    <p class="package-price">From $99 per visit</p>
+                    <ul class="package-features">
+                        <li>Lawn mowing & edging</li>
+                        <li>Basic hedge trimming</li>
+                        <li>Leaf blowing</li>
+                        <li>Green waste removal (2 bags)</li>
+                        <li>Monthly or fortnightly service</li>
+                    </ul>
+                    <a href="quote.html" class="package-cta">Get Started</a>
+                </div>
+
+                <div class="package-card featured">
+                    <h3 class="package-title">Premium Excellence</h3>
+                    <p class="package-price">From $149 per visit</p>
+                    <ul class="package-features">
+                        <li>Everything in Essential Care</li>
+                        <li>Premium lawn treatments</li>
+                        <li>Fertiliser programs</li>
+                        <li>Weed & pest management</li>
+                        <li>Garden bed maintenance</li>
+                        <li>Seasonal pruning</li>
+                        <li>Priority scheduling</li>
+                    </ul>
+                    <a href="quote.html" class="package-cta">Get Started</a>
+                </div>
+
+                <div class="package-card">
+                    <h3 class="package-title">Complete Transform</h3>
+                    <p class="package-price">Custom Quote</p>
+                    <ul class="package-features">
+                        <li>One-day intensive service</li>
+                        <li>Complete garden assessment</li>
+                        <li>Soil testing & treatment</li>
+                        <li>Deep lawn renovation</li>
+                        <li>Comprehensive pruning</li>
+                        <li>Mulch application</li>
+                        <li>Irrigation optimization</li>
+                    </ul>
+                    <a href="quote.html" class="package-cta">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Service -->
+    <section class="content-section">
+        <div class="container">
+            <div class="subscription-highlight">
+                <h3>Set-and-Forget Subscription Service</h3>
+                <p style="font-size: 20px; margin-bottom: 30px;">
+                    Never think about garden maintenance again
+                </p>
+
+                <ul class="subscription-benefits">
+                    <li><strong>Fixed Monthly Pricing:</strong> Predictable costs, no surprises</li>
+                    <li><strong>Priority Scheduling:</strong> Your regular spot is guaranteed</li>
+                    <li><strong>Automatic Service:</strong> We manage everything for you</li>
+                    <li><strong>Flexible Options:</strong> Pause or adjust anytime</li>
+                    <li><strong>Member Benefits:</strong> 10% off additional services</li>
+                    <li><strong>Direct Debit:</strong> Convenient automatic payments</li>
+                </ul>
+
+                <a href="quote.html" class="cta-button" style="background: white; color: #244419;">Start Your Subscription</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Services -->
+    <section class="content-section" id="seasonal">
+        <div class="container">
+            <h2>Seasonal Garden Programs</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Year-round care adapted to Perth's seasons
+            </p>
+
+            <div class="seasonal-grid">
+                <div class="season-card">
+                    <div class="season-icon">🌸</div>
+                    <h4>Spring (Sep-Nov)</h4>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0;">• Lawn renovation & repair</li>
+                        <li style="padding: 8px 0;">• Spring fertilising program</li>
+                        <li style="padding: 8px 0;">• Pre-emergent weed control</li>
+                        <li style="padding: 8px 0;">• Pruning for new growth</li>
+                        <li style="padding: 8px 0;">• Pest monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="season-card">
+                    <div class="season-icon">☀️</div>
+                    <h4>Summer (Dec-Feb)</h4>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0;">• Increased mowing frequency</li>
+                        <li style="padding: 8px 0;">• Heat stress management</li>
+                        <li style="padding: 8px 0;">• Deep watering programs</li>
+                        <li style="padding: 8px 0;">• Disease prevention</li>
+                        <li style="padding: 8px 0;">• Mulch top-ups</li>
+                    </ul>
+                </div>
+
+                <div class="season-card">
+                    <div class="season-icon">🍂</div>
+                    <h4>Autumn (Mar-May)</h4>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0;">• Leaf management</li>
+                        <li style="padding: 8px 0;">• Winter grass prevention</li>
+                        <li style="padding: 8px 0;">• Autumn fertilising</li>
+                        <li style="padding: 8px 0;">• Garden bed preparation</li>
+                        <li style="padding: 8px 0;">• Gutter cleaning</li>
+                    </ul>
+                </div>
+
+                <div class="season-card">
+                    <div class="season-icon">🌧️</div>
+                    <h4>Winter (Jun-Aug)</h4>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0;">• Reduced mowing schedule</li>
+                        <li style="padding: 8px 0;">• Winter pruning programs</li>
+                        <li style="padding: 8px 0;">• Moss & algae control</li>
+                        <li style="padding: 8px 0;">• Irrigation maintenance</li>
+                        <li style="padding: 8px 0;">• Plant health checks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="content-section">
+        <div class="container">
+            <h2>How Our Service Works</h2>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Free Assessment</h4>
+                    <p>We visit your property to evaluate your garden's needs and discuss your goals</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Custom Quote</h4>
+                    <p>Receive a detailed proposal with service recommendations and competitive pricing</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Schedule Service</h4>
+                    <p>Choose your preferred frequency and we'll lock in your regular service slot</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Ongoing Care</h4>
+                    <p>Enjoy a beautiful garden year-round with our reliable, professional service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Garden?</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">
+                Get started with Perth's premium garden care service today
+            </p>
+            <div>
+                <a href="quote.html" class="cta-button">Get Your Free Quote</a>
+                <a href="tel:0490841667" class="cta-button" style="background: white; color: #244419;">Call 0490 841 667</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Privium</h4>
+                    <p>Perth's premium garden care service, delivering science-based maintenance solutions to the city's finest properties.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="quote.html">Get Quote</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:0490841667">0490 841 667</a></p>
+                    <p>✉️ <a href="mailto:office@privium.com.au">office@privium.com.au</a></p>
+                    <p>📍 Servicing Perth Metro</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Hours</h4>
+                    <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Privium Garden Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

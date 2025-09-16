@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Quote | Free Garden Care Assessment Perth | Privium Garden Services</title>
+    <meta name="description" content="Request a free quote for garden care services in Perth. Professional lawn mowing, hedge trimming, and garden maintenance. Quick response, competitive rates.">
+    <meta name="keywords" content="garden services quote Perth, free garden assessment, lawn care quote, garden maintenance pricing">
+    <meta property="og:title" content="Get a Free Quote | Privium Garden Services Perth">
+    <meta property="og:description" content="Request your free garden care quote. Professional service for Perth's premium suburbs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privium.com.au/quote/">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 5px solid #244419;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #6B8250;
+        }
+
+        .nav-cta {
+            background: #A58062;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #8d6d52;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(36, 68, 25, 0.9), rgba(36, 68, 25, 0.9)), url('garden-beds.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #A3B583;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #244419;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Form Container */
+        .form-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-title {
+            font-size: 28px;
+            color: #244419;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #244419;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .required {
+            color: #A58062;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #6B8250;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Contact Fields with Preferred */
+        .contact-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding-left: 4px;
+        }
+
+        .radio-label input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        .radio-label span {
+            font-size: 14px;
+            color: #6B8250;
+            font-weight: 500;
+        }
+
+        /* Service Checkboxes */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: start;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            border-color: #6B8250;
+            background: #f8f9fa;
+        }
+
+        .service-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-title {
+            font-weight: bold;
+            color: #244419;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .service-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .service-item:has(input:checked) {
+            border-color: #6B8250;
+            background: #f0f7f0;
+        }
+
+        /* Subscription Option */
+        .subscription-option {
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #A58062;
+            margin: 25px 0;
+        }
+
+        .subscription-option label {
+            display: flex;
+            align-items: start;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .subscription-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            background: #6B8250;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background: #5a6e42;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Info Sidebar */
+        .info-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .info-card h3 {
+            font-size: 22px;
+            color: #244419;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .contact-info a {
+            color: #6B8250;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            color: #5a6e42;
+        }
+
+        /* Service Summary */
+        .service-summary {
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .service-summary h4 {
+            color: #244419;
+            margin-bottom: 15px;
+        }
+
+        .service-summary ul {
+            list-style: none;
+        }
+
+        .service-summary li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-summary li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6B8250;
+            font-weight: bold;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .trust-badge-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #244419;
+        }
+
+        .trust-badge-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .success-message h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Error Message */
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #244419;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #A3B583;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #A3B583;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #A3B583;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .info-sidebar {
+                position: static;
+            }
+
+            .contact-fields {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-section {
+                padding: 30px 20px;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html" class="nav-cta active">Get Quote</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us - Booking Form</h1>
+            <p class="hero-subtitle">
+                Professional garden assessment • Competitive rates • Quick response
+            </p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="form-container">
+                <!-- Main Form -->
+                <div class="form-section">
+                    <h2 class="form-title">Request Your Free Quote</h2>
+
+                    <div class="success-message" id="successMessage">
+                        <h3>Thank You!</h3>
+                        <p>We'll contact you within 24 hours with a quote.</p>
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        Please fill in all required fields and select at least one service.
+                    </div>
+
+                    <form id="bookingForm" method="POST" action="#" onsubmit="handleSubmit(event)">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name *" required>
+                        </div>
+
+                        <!-- Contact Information with Preferred Method -->
+                        <div class="form-group">
+                            <label>Contact Information</label>
+                            <div class="contact-fields">
+                                <div class="contact-field-group">
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactMethod" value="phone" checked>
+                                        <span>Preferred</span>
+                                    </label>
+                                </div>
+                                <div class="contact-field-group">
+                                    <input type="email" id="email" name="email" placeholder="Email Address">
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactMethod" value="email">
+                                        <span>Preferred</span>
+                                    </label>
+                                </div>
+                                <input type="text" id="address" name="address" placeholder="Property Address">
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your request"></textarea>
+                        </div>
+
+                        <!-- Services Needed -->
+                        <div class="form-group">
+                            <label>Services Needed</label>
+                            <div class="services-grid">
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="lawn-care">
+                                    <div class="service-content">
+                                        <div class="service-title">Lawn Care</div>
+                                        <div class="service-desc">Complete lawn maintenance including mowing, edging, fertilizing, weed control & premium treatments</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="lawn-renovation">
+                                    <div class="service-content">
+                                        <div class="service-title">Lawn Renovation</div>
+                                        <div class="service-desc">Vertimowing, scalping, top dressing, aeration, turf laying & restoration services</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="garden-maintenance">
+                                    <div class="service-content">
+                                        <div class="service-title">Garden Maintenance</div>
+                                        <div class="service-desc">Regular weeding, pruning, mulching, hedge trimming, leaf removal & garden bed care</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="tree-shrub-care">
+                                    <div class="service-content">
+                                        <div class="service-title">Tree & Shrub Care</div>
+                                        <div class="service-desc">Professional pruning, hedge reduction, topiary work, disease treatment & pest management</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="irrigation-water">
+                                    <div class="service-content">
+                                        <div class="service-title">Irrigation & Water</div>
+                                        <div class="service-desc">System checks, repairs, optimization, winter shutdown & water management</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="soil-plant-health">
+                                    <div class="service-content">
+                                        <div class="service-title">Soil & Plant Health</div>
+                                        <div class="service-desc">Comprehensive testing, pH analysis, cultivation, plant recommendations & treatment programs</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="specialized-services">
+                                    <div class="service-content">
+                                        <div class="service-title">Specialized Services</div>
+                                        <div class="service-desc">Hard surface cleaning, waste removal, repotting, pool skimming & custom requests</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="complete-property-care">
+                                    <div class="service-content">
+                                        <div class="service-title">Complete Property Care</div>
+                                        <div class="service-desc">All-inclusive regular maintenance package with seasonal reports & documentation</div>
+                                    </div>
+                                </label>
+
+                                <label class="service-item">
+                                    <input type="checkbox" name="services" value="tennis-court-services">
+                                    <div class="service-content">
+                                        <div class="service-title">Tennis Court Services</div>
+                                        <div class="service-desc">Synthetic & grass court maintenance, moss treatment, sand infill, line marking & restoration</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Service Preference -->
+                        <div class="form-group">
+                            <label>Service Preference</label>
+                            <div class="subscription-option">
+                                <label>
+                                    <input type="checkbox" name="subscription" value="set-and-forget">
+                                    <div class="service-content">
+                                        <div class="service-title">Set & Forget Subscription</div>
+                                        <div class="service-desc">I'm interested in a regular subscription model for automated, scheduled service with predictable monthly billing with direct debit</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">Send Inquiry</button>
+                    </form>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="info-sidebar">
+                    <!-- Contact Card -->
+                    <div class="info-card">
+                        <h3>Quick Contact</h3>
+                        <p>Need immediate assistance? Give us a call!</p>
+
+                        <div class="contact-info">
+                            <span>📞</span>
+                            <a href="tel:0490841667">0490 841 667</a>
+                            <span style="color: #6B8250; font-weight: bold;">(Ask for Jarod)</span>
+                        </div>
+
+                        <div class="contact-info">
+                            <span>✉️</span>
+                            <a href="mailto:office@privium.com.au">office@privium.com.au</a>
+                        </div>
+
+                        <div class="contact-info">
+                            <span>⏰</span>
+                            <span>Mon-Sat: 7AM - 5PM</span>
+                        </div>
+                    </div>
+
+                    <!-- What's Included -->
+                    <div class="info-card">
+                        <h3>What's Included</h3>
+                        <div class="service-summary">
+                            <h4>Free Assessment Includes:</h4>
+                            <ul>
+                                <li>Property evaluation</li>
+                                <li>Service recommendations</li>
+                                <li>Detailed quote</li>
+                                <li>No obligation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="info-card">
+                        <h3>Why Choose Privium</h3>
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <div class="trust-badge-number">10+</div>
+                                <div class="trust-badge-label">Years Experience</div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-number">100%</div>
+                                <div class="trust-badge-label">Insured</div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-number">5★</div>
+                                <div class="trust-badge-label">Service Quality</div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="trust-badge-number">24hr</div>
+                                <div class="trust-badge-label">Response Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Privium</h4>
+                    <p>Perth's premium garden care service, delivering quality maintenance solutions to the city's finest properties.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="services.html">Our Services</a></p>
+                    <p><a href="quote.html">Get Quote</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:0490841667">0490 841 667</a></p>
+                    <p>✉️ <a href="mailto:office@privium.com.au">office@privium.com.au</a></p>
+                    <p>📍 Servicing Perth Metro</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Hours</h4>
+                    <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Privium Garden Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('bookingForm');
+            const formData = new FormData(form);
+
+            // Check if at least one service is selected
+            const services = formData.getAll('services');
+            if (services.length === 0) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return false;
+            }
+
+            // Hide error message if shown
+            document.getElementById('errorMessage').style.display = 'none';
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Reset form after a delay
+            setTimeout(() => {
+                form.reset();
+            }, 1000);
+
+            // In production, you would send the form data to your server here
+            console.log('Form submitted with data:', Object.fromEntries(formData));
+
+            return false;
+        }
+    </script>
+</body>
+</html>

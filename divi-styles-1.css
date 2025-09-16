@@ -1,0 +1,1 @@
+.bottom-shadow{position:relative;z-index:1}.bottom-shadow::after{content:"";position:absolute;left:0;right:0;bottom:0;height:66%;border-radius:inherit;box-shadow:0 10px 30px rgba(0,0,0,0.2);z-index:-1}

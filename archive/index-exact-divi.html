@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privium Garden Services | Premium Garden Care Perth</title>
+    <meta name="description" content="Science-Based Garden Care That Just Works. Comprehensive, Set-and-Forget Garden Maintenance – Enjoy Your Beautiful Garden Without the Hassle.">
+
+    <!-- Google Fonts - Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Divi Theme Base Styles - Exact Copy */
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+            line-height: 1.7em;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: #2ea3f2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        p {
+            padding-bottom: 1em;
+            line-height: 1.7em;
+        }
+
+        p:not(.has-background):last-of-type {
+            padding-bottom: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            padding-bottom: 10px;
+            line-height: 1em;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+
+        h3 {
+            font-size: 22px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: auto;
+            position: relative;
+        }
+
+        /* Page Container */
+        #page-container {
+            position: relative;
+        }
+
+        /* Header Section */
+        .et-l--header {
+            position: sticky;
+            top: 0;
+            z-index: 999999;
+            background: #fff;
+            box-shadow: 0 0 7px rgba(0,0,0,.1);
+        }
+
+        .et_pb_section_0_tb_header {
+            padding: 20px 0;
+        }
+
+        .et_pb_row {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .et_pb_row_0_tb_header {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo */
+        .et_pb_column_1_4 {
+            width: 25%;
+        }
+
+        .et_pb_image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Navigation */
+        .et_pb_column_1_2 {
+            width: 50%;
+        }
+
+        .et_pb_menu .et-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .et-menu li a {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 0;
+        }
+
+        .et-menu li a:hover,
+        .et-menu .current_page_item a {
+            color: #2ea3f2;
+        }
+
+        /* Header Button */
+        .et_pb_button_0_tb_header {
+            background: #2ea3f2;
+            color: #fff !important;
+            padding: 12px 24px;
+            border-radius: 3px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .et_pb_button_0_tb_header:hover {
+            background: #1e8bc3;
+        }
+
+        /* Hero Section - Full Width Header */
+        .et_pb_fullwidth_section {
+            width: 100%;
+        }
+
+        .et_pb_fullwidth_header {
+            background: linear-gradient(rgba(46, 163, 242, 0.8), rgba(46, 163, 242, 0.8)),
+                        url('https://privium.com.au/wp-content/uploads/2025/08/Garden-Services-Perth.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .et_pb_fullwidth_header_container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .et_pb_fullwidth_header_subhead {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .et_pb_header_content_wrapper h1 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .et_pb_header_content_wrapper p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Divi Buttons */
+        .et_pb_button {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0.3em 1em;
+            line-height: 1.7em;
+            background-color: transparent;
+            border: 2px solid;
+            border-radius: 3px;
+            transition-duration: 0.2s;
+            transition-property: all;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .et_pb_button:hover {
+            padding: 0.3em 2em 0.3em 0.7em;
+        }
+
+        .et_pb_button_one {
+            border-color: #fff;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .et_pb_button_one:hover {
+            background: #fff;
+            color: #2ea3f2;
+        }
+
+        .et_pb_button_two {
+            border-color: #A58062;
+            color: #A58062;
+            background: rgba(165, 128, 98, 0.1);
+        }
+
+        .et_pb_button_two:hover {
+            background: #A58062;
+            color: #fff;
+        }
+
+        /* Content Sections */
+        .et_pb_section {
+            padding: 4% 0;
+            position: relative;
+        }
+
+        .et_pb_section_1 {
+            padding: 80px 0;
+        }
+
+        .et_pb_equal_columns {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .et_pb_column_1_2 {
+            width: 50%;
+        }
+
+        .et_pb_text h3 {
+            margin-bottom: 5px;
+        }
+
+        .et_pb_text h3 span {
+            color: #A58062;
+        }
+
+        .et_pb_text h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .et_pb_text p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .et_pb_button_0 {
+            background: #2ea3f2;
+            border-color: #2ea3f2;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .et_pb_button_0:hover {
+            background: #1e8bc3;
+            border-color: #1e8bc3;
+        }
+
+        /* Image with Shadow */
+        .et_pb_image_0 {
+            border: 1px solid #e2e2e2;
+            padding: 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .has-box-shadow-overlay {
+            position: relative;
+        }
+
+        .box-shadow-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+
+        /* Service Packages Section */
+        .et_pb_section_2 {
+            background: #f7f7f7;
+            border-top: 1px solid #e2e2e2;
+            border-bottom: 1px solid #e2e2e2;
+            padding: 80px 0;
+        }
+
+        .et_pb_text_1 h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        /* Service Cards */
+        .et_pb_row_2 {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .et_pb_blurb {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #e2e2e2;
+            border-radius: 3px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .et_pb_blurb:hover {
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Navigation */
+        .mobile_nav {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .container,
+            .et_pb_row {
+                width: 94%;
+            }
+
+            .et_pb_menu .et-menu {
+                display: none;
+            }
+
+            .mobile_nav {
+                display: block;
+                cursor: pointer;
+                padding: 10px 0;
+            }
+
+            .mobile_menu_bar {
+                width: 24px;
+                height: 2px;
+                background: #333;
+                position: relative;
+                display: block;
+            }
+
+            .mobile_menu_bar:before,
+            .mobile_menu_bar:after {
+                content: '';
+                width: 24px;
+                height: 2px;
+                background: #333;
+                position: absolute;
+            }
+
+            .mobile_menu_bar:before {
+                top: -8px;
+            }
+
+            .mobile_menu_bar:after {
+                top: 8px;
+            }
+
+            .et_pb_equal_columns {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .et_pb_column_1_2 {
+                width: 100%;
+            }
+
+            .et_pb_row_2 {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .et_pb_fullwidth_header {
+                padding: 80px 0;
+            }
+
+            .header-logo {
+                max-width: 300px;
+            }
+
+            .et_pb_text h1 {
+                font-size: 30px;
+            }
+
+            .et_pb_button {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body class="wp-singular page-template-default page et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme">
+
+    <div id="page-container">
+        <!-- Header -->
+        <header class="et-l et-l--header">
+            <div class="et_pb_section et_pb_section_0_tb_header et_pb_sticky_module">
+                <div class="et_pb_row et_pb_row_0_tb_header">
+                    <!-- Logo -->
+                    <div class="et_pb_column et_pb_column_1_4 et_pb_column_0_tb_header">
+                        <div class="et_pb_image et_pb_image_0_tb_header">
+                            <img src="privium-long-logo.png" alt="Privium Garden Services" />
+                        </div>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <div class="et_pb_column et_pb_column_1_2 et_pb_column_1_tb_header">
+                        <div class="et_pb_menu et_pb_menu_0_tb_header">
+                            <div class="et_pb_menu_inner_container">
+                                <div class="et_pb_menu__wrap">
+                                    <nav class="et-menu-nav">
+                                        <ul class="et-menu nav">
+                                            <li class="current_page_item"><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="services.html">Our Services</a></li>
+                                            <li><a href="#contact">Contact us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Mobile Menu -->
+                                <div class="et_mobile_nav_menu">
+                                    <div class="mobile_nav closed">
+                                        <span class="mobile_menu_bar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Button -->
+                    <div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_header">
+                        <div class="et_pb_button_module_wrapper">
+                            <a class="et_pb_button et_pb_button_0_tb_header" href="quote.html">Book Online</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="et-main-area">
+            <div id="main-content">
+                <article class="post page type-page status-publish">
+                    <div class="entry-content">
+                        <div class="et-l et-l--post">
+                            <div class="et_builder_inner_content et_pb_gutters3">
+
+                                <!-- Hero Section -->
+                                <div class="et_pb_section et_pb_section_0 et_pb_fullwidth_section">
+                                    <section class="et_pb_fullwidth_header et_pb_fullwidth_header_0 et_pb_bg_layout_dark">
+                                        <div class="et_pb_fullwidth_header_container center">
+                                            <div class="header-content-container center">
+                                                <div class="header-content">
+                                                    <img src="privium-long-logo.png" class="header-logo" alt="Privium Garden Services" />
+                                                    <span class="et_pb_fullwidth_header_subhead">Science-Based Garden Care That Just Works</span>
+                                                    <div class="et_pb_header_content_wrapper">
+                                                        <h1></h1>
+                                                        <p>Comprehensive, Set-and-Forget Garden Maintenance – Enjoy Your Beautiful Garden Without the Hassle</p>
+                                                    </div>
+                                                    <a class="et_pb_button et_pb_more_button et_pb_button_one" href="services.html">Our Services</a>
+                                                    <a class="et_pb_button et_pb_more_button et_pb_button_two" href="quote.html">Book Online</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="et_pb_fullwidth_header_overlay"></div>
+                                    </section>
+                                </div>
+
+                                <!-- Welcome Section -->
+                                <div class="et_pb_section et_pb_section_1">
+                                    <div class="et_pb_row et_pb_row_0 et_pb_equal_columns">
+                                        <!-- Left Column - Text -->
+                                        <div class="et_pb_column et_pb_column_1_2 et_pb_column_0">
+                                            <div class="et_pb_text et_pb_text_0">
+                                                <div class="et_pb_text_inner">
+                                                    <h3><span style="color: #a58062;">Welcome to</span></h3>
+                                                    <h1>Privium Garden Services</h1>
+                                                    <p>At Privium Garden Services, we take care of everything in your garden using proven, professional methods that deliver exceptional results.</p>
+                                                    <p>From premium treatments to comprehensive maintenance programs, our approach doesn't just maintain your garden – it transforms it into the healthiest, most beautiful version of itself.</p>
+                                                    <p>We measure our success by the quality of outcomes: lusher lawns, healthier plants, and gardens that become the pride of your property.</p>
+                                                    <p>We are experts in Perth gardens. If you are in the Northern, Central or Western Suburbs, contact us to see how we can help.</p>
+                                                </div>
+                                            </div>
+                                            <div class="et_pb_button_module_wrapper">
+                                                <a class="et_pb_button et_pb_button_0" href="about.html">Our Story</a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right Column - Image -->
+                                        <div class="et_pb_column et_pb_column_1_2 et_pb_column_1">
+                                            <div class="et_pb_image et_pb_image_0">
+                                                <span class="et_pb_image_wrap has-box-shadow-overlay">
+                                                    <div class="box-shadow-overlay"></div>
+                                                    <img src="https://privium.com.au/wp-content/uploads/2025/08/Garden-Services-Perth.jpg" alt="Perth gardener with leaf blower" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Service Packages Section -->
+                                <div class="et_pb_section et_pb_section_2">
+                                    <div class="et_pb_row et_pb_row_1">
+                                        <div class="et_pb_column et_pb_column_4_4">
+                                            <div class="et_pb_text et_pb_text_1">
+                                                <div class="et_pb_text_inner">
+                                                    <h2>Our Garden Service Packages</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="et_pb_row et_pb_row_2">
+                                        <div class="et_pb_column et_pb_column_1_2">
+                                            <div class="et_pb_blurb et_pb_blurb_0">
+                                                <div class="et_pb_blurb_content">
+                                                    <div class="et_pb_main_blurb_image">
+                                                        <span style="font-size: 48px; color: #A58062;">🌿</span>
+                                                    </div>
+                                                    <div class="et_pb_blurb_container">
+                                                        <h4>Essential Garden Care</h4>
+                                                        <div class="et_pb_blurb_description">
+                                                            <p>Regular lawn mowing, edging, and basic garden maintenance to keep your outdoor space looking neat and tidy.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="et_pb_column et_pb_column_1_2">
+                                            <div class="et_pb_blurb et_pb_blurb_1">
+                                                <div class="et_pb_blurb_content">
+                                                    <div class="et_pb_main_blurb_image">
+                                                        <span style="font-size: 48px; color: #A58062;">⭐</span>
+                                                    </div>
+                                                    <div class="et_pb_blurb_container">
+                                                        <h4>Premium Garden Care</h4>
+                                                        <div class="et_pb_blurb_description">
+                                                            <p>Comprehensive garden maintenance including fertilising, pest management, and seasonal treatments for optimal garden health.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile_nav')?.addEventListener('click', function() {
+            this.classList.toggle('closed');
+        });
+
+        // Sticky header effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.et-l--header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 0 7px rgba(0,0,0,.1)';
+            }
+        });
+    </script>
+</body>
+</html>
