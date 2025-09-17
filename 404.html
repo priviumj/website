@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Privium Garden Services</title>
+    <meta name="description" content="Oops! This page doesn't exist. Let us help you find what you're looking for.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Preload Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=block" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7em;
+            color: #666;
+            background: #fff;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header .container {
+            width: 95%;
+            max-width: 1400px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 28px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #244419;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            padding: 5px 15px;
+            border-radius: 15px 3px 15px 3px;
+            border: 1px solid transparent;
+        }
+        
+        .nav-links a:hover {
+            color: #6B8250;
+            border: 1px solid rgba(107, 130, 80, 0.3);
+            background: rgba(107, 130, 80, 0.05);
+        }
+        
+        .header-phone {
+            margin-left: 60px;
+            margin-right: auto;
+            color: #A58062;
+            text-decoration: none;
+            font-weight: 500;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        
+        .header-phone .call-text {
+            color: #244419;
+            font-weight: 300;
+            font-size: 12px;
+        }
+        
+        .header-phone .phone-number {
+            font-size: 16px;
+        }
+        
+        /* 404 Content */
+        .error-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgb(215, 221, 213) 0%, #F5F3F0 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .error-404 {
+            font-size: 120px;
+            font-weight: 700;
+            color: #A58062;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #244419;
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .error-subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .error-description {
+            color: #999;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: #A58062;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #8d6d52;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #244419;
+            border: 2px solid #244419;
+        }
+        
+        .btn-secondary:hover {
+            background: #244419;
+            color: white;
+        }
+        
+        /* Decorative Elements */
+        .leaf-decoration {
+            position: absolute;
+            opacity: 0.1;
+        }
+        
+        .leaf-1 {
+            top: 10%;
+            left: 5%;
+            width: 150px;
+            transform: rotate(-15deg);
+        }
+        
+        .leaf-2 {
+            bottom: 10%;
+            right: 5%;
+            width: 200px;
+            transform: rotate(45deg);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #244419;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(36, 68, 25, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-brand {
+            flex: 1;
+            max-width: 350px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .footer-column h5 {
+            color: #A58062;
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #A58062;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(36, 68, 25, 0.1);
+            color: #999;
+            font-size: 12px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #244419;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-404 {
+                font-size: 80px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .error-subtitle {
+                font-size: 16px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .logo img {
+                height: 20px;
+            }
+            
+            .header-phone {
+                font-size: 14px !important;
+                margin-left: 15px !important;
+                margin-right: 10px !important;
+            }
+            
+            .header-phone .call-text {
+                font-size: 10px;
+            }
+            
+            .header-phone .phone-number {
+                font-size: 13px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 60px;
+                right: 0;
+                background: white;
+                width: 250px;
+                height: 100vh;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="privium-long-logo.png" alt="Privium Garden Services">
+            </a>
+            <a href="tel:0490841667" class="header-phone">
+                <span class="call-text">Call Jarod</span>
+                <span class="phone-number">0490 841 667</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="quote.html">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- 404 Content -->
+    <main class="error-content">
+        <img src="green-stem.svg" alt="Decorative leaf" class="leaf-decoration leaf-1">
+        <img src="green-stem.svg" alt="Decorative leaf" class="leaf-decoration leaf-2">
+        
+        <div class="error-container">
+            <div class="error-404">404</div>
+            <h1>This Garden Bed is Empty!</h1>
+            <p class="error-subtitle">Looks like this page hasn't been planted yet</p>
+            <p class="error-description">
+                The page you're looking for may have been moved, removed, or is still being cultivated. 
+                Let's get you back to greener pastures!
+            </p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                <a href="services.html" class="btn btn-secondary">View Our Services</a>
+                <a href="quote.html" class="btn btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="privium-long-logo.png" alt="Privium Garden Services" style="height: 32px; margin-bottom: 15px;">
+                    <p style="color: #666; font-weight: 300; line-height: 1.5; max-width: 280px; font-size: 13px;">
+                        Creating and maintaining Perth's most beautiful gardens with professional care and attention to detail.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Quick Links</h5>
+                        <a href="index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="about.html">About Us</a>
+                        <a href="quote.html">Get Quote</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Contact</h5>
+                        <a href="tel:0490841667" style="color: #244419; font-weight: 400;">0490 841 667</a>
+                        <a href="mailto:office@privium.com.au">office@privium.com.au</a>
+                        <p style="margin-top: 10px; color: #666; font-size: 12px;">
+                            Mon-Fri: 7am-5pm<br>
+                            Sat: By appointment
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Privium Garden Services | ABN: 58 685 448 800 | Fully Insured</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('mobileMenuToggle');
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
