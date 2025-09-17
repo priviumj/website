@@ -709,9 +709,24 @@
             margin-bottom: 20px;
         }
 
-        .service-item:hover {
-            background: #f0f7f0 !important;
-            border-color: #6B8250 !important;
+        .service-item:hover .service-title {
+            color: #6B8250;
+        }
+        
+        .service-item input[type="checkbox"]:checked + .service-content .service-title {
+            color: #6B8250;
+        }
+        
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-item {
+                padding: 14px !important;
+            }
         }
 
         /* Phone Link */
@@ -1001,10 +1016,10 @@
             <a href="index.html" class="logo">
                 <img src="privium-long-logo.png" alt="Privium Garden Services">
             </a>
-            <a href="tel:0490841667" class="header-phone">
-                <span class="call-text">Call Jarod</span>
-                <span class="phone-number">0490 841 667</span>
-            </a>
+            <div class="header-phone">
+                <span class="call-text">Call Jarod <span style="color: #666; font-weight: 300;">or</span> <a href="sms:0490841667" style="color: #A58062; text-decoration: none; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#8d6d52'" onmouseout="this.style.color='#A58062'">TEXT</a></span>
+                <a href="tel:0490841667" class="phone-number" style="color: #A58062; text-decoration: none; font-size: 16px;">0490 841 667</a>
+            </div>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -1125,77 +1140,77 @@
 
                         <!-- Services Needed -->
                         <div class="form-group">
-                            <label>Select Any Needed</label>
-                            <div class="services-grid" style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="lawn-care">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Lawn Care</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Complete lawn maintenance including mowing, edging, fertilizing, weed control & premium treatments</div>
+                            <label style="font-weight: 600; color: #244419; margin-bottom: 15px; display: block;">Services You're Interested In</label>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 6px;">
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="lawn-care" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Lawn Care</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Complete lawn maintenance including mowing, edging, fertilizing, weed control & premium treatments</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="lawn-renovation">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Lawn Renovation</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Vertimowing, scalping, top dressing, aeration, turf laying & restoration services</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="lawn-renovation" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Lawn Renovation</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Vertimowing, scalping, top dressing, aeration, turf laying & restoration services</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="garden-maintenance">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Garden Maintenance</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Regular weeding, pruning, mulching, hedge trimming, leaf removal & garden bed care</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="garden-maintenance" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Garden Maintenance</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Regular weeding, pruning, mulching, hedge trimming, leaf removal & garden bed care</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="tree-shrub-care">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Tree & Shrub Care</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Professional pruning, hedge reduction, topiary work, disease treatment & pest management</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="tree-shrub-care" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Tree & Shrub Care</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Professional pruning, hedge reduction, topiary work, disease treatment & pest management</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="irrigation-water">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Irrigation & Water</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">System checks, repairs, optimization, winter shutdown & water management</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="irrigation-water" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Irrigation & Water</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">System checks, repairs, optimization, winter shutdown & water management</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="soil-plant-health">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Soil & Plant Health</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Comprehensive testing, pH analysis, cultivation, plant recommendations & treatment programs</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="soil-plant-health" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Soil & Plant Health</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Comprehensive testing, pH analysis, cultivation, plant recommendations & treatment programs</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="specialized-services">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Specialized Services</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Hard surface cleaning, waste removal, repotting, pool skimming & custom requests</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="specialized-services" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Specialized Services</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Hard surface cleaning, waste removal, repotting, pool skimming & custom requests</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="complete-property-care">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Complete Property Care</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">All-inclusive regular maintenance package with seasonal reports & documentation</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="complete-property-care" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Complete Property Care</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">All-inclusive regular maintenance package with seasonal reports & documentation</div>
                                     </div>
                                 </label>
 
-                                <label class="service-item" style="display: flex; gap: 10px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
-                                    <input type="checkbox" name="services" value="tennis-court-services">
-                                    <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Tennis Court Services</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">Synthetic & grass court maintenance, moss treatment, sand infill, line marking & restoration</div>
+                                <label class="service-item" style="display: flex; gap: 10px; padding: 6px 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
+                                    <input type="checkbox" name="services" value="tennis-court-services" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
+                                    <div class="service-content" style="flex: 1;">
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Tennis Court Services</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">Synthetic & grass court maintenance, moss treatment, sand infill, line marking & restoration</div>
                                     </div>
                                 </label>
                             </div>
@@ -1208,8 +1223,8 @@
                                 <label style="display: flex; gap: 10px; padding: 15px; background: #f0f7f0; border: 1px solid #6B8250; border-radius: 8px; cursor: pointer;">
                                     <input type="checkbox" name="subscription" value="set-and-forget">
                                     <div class="service-content">
-                                        <div class="service-title" style="font-weight: 500; color: #244419; margin-bottom: 5px;">Set & Forget Subscription</div>
-                                        <div class="service-desc" style="font-size: 13px; color: #666; line-height: 1.4;">I'm interested in a regular subscription model for automated, scheduled service with predictable monthly billing with direct debit</div>
+                                        <div class="service-title" style="font-weight: 600; color: #244419; margin-bottom: 4px; font-size: 15px;">Set & Forget Subscription</div>
+                                        <div class="service-desc" style="font-size: 12px; color: #777; line-height: 1.5;">I'm interested in a regular subscription model for automated, scheduled service with predictable monthly billing with direct debit</div>
                                     </div>
                                 </label>
                             </div>
