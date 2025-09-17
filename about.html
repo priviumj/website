@@ -11,6 +11,18 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://privium.com.au/about/">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="professional-team-equipment.webp" type="image/webp">
+    <link rel="preload" as="image" href="professional-team-equipment.jpg" imagesrcset="professional-team-equipment-mobile.jpg 768w, professional-team-equipment.jpg">
+    
     <!-- LocalBusiness Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -54,7 +66,8 @@
       "image": [
         "https://privium.com.au/hero-lawn.jpg",
         "https://privium.com.au/garden-work-1.jpg",
-        "https://privium.com.au/PXL_20250416_032902603.jpg"
+        "https://privium.com.au/PXL_20250416_032902603.jpg",
+        "https://privium.com.au/professional-team-equipment.jpg"
       ],
       "logo": "https://privium.com.au/privium-long-logo.png",
       "openingHoursSpecification": [
@@ -894,7 +907,7 @@
                         on delivering these meaningful outcomes through meticulous attention to every detail.
                     </p>
                     <p>
-                        Founded by Jarod, who brings over 10 years of experience in garden care and
+                        Founded by Jarod, with his team brings over 10 years experience in garden care and
                         maintenance, Privium has grown from a single operator to a trusted team
                         serving Perth's most prestigious suburbs.
                     </p>
@@ -954,7 +967,17 @@
                 </div>
                 
                 <div class="value-card">
-                    <img src="lawn-mowing.jpg" alt="Professional cylinder mower results" class="value-card-image" loading="lazy">
+                    <picture>
+                        <source srcset="professional-team-equipment.webp" type="image/webp">
+                        <source media="(max-width: 768px)" srcset="professional-team-equipment-mobile.jpg">
+                        <img src="professional-team-equipment.jpg" 
+                             alt="Professional garden maintenance team using specialized cylinder mower equipment on Perth lawn" 
+                             class="value-card-image" 
+                             loading="lazy"
+                             width="600"
+                             height="400"
+                             decoding="async">
+                    </picture>
                     <div class="value-card-content">
                         <h4>Professional Team & Equipment</h4>
                         <p>Our experienced professionals use specialised equipment like tripod ladders for large hedges, cylinder mowers for golf-cut lawns, and professional-grade application equipment for our premium bio-stimulants and treatments.</p>

@@ -1,0 +1,50 @@
+# Robots.txt for Privium Garden Services
+# https://privium.com.au
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /backup/
+Disallow: /*.bak$
+Disallow: /*-backup.html$
+Disallow: /value-prop-test.html
+
+# Specific crawler instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://privium.com.au/sitemap.xml
+
+# Cache control hints
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$

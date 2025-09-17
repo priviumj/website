@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage - highest priority -->
+  <url>
+    <loc>https://privium.com.au/</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://privium.com.au/hero-lawn.jpg</image:loc>
+      <image:caption>Professional garden maintenance services in Perth</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privium.com.au/PXL_20250416_032902603.jpg</image:loc>
+      <image:caption>Beautiful maintained garden lawn</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Services page - high priority -->
+  <url>
+    <loc>https://privium.com.au/services.html</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://privium.com.au/hero-services.jpg</image:loc>
+      <image:caption>Comprehensive garden care services</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Quote/Contact page - high priority -->
+  <url>
+    <loc>https://privium.com.au/quote.html</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://privium.com.au/hedge-trimming.jpg</image:loc>
+      <image:caption>Get a quote for garden services</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- About page - medium priority -->
+  <url>
+    <loc>https://privium.com.au/about.html</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://privium.com.au/PXL_20250617_085140393.PORTRAIT.jpg</image:loc>
+      <image:caption>Privium Garden Services founder Jarod</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privium.com.au/professional-team-equipment.jpg</image:loc>
+      <image:caption>Professional garden maintenance team and equipment</image:caption>
+    </image:image>
+  </url>
+</urlset>

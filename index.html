@@ -11,6 +11,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://privium.com.au/">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
     <!-- LocalBusiness Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -809,6 +817,149 @@
             border-bottom-right-radius: 70px;
         }
         
+        /* Before/After Slider */
+        .transformations-section {
+            padding: 80px 0;
+            background: #F5F3F0;
+        }
+        
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .before-after-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 66.67%; /* 3:2 aspect ratio */
+        }
+        
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .after-image-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            width: 50%;
+            z-index: 2;
+        }
+        
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100vw;
+            max-width: none;
+            object-fit: cover;
+        }
+        
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #A58062;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+            z-index: 3;
+        }
+        
+        .slider-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 3px solid #A58062;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .slider-handle::after {
+            content: '◀ ▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #A58062;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .transformation-label {
+            position: absolute;
+            top: 20px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.95);
+            color: #244419;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+        
+        .label-before {
+            left: 20px;
+        }
+        
+        .label-after {
+            right: 20px;
+        }
+        
+        .transformation-title {
+            text-align: center;
+            margin-top: 20px;
+            color: #244419;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 900px) {
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .transformation-grid {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+            
+            .before-after-container {
+                max-width: 100%;
+            }
+        }
+        
         .testimonials-grid {
             display: flex;
             flex-direction: row;
@@ -1147,7 +1298,7 @@
         <div class="hero-top-wrapper">
         <div class="hero-top">
             <div class="hero-image">
-                <img src="PXL_20250416_032902603.jpg" alt="Beautiful maintained garden lawn" class="hero-img active">
+                <img src="PXL_20250416_032902603.jpg" alt="Beautiful maintained garden lawn" class="hero-img active" loading="eager">
                 <img src="IMG_3456.jpg" alt="Beautiful garden landscape" class="hero-img" loading="lazy">
                 <img src="rn_image_picker_lib_temp_832fab1a-f7.jpg" alt="Garden entertainment space" class="hero-img" loading="lazy">
             </div>
@@ -1170,7 +1321,7 @@
         </div>
         <div style="background: #F5F3F0;">
         <div class="hero-content">
-            <img src="green-stem.svg" alt="Decorative frond" class="hero-frond">
+            <img src="green-stem.svg" alt="Decorative frond" class="hero-frond" loading="lazy">
             <div class="container" style="position: relative; z-index: 2;">
                 <h2 style="color: #A58062; font-size: 24px; font-weight: 300; margin-bottom: 20px; margin-top: -20px; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Exceptional Garden Care</h2>
                 <div class="hero-description">
@@ -1383,6 +1534,51 @@
     </section>
     </div>
 
+    <!-- Before/After Transformations -->
+    <div style="background: white;">
+    <section class="transformations-section">
+        <div class="container">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center;">See Our Work</h2>
+            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 40px; font-weight: 300;">
+                Real transformations from Perth gardens - drag the slider to reveal the results
+            </p>
+            
+            <div class="transformation-grid">
+                <!-- Lawn Transformation -->
+                <div>
+                    <div class="before-after-container" data-slider="lawn">
+                        <div class="before-after-wrapper">
+                            <img src="lawn-after-aligned.jpg" alt="Lawn before professional treatment - patchy and uneven" class="before-image" loading="lazy">
+                            <div class="after-image-wrapper" style="width: 50%;">
+                                <img src="lawn-before-aligned.jpg" alt="Lawn after Privium care - lush, green and healthy" class="after-image" loading="lazy">
+                            </div>
+                            <div class="slider-handle" style="left: 50%;"></div>
+                            <span class="transformation-label label-before">Before</span>
+                            <span class="transformation-label label-after">After</span>
+                        </div>
+                    </div>
+                    <h3 class="transformation-title">Lawn Restoration</h3>
+                </div>
+                
+                <!-- Garden Transformation -->
+                <div>
+                    <div class="before-after-container" data-slider="garden">
+                        <div class="before-after-wrapper">
+                            <img src="garden-before-aligned.jpg" alt="Garden before maintenance - overgrown and untidy" class="before-image" loading="lazy">
+                            <div class="after-image-wrapper" style="width: 50%;">
+                                <img src="garden-after-aligned.jpg" alt="Garden after professional care - manicured and beautiful" class="after-image" loading="lazy">
+                            </div>
+                            <div class="slider-handle" style="left: 50%;"></div>
+                            <span class="transformation-label label-before">Before</span>
+                            <span class="transformation-label label-after">After</span>
+                        </div>
+                    </div>
+                    <h3 class="transformation-title">Complete Garden Makeover</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
 
     <!-- CTA Section Wrapper -->
     <div style="background: white;">
@@ -1440,6 +1636,72 @@
             if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
                 navLinks.classList.remove('active');
             }
+        });
+        
+        // Before/After Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.before-after-container').forEach(container => {
+                const slider = container.querySelector('.slider-handle');
+                const afterWrapper = container.querySelector('.after-image-wrapper');
+                const afterImage = afterWrapper.querySelector('.after-image');
+                let isActive = false;
+                
+                // Set after image width to match container
+                function setImageWidth() {
+                    const containerWidth = container.offsetWidth;
+                    afterImage.style.width = containerWidth + 'px';
+                }
+                
+                setImageWidth();
+                window.addEventListener('resize', setImageWidth);
+                
+                function updateSlider(x) {
+                    const rect = container.getBoundingClientRect();
+                    const offsetX = x - rect.left;
+                    const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
+                    
+                    slider.style.left = percentage + '%';
+                    afterWrapper.style.width = percentage + '%';
+                }
+                
+                // Mouse events
+                slider.addEventListener('mousedown', (e) => {
+                    isActive = true;
+                    e.preventDefault();
+                });
+                
+                document.addEventListener('mouseup', () => {
+                    isActive = false;
+                });
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (!isActive) return;
+                    e.preventDefault();
+                    updateSlider(e.clientX);
+                });
+                
+                // Touch events for mobile
+                slider.addEventListener('touchstart', (e) => {
+                    isActive = true;
+                    e.preventDefault();
+                });
+                
+                document.addEventListener('touchend', () => {
+                    isActive = false;
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    if (!isActive) return;
+                    e.preventDefault();
+                    updateSlider(e.touches[0].clientX);
+                });
+                
+                // Click to position
+                container.addEventListener('click', (e) => {
+                    if (e.target === slider || slider.contains(e.target)) return;
+                    updateSlider(e.clientX);
+                });
+            });
         });
         
         // Show body once fonts are loaded

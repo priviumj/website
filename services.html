@@ -11,6 +11,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://privium.com.au/services/">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
     <!-- LocalBusiness Schema for SEO -->
     <script type="application/ld+json">
     {
@@ -52,7 +60,7 @@
         {"@type": "City", "name": "Swanbourne"}
       ],
       "image": [
-        "https://privium.com.au/hero-lawn.jpg",
+        "https://privium.com.au/hero-services.jpg",
         "https://privium.com.au/garden-work-1.jpg",
         "https://privium.com.au/PXL_20250416_032902603.jpg"
       ],
@@ -362,7 +370,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('PXL_20250416_032902603.jpg');
+            background: url('hero-services.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -909,6 +917,30 @@
             color: #A58062 !important;
             transform: none !important;
         }
+        
+        /* Inline CTAs */
+        .inline-cta {
+            display: inline-block;
+            background: transparent;
+            color: #6B8250;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 400;
+            text-decoration: none;
+            border: 1px solid #6B8250;
+            border-radius: 15px 3px 15px 3px;
+            margin: 15px 0;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .inline-cta:hover {
+            background: #6B8250;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(107, 130, 80, 0.2);
+        }
 
         /* Footer */
         footer {
@@ -1152,6 +1184,9 @@
                         </div>
                     </div>
                 </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="quote.html" class="inline-cta">Get Lawn Care Quote</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1233,6 +1268,9 @@
                     </ul>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="quote.html" class="inline-cta">Get Garden Maintenance Quote</a>
+            </div>
         </div>
     </section>
     </div>
@@ -1254,6 +1292,7 @@
                     levelling, turf laying, and critical establishment watering schedules tailored to each grass type's 
                     specific requirements for successful root development.
                 </p>
+                <a href="quote.html" class="inline-cta">Request Installation Quote</a>
 
                 <h4>Soft Landscaping</h4>
                 <p>
@@ -1263,6 +1302,7 @@
                     with practical maintenance considerations, ensuring your soft landscaping elements enhance your 
                     property while remaining manageable year-round.
                 </p>
+                <a href="quote.html" class="inline-cta">Discuss Landscaping Project</a>
 
                 <h4>Seasonal Garden Assessments</h4>
                 <p>
@@ -1270,6 +1310,7 @@
                     and provide specific recommendations. We monitor nutrient levels, pH balance, watering cycles, 
                     and mowing heights to ensure optimal garden performance year-round.
                 </p>
+                <a href="quote.html" class="inline-cta">Book Seasonal Assessment</a>
 
                 <h4>Premium Bio-Stimulant Programs</h4>
                 <p>
@@ -1277,6 +1318,7 @@
                     that dramatically improve nutrient uptake and soil health. Applied every second visit, these 
                     treatments create the thick, lush lawns that set Privium-maintained gardens apart.
                 </p>
+                <a href="quote.html" class="inline-cta">Start Bio-Stimulant Program</a>
 
                 <h4>Integrated Pest Management</h4>
                 <p>
@@ -1284,6 +1326,7 @@
                     while effectively managing harmful pests. Our approach includes monitoring, prevention,
                     and targeted treatments only when necessary.
                 </p>
+                <a href="quote.html" class="inline-cta">Schedule Pest Assessment</a>
 
                 <h4>Comprehensive Soil Management</h4>
                 <p>
@@ -1291,6 +1334,7 @@
                     creating targeted treatment plans. Our soil cultivation, pH adjustment, and nutrient management 
                     address the unique challenges of Perth's sandy soils.
                 </p>
+                <a href="quote.html" class="inline-cta">Book Soil Analysis</a>
 
                 <h4>Tennis Court Maintenance</h4>
                 <p>
