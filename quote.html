@@ -717,6 +717,23 @@
             color: #6B8250;
         }
         
+        /* Collapsible Services Styling */
+        .services-collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .services-collapsible[open] .collapse-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .services-collapsible summary {
+            outline: none;
+        }
+        
+        .services-collapsible summary:hover {
+            color: #6B8250;
+        }
+        
         @media (max-width: 900px) {
             .services-grid {
                 grid-template-columns: 1fr !important;
@@ -1138,10 +1155,33 @@
                             <textarea id="message" name="message" placeholder="Your request"></textarea>
                         </div>
 
+                        <!-- How did you hear about us -->
+                        <div class="form-group">
+                            <label for="referral-source" style="font-weight: 600; color: #244419; margin-bottom: 8px; display: block;">How did you hear about us?</label>
+                            <select id="referral-source" name="referralSource" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; color: #333; background: white; cursor: pointer;">
+                                <option value="" disabled selected>Please select...</option>
+                                <option value="google-search">Google Search</option>
+                                <option value="friend-referral">Friend or Family Referral</option>
+                                <option value="existing-customer">Existing Customer</option>
+                                <option value="signage">Vehicle/Trailer Signage</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="nextdoor">Nextdoor</option>
+                                <option value="flyer">Flyer/Letterbox Drop</option>
+                                <option value="neighbor">Saw Work at Neighbor's</option>
+                                <option value="local-directory">Local Directory</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
                         <!-- Services Needed -->
                         <div class="form-group">
-                            <label style="font-weight: 600; color: #244419; margin-bottom: 0; display: block;">Services You're Interested In</label>
-                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px;">
+                            <details class="services-collapsible">
+                                <summary style="font-weight: 600; color: #244419; margin-bottom: 10px; display: block; cursor: pointer; user-select: none; position: relative; padding-right: 25px;">
+                                    Services You're Interested In
+                                    <span style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: transform 0.3s; display: inline-block;" class="collapse-arrow">▼</span>
+                                </summary>
+                            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; margin-top: 10px;">
                                 <label class="service-item" style="display: flex; gap: 8px; padding: 0; background: transparent; border: none; cursor: pointer; transition: all 0.2s; position: relative; align-items: flex-start;">
                                     <input type="checkbox" name="services" value="lawn-care" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #6B8250; cursor: pointer;">
                                     <div class="service-content" style="flex: 1;">
@@ -1214,6 +1254,7 @@
                                     </div>
                                 </label>
                             </div>
+                            </details>
                         </div>
 
                         <!-- Service Preference -->
@@ -1470,6 +1511,22 @@
 
             return false;
         }
+
+        // Handle collapsible arrow rotation
+        document.addEventListener('DOMContentLoaded', function() {
+            const details = document.querySelector('.services-collapsible');
+            const arrow = document.querySelector('.collapse-arrow');
+            
+            if (details && arrow) {
+                details.addEventListener('toggle', function() {
+                    if (details.open) {
+                        arrow.style.transform = 'translateY(-50%) rotate(180deg)';
+                    } else {
+                        arrow.style.transform = 'translateY(-50%) rotate(0deg)';
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
