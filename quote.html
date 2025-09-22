@@ -1446,7 +1446,7 @@
 
             const form = document.getElementById('bookingForm');
             const formData = new FormData(form);
-            
+
             // Add visual feedback
             const submitButton = form.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
@@ -1457,7 +1457,7 @@
             const contactMethod = formData.get('contactMethod');
             const phone = formData.get('phone');
             const email = formData.get('email');
-            
+
             // Validate that if a contact method is selected, the corresponding field has data
             if (contactMethod === 'phone' && !phone) {
                 document.getElementById('errorMessage').textContent = 'Please provide a phone number for your preferred contact method.';
@@ -1468,7 +1468,7 @@
                 submitButton.disabled = false;
                 return false;
             }
-            
+
             if (contactMethod === 'email' && !email) {
                 document.getElementById('errorMessage').textContent = 'Please provide an email address for your preferred contact method.';
                 document.getElementById('errorMessage').style.display = 'block';
@@ -1479,35 +1479,84 @@
                 return false;
             }
 
-
             // Hide error message if shown
             document.getElementById('errorMessage').style.display = 'none';
 
-            // Show success message with animation
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('errorMessage').style.display = 'none';
-            
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset button
-            submitButton.textContent = '✓ Sent Successfully!';
-            submitButton.style.background = '#28a745';
-            
-            // Reset form after a delay
-            setTimeout(() => {
-                form.reset();
+            // Prepare form data for Web3Forms
+            const web3FormsData = new FormData();
+
+            // Web3Forms API Key - Get your own free key at https://web3forms.com
+            // This key is for office@privium.com.au
+            web3FormsData.append('access_key', '600d94ef-416c-4c35-b611-8547ce325119');
+
+            // Add form fields
+            web3FormsData.append('name', formData.get('name'));
+            web3FormsData.append('phone', formData.get('phone') || 'Not provided');
+            web3FormsData.append('email', formData.get('email') || 'Not provided');
+            web3FormsData.append('address', formData.get('address') || 'Not provided');
+            web3FormsData.append('message', formData.get('message') || 'No message');
+            web3FormsData.append('contact_method', formData.get('contactMethod'));
+            web3FormsData.append('referral_source', formData.get('referralSource') || 'Not specified');
+
+            // Get selected services
+            const services = formData.getAll('services');
+            web3FormsData.append('services', services.length > 0 ? services.join(', ') : 'No specific services selected');
+
+            // Check subscription interest
+            const subscription = formData.get('subscription');
+            web3FormsData.append('subscription_interest', subscription ? 'Yes - Interested in Set & Forget Subscription' : 'No');
+
+            // Email configuration
+            web3FormsData.append('subject', 'New Quote Request from Privium Website');
+            web3FormsData.append('from_name', 'Privium Website');
+
+            // Send the form data to Web3Forms
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: web3FormsData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message with animation
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('errorMessage').style.display = 'none';
+
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Reset button
+                    submitButton.textContent = '✓ Sent Successfully!';
+                    submitButton.style.background = '#28a745';
+
+                    // Reset form after a delay
+                    setTimeout(() => {
+                        form.reset();
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.style.background = '';
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            document.getElementById('successMessage').style.display = 'none';
+                        }, 3000);
+                    }, 2000);
+                } else {
+                    // Show error message
+                    document.getElementById('errorMessage').textContent = 'There was a problem sending your request. Please call us at 0490 841 667.';
+                    document.getElementById('errorMessage').style.display = 'block';
+                    document.getElementById('successMessage').style.display = 'none';
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = 'There was a problem sending your request. Please call us at 0490 841 667.';
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-                submitButton.style.background = '';
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 3000);
-            }, 2000);
-
-            // In production, you would send the form data to your server here
-            console.log('Form submitted with data:', Object.fromEntries(formData));
+            });
 
             return false;
         }
