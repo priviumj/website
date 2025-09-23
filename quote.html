@@ -944,6 +944,10 @@
             .sidebar-info {
                 grid-template-columns: 1fr;
             }
+
+            .trust-badges {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
         }
         
         @media (max-width: 400px) {
@@ -958,13 +962,17 @@
                 width: 92%;
                 padding: 0 15px;
             }
-            
+
             .why-grid {
                 grid-template-columns: 1fr;
             }
 
             .checkbox-group {
                 grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                grid-template-columns: repeat(2, 1fr) !important;
             }
             
             .logo img {
@@ -1275,31 +1283,31 @@
                     </form>
             </div>
 
-            <!-- Info Cards Below Form -->
-            <div class="sidebar-info">
-                    <!-- Trust Badges -->
-                    <div class="info-card">
-                        <h3>Why Choose Privium</h3>
-                        <div class="trust-badges" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
-                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">10+</div>
-                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Years Experience</div>
-                            </div>
-                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">100%</div>
-                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Insured</div>
-                            </div>
-                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">5★</div>
-                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Service Quality</div>
-                            </div>
-                            <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                                <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">24hr</div>
-                                <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Response Time</div>
-                            </div>
-                        </div>
+            <!-- Trust Badges Full Width -->
+            <div class="info-card" style="margin-top: 40px;">
+                <h3>Why Choose Privium</h3>
+                <div class="trust-badges" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px;">
+                    <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">10+</div>
+                        <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Years Experience</div>
                     </div>
+                    <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">100%</div>
+                        <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Insured</div>
+                    </div>
+                    <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">5★</div>
+                        <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Service Quality</div>
+                    </div>
+                    <div class="trust-badge" style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <div class="trust-badge-number" style="font-size: 24px; font-weight: bold; color: #244419;">24hr</div>
+                        <div class="trust-badge-label" style="font-size: 14px; color: #666; margin-top: 5px;">Response Time</div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Empty sidebar-info container if there was other content -->
+            <div class="sidebar-info" style="display: none;">
         </div>
     </section>
     </div>
