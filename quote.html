@@ -1284,7 +1284,10 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <button type="button" onclick="clearFormData()" style="background: transparent; border: none; color: #999; font-size: 12px; cursor: pointer; padding: 8px; text-decoration: underline; font-weight: 300;">Clear form</button>
+                            <button type="submit" class="submit-btn">Send Inquiry</button>
+                        </div>
                     </form>
             </div>
 
@@ -1470,6 +1473,15 @@
                 subscription: form.subscription?.checked || false
             };
             localStorage.setItem('priviumQuoteForm', JSON.stringify(formData));
+        }
+
+        // Clear form data and localStorage
+        function clearFormData() {
+            const form = document.getElementById('bookingForm');
+            if (form) {
+                form.reset();
+                localStorage.removeItem('priviumQuoteForm');
+            }
         }
 
         // Restore form data from localStorage
