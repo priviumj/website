@@ -1284,9 +1284,9 @@
                             </select>
                         </div>
 
-                        <div style="display: flex; align-items: center; justify-content: space-between;">
-                            <button type="button" onclick="clearFormData()" style="background: transparent; border: none; color: #999; font-size: 12px; cursor: pointer; padding: 8px; text-decoration: underline; font-weight: 300;">Clear form</button>
+                        <div style="display: flex; gap: 15px; justify-content: flex-end;">
                             <button type="submit" class="submit-btn">Send Inquiry</button>
+                            <button type="button" onclick="clearFormData()" class="submit-btn" style="background: #A58062; border: 2px solid #A58062;">Clear Form</button>
                         </div>
                     </form>
             </div>
@@ -1477,10 +1477,12 @@
 
         // Clear form data and localStorage
         function clearFormData() {
-            const form = document.getElementById('bookingForm');
-            if (form) {
-                form.reset();
-                localStorage.removeItem('priviumQuoteForm');
+            if (confirm('Are you sure you want to clear all form data? This cannot be undone.')) {
+                const form = document.getElementById('bookingForm');
+                if (form) {
+                    form.reset();
+                    localStorage.removeItem('priviumQuoteForm');
+                }
             }
         }
 
