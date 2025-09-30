@@ -46,18 +46,23 @@
       "areaServed": [
         {"@type": "City", "name": "Cottesloe"},
         {"@type": "City", "name": "Dalkeith"},
-        {"@type": "City", "name": "Claremont"},
         {"@type": "City", "name": "Nedlands"},
+        {"@type": "City", "name": "Claremont"},
         {"@type": "City", "name": "Peppermint Grove"},
         {"@type": "City", "name": "Mosman Park"},
+        {"@type": "City", "name": "Swanbourne"},
+        {"@type": "City", "name": "City Beach"},
+        {"@type": "City", "name": "Floreat"},
+        {"@type": "City", "name": "Shenton Park"},
+        {"@type": "City", "name": "Mount Claremont"},
         {"@type": "City", "name": "South Perth"},
         {"@type": "City", "name": "Como"},
+        {"@type": "City", "name": "Kensington"},
         {"@type": "City", "name": "Applecross"},
         {"@type": "City", "name": "Mount Pleasant"},
-        {"@type": "City", "name": "Bicton"},
-        {"@type": "City", "name": "Floreat"},
-        {"@type": "City", "name": "City Beach"},
-        {"@type": "City", "name": "Swanbourne"}
+        {"@type": "City", "name": "Salter Point"},
+        {"@type": "City", "name": "Attadale"},
+        {"@type": "City", "name": "Bicton"}
       ],
       "image": [
         "https://privium.com.au/hero-lawn.jpg",
@@ -781,33 +786,29 @@
         }
         
         .suburbs-showcase {
-            padding: 50px 0;
+            padding: 0;
         }
 
         .suburbs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
+            gap: 4px 12px;
         }
 
         .suburb-tag {
-            background: white;
-            padding: 12px 8px;
-            border-radius: 15px 3px 15px 3px;
-            text-align: center;
-            border: 1px solid #A3B583;
-            transition: all 0.3s;
-            color: #244419;
+            color: #5E483A;
             font-weight: 300;
             font-size: 14px;
+            text-align: left;
+            padding: 2px 0;
+            line-height: 1.4;
         }
 
-        .suburb-tag:hover {
-            background: #A58062;
-            color: white;
-            border-color: #A58062;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(165, 128, 98, 0.2);
+        .suburb-tag:before {
+            content: "• ";
+            color: #A58062;
+            font-weight: bold;
+            margin-right: 8px;
         }
 
         /* Testimonial Section */
@@ -1470,32 +1471,34 @@
     <div style="background: rgb(215, 221, 213);">
     <section class="service-areas-section">
         <div class="container">
-            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 20px;">Service Areas</h2>
-            <p style="text-align: center; font-size: 16px; margin-bottom: 50px; color: #666; font-weight: 300;">
+            <h2 style="color: #A58062; font-size: 24px; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 10px;">Service Areas</h2>
+            <p style="text-align: center; font-size: 16px; margin-bottom: 20px; color: #666; font-weight: 300;">
                 Trusted garden care throughout Perth's most beautiful suburbs
             </p>
             <div class="suburbs-showcase">
                 <div class="suburbs-grid">
-                    <div class="suburb-tag">Cottesloe</div>
-                    <div class="suburb-tag">Dalkeith</div>
-                    <div class="suburb-tag">Nedlands</div>
-                    <div class="suburb-tag">Claremont</div>
-                    <div class="suburb-tag">Peppermint Grove</div>
-                    <div class="suburb-tag">Mosman Park</div>
-                    <div class="suburb-tag">South Perth</div>
-                    <div class="suburb-tag">Como</div>
                     <div class="suburb-tag">Applecross</div>
-                    <div class="suburb-tag">Mount Pleasant</div>
-                    <div class="suburb-tag">City Beach</div>
-                    <div class="suburb-tag">Floreat</div>
-                    <div class="suburb-tag">Shenton Park</div>
-                    <div class="suburb-tag">Mount Claremont</div>
-                    <div class="suburb-tag">Swanbourne</div>
                     <div class="suburb-tag">Attadale</div>
                     <div class="suburb-tag">Bicton</div>
-                    <div class="suburb-tag">Salter Point</div>
+                    <div class="suburb-tag">City Beach</div>
+                    <div class="suburb-tag">Claremont</div>
+                    <div class="suburb-tag">Como</div>
+                    <div class="suburb-tag">Cottesloe</div>
+                    <div class="suburb-tag">Dalkeith</div>
+                    <div class="suburb-tag">Floreat</div>
                     <div class="suburb-tag">Kensington</div>
-                    <div class="suburb-tag">Victoria Park</div>
+                    <div class="suburb-tag">Mosman Park</div>
+                    <div class="suburb-tag">Mount Claremont</div>
+                    <div class="suburb-tag">Mount Pleasant</div>
+                    <div class="suburb-tag">Nedlands</div>
+                    <div class="suburb-tag">Peppermint Grove</div>
+                    <div class="suburb-tag">Salter Point</div>
+                    <div class="suburb-tag">Shenton Park</div>
+                    <div class="suburb-tag">South Perth</div>
+                    <div class="suburb-tag">Swanbourne</div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="services.html#service-areas" style="display: inline-block; padding: 12px 30px; background: #A58062; color: white; text-decoration: none; border-radius: 20px 5px 20px 5px; font-size: 16px; font-weight: 300; transition: all 0.3s; border: 2px solid #A58062;">View Service Area Map</a>
                 </div>
             </div>
         </div>
