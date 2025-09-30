@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal Login | Privium Garden Services</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #F5F3F0 0%, #e8f0e3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px 5px 20px 5px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #244419;
+            font-size: 26px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #244419;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #A58062;
+            box-shadow: 0 0 0 3px rgba(165, 128, 98, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: #244419;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            background: #1a3014;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(36, 68, 25, 0.3);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .btn-login:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-message {
+            display: none;
+            background: #fee;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .help-text {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .help-text p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .help-text a {
+            color: #A58062;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .help-text a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #244419;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Client Portal</h1>
+            <p class="subtitle">Access Your Service Guides</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            Invalid email or access token. Please check your credentials and try again.
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="token">Access Token</label>
+                <input
+                    type="text"
+                    id="token"
+                    name="token"
+                    placeholder="PRIV-XXXXXXXXXXXXXXXX"
+                    required
+                    style="font-family: 'Courier New', monospace;"
+                >
+            </div>
+
+            <button type="submit" class="btn-login" id="loginBtn">
+                Access Portal
+            </button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 15px; color: #666;">Verifying credentials...</p>
+        </div>
+
+        <div class="help-text">
+            <p>Don't have an access token?</p>
+            <p>Contact us at <a href="tel:0490841667">0490 841 667</a></p>
+        </div>
+    </div>
+
+    <script>
+        // SECRET KEY - Must match the one in token-generator.html
+        const SECRET_KEY = 'PRIVIUM_GARDEN_SERVICES_2025_SECRET_KEY_v1';
+
+        function handleLogin(event) {
+            event.preventDefault();
+
+            // Get form values
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const token = document.getElementById('token').value.trim().toUpperCase();
+
+            // Hide any previous error
+            document.getElementById('errorMessage').classList.remove('show');
+
+            // Show loading
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('loading').classList.add('show');
+
+            // Simulate network delay for better UX
+            setTimeout(() => {
+                if (validateCredentials(email, token)) {
+                    // Success! Store session and redirect
+                    const decryptionKey = generateDecryptionKey(email, token);
+                    sessionStorage.setItem('privium_auth', decryptionKey);
+                    sessionStorage.setItem('privium_email', email);
+
+                    // Redirect to guides
+                    window.location.href = 'guides.html';
+                } else {
+                    // Failed validation
+                    document.getElementById('loading').classList.remove('show');
+                    document.getElementById('loginForm').style.display = 'block';
+                    document.getElementById('errorMessage').classList.add('show');
+
+                    // Clear token field
+                    document.getElementById('token').value = '';
+                    document.getElementById('token').focus();
+                }
+            }, 800);
+        }
+
+        function validateCredentials(email, token) {
+            // Generate expected token from email
+            const hash = CryptoJS.SHA256(email + SECRET_KEY).toString();
+            const expectedToken = 'PRIV-' + hash.substring(0, 16).toUpperCase();
+
+            // Compare with provided token
+            return token === expectedToken;
+        }
+
+        function generateDecryptionKey(email, token) {
+            // Generate decryption key from validated credentials
+            return CryptoJS.SHA256(email + token + SECRET_KEY).toString();
+        }
+
+        // Check if already logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('privium_auth')) {
+                window.location.href = 'guides.html';
+            }
+        });
+    </script>
+</body>
+</html>

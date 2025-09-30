@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation & Reticulation Service | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --blue: #2196F3;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --danger: #F44336;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--blue);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .system-diagram {
+            background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+            border: 2px solid var(--blue);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .component-card {
+            background: white;
+            border: 1px solid var(--blue);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .component-icon {
+            font-size: 18pt;
+            margin-bottom: 5px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .schedule-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .schedule-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .water-savings {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .savings-card {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 4px solid var(--blue);
+        }
+
+        .savings-card h4 {
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .troubleshooting {
+            background: white;
+            border: 2px solid var(--warning);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .issue-item {
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+            gap: 10px;
+            align-items: start;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .issue-icon {
+            background: var(--warning);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .maintenance-checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .checklist-section {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .checklist-section h4 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .controller-settings {
+            background: var(--cream);
+            border: 2px solid var(--blue);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .zone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 10pt;
+        }
+
+        .zone-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 6px;
+            text-align: left;
+        }
+
+        .zone-table td {
+            padding: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Irrigation System Service</h1>
+                <p class="subtitle">Installation, Repair & Optimization Guide</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="success-box">
+                <strong>💧 Service Completed:</strong> Your irrigation/reticulation system has been serviced, repaired, or installed. This guide explains your system and optimal usage for water efficiency and lawn health.
+            </div>
+
+            <h2>Your Irrigation System Components</h2>
+            <div class="system-diagram">
+                <h3>System Overview</h3>
+                <div class="component-grid">
+                    <div class="component-card">
+                        <div class="component-icon">🎛️</div>
+                        <strong>Controller</strong>
+                        <p>Programs watering</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">🔧</div>
+                        <strong>Solenoid Valves</strong>
+                        <p>Control zones</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">💦</div>
+                        <strong>Sprinklers</strong>
+                        <p>Distribute water</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">📊</div>
+                        <strong>Master Valve</strong>
+                        <p>Main shutoff</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">🌧️</div>
+                        <strong>Rain Sensor</strong>
+                        <p>Prevents overwatering</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon">⚡</div>
+                        <strong>Pressure Reg</strong>
+                        <p>Protects system</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Today's Service Work</h2>
+            <div class="info-box">
+                <strong>Completed Tasks:</strong>
+                <ul>
+                    <li>System inspection and pressure test</li>
+                    <li>Sprinkler head adjustment and cleaning</li>
+                    <li>Controller programming optimization</li>
+                    <li>Leak detection and repair</li>
+                    <li>Coverage pattern verification</li>
+                    <li>Rain sensor testing</li>
+                </ul>
+            </div>
+
+            <h2>Optimal Watering Schedule - Perth Climate</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Frequency</th>
+                        <th>Duration/Zone</th>
+                        <th>Best Time</th>
+                        <th>Water Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Summer</strong></td>
+                        <td>2 days/week</td>
+                        <td>10-12 minutes</td>
+                        <td>Before 9am/After 6pm</td>
+                        <td>Per roster</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autumn</strong></td>
+                        <td>1-2 days/week</td>
+                        <td>8-10 minutes</td>
+                        <td>Early morning</td>
+                        <td>Per roster</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Winter</strong></td>
+                        <td>Off/Manual only</td>
+                        <td>As needed</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spring</strong></td>
+                        <td>1-2 days/week</td>
+                        <td>8-10 minutes</td>
+                        <td>Early morning</td>
+                        <td>Per roster</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>⚠️ Water Corporation Restrictions:</strong> Always comply with current water restrictions. Winter sprinkler ban typically June 1 - August 31. Check watercorporation.com.au for current roster and restrictions.
+            </div>
+
+            <h2>Programming Your Controller</h2>
+            <div class="controller-settings">
+                <h3>Recommended Settings</h3>
+                <table class="zone-table">
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Area Type</th>
+                            <th>Run Time</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Front Lawn</td>
+                            <td>10 min</td>
+                            <td>Full sun exposure</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Back Lawn</td>
+                            <td>12 min</td>
+                            <td>Larger area</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Garden Beds</td>
+                            <td>8 min</td>
+                            <td>Drip system</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Side Strip</td>
+                            <td>6 min</td>
+                            <td>Partial shade</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 10px;"><strong>Start Times:</strong> Program A: 6:00 AM | Program B (if needed): 7:00 PM</p>
+            </div>
+
+            <h2>Water Saving Tips</h2>
+            <div class="water-savings">
+                <div class="savings-card">
+                    <h4>Smart Watering</h4>
+                    <ul>
+                        <li>Water early morning (4-9am)</li>
+                        <li>Use cycle and soak method</li>
+                        <li>Adjust for rainfall</li>
+                        <li>Reduce in shaded areas</li>
+                    </ul>
+                </div>
+                <div class="savings-card">
+                    <h4>System Efficiency</h4>
+                    <ul>
+                        <li>Fix leaks immediately</li>
+                        <li>Install rain sensor</li>
+                        <li>Use drip for garden beds</li>
+                        <li>Mulch to retain moisture</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Troubleshooting Common Issues</h2>
+            <div class="troubleshooting">
+                <div class="issue-item">
+                    <div class="issue-icon">1</div>
+                    <div>
+                        <strong>Dry Patches</strong>
+                        <p>Despite regular watering</p>
+                    </div>
+                    <div>
+                        <p><em>Check:</em> Blocked nozzles, adjust arc/radius, increase run time</p>
+                    </div>
+                </div>
+                <div class="issue-item">
+                    <div class="issue-icon">2</div>
+                    <div>
+                        <strong>Pooling Water</strong>
+                        <p>Puddles after watering</p>
+                    </div>
+                    <div>
+                        <p><em>Solution:</em> Reduce run time, use cycle/soak, check for leaks</p>
+                    </div>
+                </div>
+                <div class="issue-item">
+                    <div class="issue-icon">3</div>
+                    <div>
+                        <strong>Zone Not Working</strong>
+                        <p>No water from sprinklers</p>
+                    </div>
+                    <div>
+                        <p><em>Check:</em> Controller settings, solenoid valve, wiring connections</p>
+                    </div>
+                </div>
+                <div class="issue-item">
+                    <div class="issue-icon">4</div>
+                    <div>
+                        <strong>Low Pressure</strong>
+                        <p>Weak spray pattern</p>
+                    </div>
+                    <div>
+                        <p><em>Possible:</em> Too many heads per zone, leak in line, filter blocked</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Monthly Maintenance Checklist</h2>
+            <div class="maintenance-checklist">
+                <div class="checklist-section">
+                    <h4>Visual Inspection</h4>
+                    <ul>
+                        <li>Run each zone for 2 minutes</li>
+                        <li>Check for broken/tilted heads</li>
+                        <li>Look for wet spots (leaks)</li>
+                        <li>Verify coverage patterns</li>
+                        <li>Clear grass from pop-ups</li>
+                    </ul>
+                </div>
+                <div class="checklist-section">
+                    <h4>System Check</h4>
+                    <ul>
+                        <li>Test rain sensor</li>
+                        <li>Check controller battery</li>
+                        <li>Verify schedule settings</li>
+                        <li>Clean filter screens</li>
+                        <li>Test manual operation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Signs You Need Professional Service</h2>
+            <div class="danger-box">
+                <strong>Call Privium if you notice:</strong>
+                <ul>
+                    <li>Continuously running sprinklers (stuck valve)</li>
+                    <li>Multiple zones not working (controller or wiring issue)</li>
+                    <li>High water bills (hidden leak)</li>
+                    <li>Erosion or washouts (pressure problems)</li>
+                    <li>Electrical issues with controller</li>
+                    <li>Significant pressure loss across system</li>
+                </ul>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Seasonal Adjustments</h2>
+            <div class="info-box">
+                <strong>Automatic Seasonal Adjust:</strong> Most modern controllers have a seasonal adjustment feature (%). Set to 100% in peak summer, reduce to 50-70% in cooler months. This maintains your programmed schedule while adjusting run times for seasonal needs.
+            </div>
+
+            <div class="success-box">
+                <strong>💚 Pro Tip:</strong> A properly maintained irrigation system saves water and money while keeping your lawn healthy. The "10-minute test" - running each zone monthly for quick inspection - prevents most major problems. Remember: deep, infrequent watering grows stronger roots than daily light watering.
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Irrigation & Reticulation Specialists • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

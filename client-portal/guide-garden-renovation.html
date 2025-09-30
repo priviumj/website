@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Bed Renovation | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+            --earth: #8B4513;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .renovation-stages {
+            background: linear-gradient(90deg, var(--cream) 0%, white 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .stage-item {
+            display: grid;
+            grid-template-columns: 30px 120px 1fr;
+            gap: 10px;
+            align-items: start;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .stage-number {
+            background: var(--earth);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .material-card {
+            background: var(--cream);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+            border-left: 3px solid var(--earth);
+        }
+
+        .planting-guide {
+            background: white;
+            border: 2px solid var(--light-green);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .plant-spacing {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .spacing-card {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--dark-green);
+        }
+
+        .maintenance-schedule {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .maintenance-schedule th {
+            background: var(--earth);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .maintenance-schedule td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .maintenance-schedule tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .soil-layers {
+            background: linear-gradient(180deg,
+                var(--brown) 0%,
+                var(--brown) 25%,
+                var(--earth) 25%,
+                var(--earth) 50%,
+                var(--tan) 50%,
+                var(--tan) 75%,
+                #D2691E 75%,
+                #D2691E 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .layer-item {
+            padding: 8px;
+            margin: 5px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .care-card {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--dark-green);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .watering-guide {
+            background: #E1F5FE;
+            border: 2px solid var(--info);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .timeline-bar {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            border: 2px solid var(--earth);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .timeline-point {
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-week {
+            background: var(--earth);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 10pt;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Garden Bed Renovation</h1>
+                <p class="subtitle">Complete Transformation & Care Guide</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="success-box">
+                <strong>🌿 Renovation Complete:</strong> Your garden beds have been professionally renovated with quality soil, mulch, and plants selected for Perth's Mediterranean climate. This guide ensures successful establishment through our hot, dry summers and cool, wet winters.
+            </div>
+
+            <h2>Renovation Work Completed</h2>
+            <div class="renovation-stages">
+                <div class="stage-item">
+                    <div class="stage-number">1</div>
+                    <div><strong>Preparation</strong></div>
+                    <div>Removed old plants, weeds, and debris. Improved drainage where needed.</div>
+                </div>
+                <div class="stage-item">
+                    <div class="stage-number">2</div>
+                    <div><strong>Soil Improvement</strong></div>
+                    <div>Added quality soil mix, compost, and amendments suitable for Perth's sandy soils. Incorporated soil wetter for improved water retention.</div>
+                </div>
+                <div class="stage-item">
+                    <div class="stage-number">3</div>
+                    <div><strong>Planting</strong></div>
+                    <div>Installed new plants with proper spacing. Applied starter fertiliser and soil wetter essential for Perth's water-repellent soils.</div>
+                </div>
+                <div class="stage-item">
+                    <div class="stage-number">4</div>
+                    <div><strong>Mulching</strong></div>
+                    <div>Applied 75-100mm premium mulch layer. Installed edging where specified.</div>
+                </div>
+            </div>
+
+            <h2>Materials Used in Your Garden</h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <strong>Premium Soil Mix</strong>
+                    <p>Blend of loam, compost, sand</p>
+                </div>
+                <div class="material-card">
+                    <strong>Organic Compost</strong>
+                    <p>Improves structure & nutrients</p>
+                </div>
+                <div class="material-card">
+                    <strong>Soil Wetter</strong>
+                    <p>Essential for Perth's water-repellent sandy soils</p>
+                </div>
+                <div class="material-card">
+                    <strong>Slow Release Fertiliser</strong>
+                    <p>3-6 month feeding</p>
+                </div>
+                <div class="material-card">
+                    <strong>Premium Mulch</strong>
+                    <p>Retains moisture, suppresses weeds</p>
+                </div>
+                <div class="material-card">
+                    <strong>Gypsum/Lime</strong>
+                    <p>Clay breaker or pH adjustment</p>
+                </div>
+            </div>
+
+            <h2>Critical First Month Care</h2>
+            <div class="watering-guide">
+                <h3>🚿 Watering Schedule for Plant Establishment</h3>
+                <table style="width: 100%; margin-top: 10px;">
+                    <tr style="background: white;">
+                        <td style="padding: 8px;"><strong>Week 1:</strong></td>
+                        <td style="padding: 8px;">Daily watering (morning)</td>
+                        <td style="padding: 8px;">10-15 minutes</td>
+                    </tr>
+                    <tr style="background: #F0F8FF;">
+                        <td style="padding: 8px;"><strong>Week 2:</strong></td>
+                        <td style="padding: 8px;">Every 2nd day</td>
+                        <td style="padding: 8px;">15-20 minutes</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 8px;"><strong>Week 3-4:</strong></td>
+                        <td style="padding: 8px;">Twice weekly</td>
+                        <td style="padding: 8px;">20-30 minutes</td>
+                    </tr>
+                    <tr style="background: #F0F8FF;">
+                        <td style="padding: 8px;"><strong>After 1 month:</strong></td>
+                        <td style="padding: 8px;">Weekly deep watering</td>
+                        <td style="padding: 8px;">30+ minutes</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 10px;"><strong>⚠️ Perth Summer Warning:</strong> Increase watering frequency during days above 35°C. Check Water Corporation restrictions (2 or 3 days per week roster).</p>
+            </div>
+
+            <h2>Your New Plants Care Requirements</h2>
+            <div class="plant-spacing">
+                <div class="spacing-card">
+                    <h4>Sun Lovers (Full Sun)</h4>
+                    <p>Lavender, Rosemary, Westringia</p>
+                    <ul>
+                        <li>6+ hours direct sun</li>
+                        <li>Good drainage essential</li>
+                        <li>Less water once established</li>
+                    </ul>
+                </div>
+                <div class="spacing-card">
+                    <h4>Shade Tolerant</h4>
+                    <p>Liriope, Clivias, Ferns</p>
+                    <ul>
+                        <li>Filtered light preferred</li>
+                        <li>Keep soil moist</li>
+                        <li>Protection from hot afternoon sun</li>
+                    </ul>
+                </div>
+                <div class="spacing-card">
+                    <h4>Native Plants</h4>
+                    <p>Kangaroo Paw, Grevilleas</p>
+                    <ul>
+                        <li>Low water once established</li>
+                        <li>Native-specific fertiliser</li>
+                        <li>Minimal pruning needed</li>
+                    </ul>
+                </div>
+                <div class="spacing-card">
+                    <h4>Feature Plants</h4>
+                    <p>Standard roses, Feature trees</p>
+                    <ul>
+                        <li>Regular feeding schedule</li>
+                        <li>May need staking initially</li>
+                        <li>Pruning for shape</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Soil Profile & Mulch Layers</h2>
+            <div class="soil-layers">
+                <div class="layer-item">
+                    <strong>Top Layer:</strong> Premium Mulch (75-100mm) - Moisture retention & weed suppression
+                </div>
+                <div class="layer-item">
+                    <strong>Plant Level:</strong> Quality Topsoil Mix - Root growth zone
+                </div>
+                <div class="layer-item">
+                    <strong>Amendment Layer:</strong> Compost & Fertilizer - Nutrient supply
+                </div>
+                <div class="layer-item">
+                    <strong>Base Layer:</strong> Improved Original Soil - Drainage & stability
+                </div>
+            </div>
+
+            <h2>Ongoing Maintenance Schedule</h2>
+            <table class="maintenance-schedule">
+                <thead>
+                    <tr>
+                        <th>Timeframe</th>
+                        <th>Task</th>
+                        <th>Details</th>
+                        <th>Importance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Weekly</strong></td>
+                        <td>Watering & inspection</td>
+                        <td>Check moisture, look for problems</td>
+                        <td>Critical first month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly</strong></td>
+                        <td>Weed control</td>
+                        <td>Remove before seeding</td>
+                        <td>Prevents competition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3 Months</strong></td>
+                        <td>First feed</td>
+                        <td>Liquid fertiliser application</td>
+                        <td>Boosts growth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6 Months</strong></td>
+                        <td>Mulch top-up</td>
+                        <td>Add 25-50mm fresh mulch</td>
+                        <td>Maintains benefits</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Annually</strong></td>
+                        <td>Major maintenance</td>
+                        <td>Pruning, soil improvement</td>
+                        <td>Long-term health</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Establishment Timeline</h2>
+            <div class="timeline-bar">
+                <div class="timeline-point">
+                    <div class="timeline-week">Week 1-2</div>
+                    <div>Settling in<br>Daily water</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-week">Week 3-4</div>
+                    <div>Root growth<br>New shoots</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-week">Month 2-3</div>
+                    <div>Active growth<br>First flowers</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-week">Month 6+</div>
+                    <div>Established<br>Full display</div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Problem Prevention</h2>
+            <div class="two-column">
+                <div class="care-card">
+                    <h4>Common Issues</h4>
+                    <ul>
+                        <li><strong>Yellowing:</strong> Often overwatering</li>
+                        <li><strong>Wilting:</strong> Check soil moisture</li>
+                        <li><strong>No growth:</strong> May need fertiliser</li>
+                        <li><strong>Pest damage:</strong> Inspect regularly</li>
+                    </ul>
+                </div>
+                <div class="care-card">
+                    <h4>Success Tips</h4>
+                    <ul>
+                        <li>Water deeply, less frequently</li>
+                        <li>Keep mulch away from stems</li>
+                        <li>Deadhead flowers regularly</li>
+                        <li>Feed during growing season</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ First Month Critical:</strong> Most plant losses occur in the first 4 weeks due to inadequate watering. Set reminders, check soil moisture daily, and don't let new plants dry out completely. Once established, they'll be much more resilient.
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Perth Seasonal Care Calendar</h2>
+            <div class="planting-guide">
+                <p><strong>Spring (Sep-Nov):</strong> Peak growth season in Perth - increase feeding, watch for aphids and caterpillars, deadhead flowers. Perfect planting time before summer heat.</p>
+                <p><strong>Summer (Dec-Feb):</strong> Critical watering period with temps 35-42°C. Deep watering within roster days, maintain 100mm mulch layer, avoid planting in extreme heat.</p>
+                <p><strong>Autumn (Mar-May):</strong> Best planting season for Perth gardens. Reduce watering as temperatures drop, plant natives and Mediterranean species.</p>
+                <p><strong>Winter (Jun-Aug):</strong> Perth's rainy season (avg 130mm/month). Turn off reticulation during winter sprinkler ban, major pruning time, treat moss and fungal issues.</p>
+            </div>
+
+            <h2>Material Sourcing - Perth Suppliers</h2>
+            <div class="info-box">
+                <strong>Where to source quality materials:</strong>
+                <ul>
+                    <li><strong>Soil & Mulch:</strong> Soils Ain't Soils (multiple locations), Baileys Fertilisers, The Mulch Centre</li>
+                    <li><strong>Plants:</strong> Zanthorrea Nursery (natives), Dawsons Garden Centre, Waldecks, Benara Nurseries</li>
+                    <li><strong>Irrigation:</strong> Total Eden, Reece Irrigation, Bunnings (basic supplies)</li>
+                    <li><strong>Garden Supplies:</strong> Bunnings Warehouse, City Farmers, Garden City Hardware</li>
+                </ul>
+                <p style="margin-top: 10px;"><em>Note: Product availability may vary seasonally. Native plants best sourced autumn-spring.</em></p>
+            </div>
+
+            <div class="success-box">
+                <strong>💚 Pro Tips:</strong>
+                <ul>
+                    <li>Group plants with similar water needs together</li>
+                    <li>Morning watering reduces disease risk</li>
+                    <li>A thick mulch layer saves water and time on weeding</li>
+                    <li>Regular small feeds better than occasional heavy feeding</li>
+                    <li>Take photos now to track your garden's transformation!</li>
+                </ul>
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Garden Design & Renovation Specialists Perth Metro • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest & Disease Treatment | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --danger: #F44336;
+            --info: #2196F3;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .alert-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .treatment-card {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 4px solid var(--dark-green);
+        }
+
+        .treatment-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .pest-type {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 10px;
+            align-items: start;
+            padding: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .pest-icon {
+            background: var(--danger);
+            color: white;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .disease-icon {
+            background: var(--warning);
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(90deg, var(--cream) 0%, white 100%);
+            border-radius: 8px;
+        }
+
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-day {
+            background: var(--dark-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 10pt;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .safety-card {
+            background: white;
+            border: 2px solid var(--warning);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .safety-icon {
+            font-size: 20pt;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .identification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .identification-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .identification-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .identification-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Pest & Disease Treatment</h1>
+                <p class="subtitle">Post-Treatment Care & Safety Guidelines</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="success-box">
+                <strong>✓ Treatment Applied:</strong> Your lawn/garden has been professionally treated for pest and/or disease issues. Proper aftercare ensures treatment effectiveness and family safety.
+            </div>
+
+            <h2>Safety First - Withholding Periods</h2>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-icon">👨‍👩‍👧‍👦</div>
+                    <strong>Children & Pets</strong>
+                    <p>Keep off treated areas for 48-72 hours</p>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">💧</div>
+                    <strong>Watering</strong>
+                    <p>Follow specific instructions (varies by treatment)</p>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">✂️</div>
+                    <strong>Mowing</strong>
+                    <p>Wait 3-5 days after treatment</p>
+                </div>
+            </div>
+
+            <div class="danger-box">
+                <strong>⚠️ IMPORTANT:</strong> Do NOT water for 24 hours after foliar treatments unless specifically instructed. Rainfall within 24 hours may reduce effectiveness - contact us if heavy rain occurs.
+            </div>
+
+            <h2>Common Perth Lawn Pests We Treat</h2>
+            <div class="pest-type">
+                <div class="pest-icon">GRUBS</div>
+                <div>
+                    <strong>African Black Beetle, Army Worm, White Curl Grubs</strong>
+                    <p>Damage: Brown patches, easily pulled turf. Most active in Perth during spring (Sep-Nov) and autumn (Mar-May)</p>
+                </div>
+                <div>
+                    <p>Treatment: Soil drench insecticide</p>
+                    <p>Recovery: 2-3 weeks</p>
+                </div>
+            </div>
+            <div class="pest-type">
+                <div class="pest-icon">MITES</div>
+                <div>
+                    <strong>Couch Mite</strong>
+                    <p>Damage: Yellowing, stunted growth. Common in Perth's warm, dry conditions (Dec-Mar)</p>
+                </div>
+                <div>
+                    <p>Treatment: Miticide spray</p>
+                    <p>Recovery: 1-2 weeks</p>
+                </div>
+            </div>
+            <div class="pest-type">
+                <div class="pest-icon">ANTS</div>
+                <div>
+                    <strong>Various Species</strong>
+                    <p>Damage: Mounds, root damage</p>
+                </div>
+                <div>
+                    <p>Treatment: Granular bait/spray</p>
+                    <p>Control: 1-2 weeks</p>
+                </div>
+            </div>
+
+            <h2>Common Perth Lawn Diseases We Treat</h2>
+            <div class="pest-type">
+                <div class="disease-icon">FUNGAL</div>
+                <div>
+                    <strong>Dollar Spot, Brown Patch, Winter Fusarium</strong>
+                    <p>Symptoms: Circular dead patches. Winter Fusarium common in Perth's wet winters (Jun-Aug)</p>
+                </div>
+                <div>
+                    <p>Treatment: Fungicide application</p>
+                    <p>Recovery: 2-4 weeks</p>
+                </div>
+            </div>
+            <div class="pest-type">
+                <div class="disease-icon">ROOT</div>
+                <div>
+                    <strong>Spring Dead Spot</strong>
+                    <p>Symptoms: Dead patches appearing in Perth spring (Sep-Oct) after winter dormancy</p>
+                </div>
+                <div>
+                    <p>Treatment: Preventative fungicide</p>
+                    <p>Recovery: Season-long</p>
+                </div>
+            </div>
+            <div class="pest-type">
+                <div class="disease-icon">LEAF</div>
+                <div>
+                    <strong>Leaf Spot, Rust</strong>
+                    <p>Symptoms: Spotted/orange leaves</p>
+                </div>
+                <div>
+                    <p>Treatment: Foliar fungicide</p>
+                    <p>Recovery: 1-3 weeks</p>
+                </div>
+            </div>
+
+            <h2>Treatment Recovery Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-day">Day 1-3</div>
+                    <div>Product absorption<br>Keep off lawn</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">Day 4-7</div>
+                    <div>Pest death<br>Initial recovery</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">Week 2-3</div>
+                    <div>New growth<br>Color returns</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">Week 4+</div>
+                    <div>Full recovery<br>Monitor health</div>
+                </div>
+            </div>
+
+            <h2>Post-Treatment Care Instructions</h2>
+            <div class="two-column">
+                <div class="treatment-card">
+                    <h4>First 48 Hours</h4>
+                    <ul>
+                        <li>Keep people & pets off treated areas</li>
+                        <li>Don't water (unless instructed)</li>
+                        <li>Leave clippings on lawn</li>
+                        <li>Monitor for rain</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <h4>Days 3-7</h4>
+                    <ul>
+                        <li>Resume normal watering</li>
+                        <li>Light foot traffic okay</li>
+                        <li>Can mow after day 5</li>
+                        <li>Watch for improvement</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <h4>Week 2-3</h4>
+                    <ul>
+                        <li>Apply fertiliser if recommended</li>
+                        <li>Increase watering for recovery</li>
+                        <li>Report any ongoing issues</li>
+                        <li>Schedule follow-up if needed</li>
+                    </ul>
+                </div>
+                <div class="treatment-card">
+                    <h4>Ongoing Prevention</h4>
+                    <ul>
+                        <li>Maintain proper mowing height</li>
+                        <li>Water deeply but infrequently</li>
+                        <li>Regular fertilization program</li>
+                        <li>Good drainage essential</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Signs Treatment Is Working</h2>
+            <table class="identification-table">
+                <thead>
+                    <tr>
+                        <th>Timeframe</th>
+                        <th>Pest Treatment</th>
+                        <th>Disease Treatment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>24-48 hours</td>
+                        <td>Dead pests visible, reduced activity</td>
+                        <td>Disease spread stops</td>
+                    </tr>
+                    <tr>
+                        <td>3-7 days</td>
+                        <td>No new damage appearing</td>
+                        <td>Affected areas stop expanding</td>
+                    </tr>
+                    <tr>
+                        <td>1-2 weeks</td>
+                        <td>New growth in damaged areas</td>
+                        <td>Color improvement begins</td>
+                    </tr>
+                    <tr>
+                        <td>3-4 weeks</td>
+                        <td>Full recovery of affected areas</td>
+                        <td>Complete green-up</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>When to Call Us</h2>
+            <div class="alert-box">
+                <strong>Contact Privium immediately if:</strong>
+                <ul>
+                    <li>Heavy rain occurs within 24 hours of treatment</li>
+                    <li>Pets or children were exposed to treated areas</li>
+                    <li>No improvement seen after 7 days</li>
+                    <li>Problem appears to be spreading</li>
+                    <li>New pests or diseases appear</li>
+                </ul>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Prevention Tips</h2>
+            <div class="two-column">
+                <div class="treatment-card">
+                    <h4>Cultural Practices</h4>
+                    <p><strong>Proper Mowing:</strong> Never remove more than 1/3 of leaf blade</p>
+                    <p><strong>Sharp Blades:</strong> Clean cuts reduce disease entry</p>
+                    <p><strong>Thatch Control:</strong> Dethatch when layer exceeds 15mm</p>
+                </div>
+                <div class="treatment-card">
+                    <h4>Environmental Management</h4>
+                    <p><strong>Air Flow:</strong> Prune shrubs for circulation</p>
+                    <p><strong>Drainage:</strong> Fix pooling water issues</p>
+                    <p><strong>Shade:</strong> Consider shade-tolerant varieties</p>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Integrated Pest Management (IPM)</h2>
+            <div class="info-box">
+                <strong>Our Approach:</strong> We use IPM principles combining cultural, biological, and chemical controls to minimise pesticide use while maintaining lawn health. Regular monitoring and preventative treatments are more effective than reactive approaches.
+            </div>
+
+            <div class="success-box">
+                <strong>💚 Remember:</strong> A healthy lawn is the best defence against pests and diseases. Our treatment today addresses the immediate problem, but ongoing proper care prevents future issues. Follow our maintenance recommendations for long-term lawn health.
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Professional Pest & Disease Management Perth Metro • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

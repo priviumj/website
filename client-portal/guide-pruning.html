@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruning & Trimming Aftercare | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .pruning-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .pruning-card {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 4px solid var(--dark-green);
+        }
+
+        .pruning-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .plant-card {
+            background: white;
+            border: 1px solid var(--light-green);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .plant-icon {
+            font-size: 20pt;
+            margin-bottom: 5px;
+        }
+
+        .recovery-timeline {
+            background: linear-gradient(90deg, var(--cream) 0%, white 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .timeline-period {
+            background: var(--dark-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .aftercare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .aftercare-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .aftercare-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .aftercare-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .dos {
+            background: #E8F5E9;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--success);
+        }
+
+        .donts {
+            background: #FFEBEE;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #F44336;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .seasonal-guide {
+            background: white;
+            border: 2px solid var(--tan);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .season-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .season-label {
+            background: var(--tan);
+            color: white;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .wound-care {
+            background: #FFF8E1;
+            border: 2px solid var(--warning);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Pruning & Trimming Aftercare</h1>
+                <p class="subtitle">Plant Recovery & Maintenance Guide</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="success-box">
+                <strong>✂️ Service Completed:</strong> Your plants have been professionally pruned/trimmed to promote healthy growth, improve shape, and enhance flowering. Proper aftercare ensures optimal recovery and vigorous new growth.
+            </div>
+
+            <h2>Types of Pruning Performed</h2>
+            <div class="pruning-types">
+                <div class="pruning-card">
+                    <h4>Maintenance Pruning</h4>
+                    <ul>
+                        <li>Dead-heading spent flowers</li>
+                        <li>Removing dead/damaged branches</li>
+                        <li>Light shaping for aesthetics</li>
+                        <li>Recovery: 1-2 weeks</li>
+                    </ul>
+                </div>
+                <div class="pruning-card">
+                    <h4>Formative Pruning</h4>
+                    <ul>
+                        <li>Shaping young plants</li>
+                        <li>Establishing structure</li>
+                        <li>Encouraging branching</li>
+                        <li>Recovery: 2-4 weeks</li>
+                    </ul>
+                </div>
+                <div class="pruning-card">
+                    <h4>Rejuvenation Pruning</h4>
+                    <ul>
+                        <li>Hard cutback of overgrown plants</li>
+                        <li>Renewal of old shrubs</li>
+                        <li>Major size reduction</li>
+                        <li>Recovery: 4-8 weeks</li>
+                    </ul>
+                </div>
+                <div class="pruning-card">
+                    <h4>Hedge Trimming</h4>
+                    <ul>
+                        <li>Formal shape maintenance</li>
+                        <li>Density improvement</li>
+                        <li>Height/width control</li>
+                        <li>Recovery: 2-3 weeks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Common Plants & Recovery Times</h2>
+            <div class="plant-grid">
+                <div class="plant-card">
+                    <div class="plant-icon">🌹</div>
+                    <strong>Roses</strong>
+                    <p>4-6 weeks</p>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-icon">🌿</div>
+                    <strong>Hedges</strong>
+                    <p>2-3 weeks</p>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-icon">🌺</div>
+                    <strong>Hibiscus</strong>
+                    <p>3-4 weeks</p>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-icon">🌳</div>
+                    <strong>Fruit Trees</strong>
+                    <p>4-8 weeks</p>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-icon">🌸</div>
+                    <strong>Natives</strong>
+                    <p>2-4 weeks</p>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-icon">🌾</div>
+                    <strong>Grasses</strong>
+                    <p>1-2 weeks</p>
+                </div>
+            </div>
+
+            <h2>Post-Pruning Recovery Timeline</h2>
+            <div class="recovery-timeline">
+                <div class="timeline-row">
+                    <div class="timeline-period">Week 1</div>
+                    <div>Wound healing begins, increased water needs, watch for stress signs</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-period">Week 2-3</div>
+                    <div>New buds form, first shoots appear, continue regular watering</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-period">Week 4-6</div>
+                    <div>Vigorous new growth, may need shaping, consider fertilizing</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-period">Week 8+</div>
+                    <div>Full recovery, normal growth pattern, regular maintenance resumes</div>
+                </div>
+            </div>
+
+            <h2>Critical Aftercare Instructions</h2>
+            <table class="aftercare-table">
+                <thead>
+                    <tr>
+                        <th>Care Aspect</th>
+                        <th>First 2 Weeks</th>
+                        <th>Weeks 3-4</th>
+                        <th>After 1 Month</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Watering</strong></td>
+                        <td>Deep water 2-3x weekly</td>
+                        <td>Regular deep watering</td>
+                        <td>Normal schedule</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fertilizing</strong></td>
+                        <td>Wait - plant stressed</td>
+                        <td>Light liquid feed</td>
+                        <td>Full strength fertiliser</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mulching</strong></td>
+                        <td>Apply 75mm layer</td>
+                        <td>Maintain mulch</td>
+                        <td>Top up as needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pest Watch</strong></td>
+                        <td>Daily inspection</td>
+                        <td>Weekly check</td>
+                        <td>Regular monitoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sun Protection</strong></td>
+                        <td>Shade if wilting</td>
+                        <td>Monitor stress</td>
+                        <td>Normal exposure</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Do's and Don'ts After Pruning</h2>
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✓ DO:</h3>
+                    <ul>
+                        <li>Water deeply and regularly</li>
+                        <li>Apply fresh mulch</li>
+                        <li>Monitor for pests/disease</li>
+                        <li>Remove water shoots</li>
+                        <li>Protect from extreme weather</li>
+                        <li>Be patient with recovery</li>
+                    </ul>
+                </div>
+                <div class="donts">
+                    <h3>✗ DON'T:</h3>
+                    <ul>
+                        <li>Fertilize immediately</li>
+                        <li>Prune again too soon</li>
+                        <li>Let soil dry out</li>
+                        <li>Apply wound paint</li>
+                        <li>Panic at leaf drop</li>
+                        <li>Overwater (causes rot)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Large Branch Wound Care</h2>
+            <div class="wound-care">
+                <h3>For Cuts Over 50mm Diameter:</h3>
+                <p><strong>Natural Healing Process:</strong> Trees seal wounds naturally - wound paint is not recommended as it can trap moisture and disease.</p>
+                <ul>
+                    <li>Clean cuts heal fastest</li>
+                    <li>Callus tissue forms from edges</li>
+                    <li>Complete sealing: 1-3 years depending on size</li>
+                    <li>Watch for signs of decay or pest entry</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Warning Signs:</strong> Weeping sap, fungal growth, hollow sounds, or pest activity require professional assessment.</p>
+            </div>
+
+            <h2>Seasonal Pruning Calendar - Perth</h2>
+            <div class="seasonal-guide">
+                <div class="season-row">
+                    <div class="season-label">SUMMER</div>
+                    <div><strong>Light only:</strong> Dead-heading, storm damage</div>
+                    <div><em>Avoid heavy pruning - heat stress risk</em></div>
+                </div>
+                <div class="season-row">
+                    <div class="season-label">AUTUMN</div>
+                    <div><strong>Ideal for:</strong> Natives, hedges</div>
+                    <div><em>Prepare plants for winter</em></div>
+                </div>
+                <div class="season-row">
+                    <div class="season-label">WINTER</div>
+                    <div><strong>Best time:</strong> Roses, deciduous plants</div>
+                    <div><em>Major pruning while dormant</em></div>
+                </div>
+                <div class="season-row">
+                    <div class="season-label">SPRING</div>
+                    <div><strong>Post-bloom:</strong> Spring flowering shrubs</div>
+                    <div><em>Shape after flowering finishes</em></div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>New Growth Management</h2>
+            <div class="info-box">
+                <strong>Water Shoots & Suckers:</strong> Vigorous vertical shoots often appear after pruning. Remove these promptly by cutting at the base - they drain energy from desired growth. For roses, remove any growth below the graft union.
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>When to Call for Follow-Up</h2>
+            <div class="warning-box">
+                <strong>Contact Privium if you notice:</strong>
+                <ul>
+                    <li>No new growth after 4 weeks</li>
+                    <li>Extensive die-back from cut points</li>
+                    <li>Signs of disease (spots, cankers, oozing)</li>
+                    <li>Pest infestation at wound sites</li>
+                    <li>Structural concerns (splitting, leaning)</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>💚 Pro Tip:</strong> The "3 D's Rule" - always remove Dead, Diseased, and Damaged growth first. Regular light pruning is less stressful than occasional heavy pruning. Most plants benefit from pruning just after their main flowering period. Feed plants 2-3 weeks after pruning to boost recovery.
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Professional Pruning & Plant Care • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

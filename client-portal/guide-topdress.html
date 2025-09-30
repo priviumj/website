@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topdressing Aftercare Guide | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--dark-green);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .alert-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            margin: 15px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-badge {
+            background: var(--tan);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 10pt;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .timeline-content {
+            background: var(--cream);
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid var(--light-green);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .info-card {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--light-green);
+        }
+
+        .benefit-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 24pt;
+            margin-bottom: 5px;
+        }
+
+        .benefit-title {
+            font-weight: 600;
+            color: var(--dark-green);
+            font-size: 10pt;
+            margin-bottom: 3px;
+        }
+
+        .benefit-text {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .schedule-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 6px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .dos {
+            background: #E8F5E9;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--success);
+        }
+
+        .donts {
+            background: #FFEBEE;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #F44336;
+        }
+
+        .visual-guide {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .photo-item {
+            text-align: center;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 80px;
+            background: var(--cream);
+            border: 1px dashed #999;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .photo-label {
+            font-size: 9pt;
+            color: var(--dark-green);
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Topdressing Service</h1>
+                <p class="subtitle">Aftercare Guide for Lawn Leveling & Improvement</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <strong>ℹ️ Service Completed:</strong> Your lawn has been topdressed with premium sandy loam to level uneven areas, improve soil quality, and enhance drainage. The existing grass was not scalped, allowing for faster recovery through the topdressing layer.
+            </div>
+
+            <h2>About Your Topdressing Service</h2>
+            <p>We've applied a 5-10mm layer of quality sandy loam across your lawn. This topdressing will level minor undulations, improve soil structure, enhance nutrient availability, and promote healthier root development. Since your grass wasn't scalped first, recovery is typically faster.</p>
+
+            <div class="three-column">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📏</div>
+                    <div class="benefit-title">Leveling</div>
+                    <div class="benefit-text">Smooths bumps and fills hollows</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <div class="benefit-title">Soil Health</div>
+                    <div class="benefit-text">Improves structure & nutrients</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💧</div>
+                    <div class="benefit-title">Drainage</div>
+                    <div class="benefit-text">Better water infiltration</div>
+                </div>
+            </div>
+
+            <h2>Recovery Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge">Day 1-3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Initial Settlement</div>
+                        <ul>
+                            <li>Sandy layer visible on lawn surface</li>
+                            <li>Grass blades poking through sand</li>
+                            <li>Begin watering to settle topdressing</li>
+                            <li>Avoid foot traffic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge">Day 4-7</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Integration Phase</div>
+                        <ul>
+                            <li>Sand settling between grass plants</li>
+                            <li>Grass growing through topdressing</li>
+                            <li>Continue regular watering</li>
+                            <li>Very light foot traffic only</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge">Week 2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Active Growth</div>
+                        <ul>
+                            <li>Most grass emerged through sand</li>
+                            <li>Topdressing largely integrated</li>
+                            <li>Can mow if grass reaches 50mm+</li>
+                            <li>Light use permitted</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge">Week 3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Full Recovery</div>
+                        <ul>
+                            <li>Lawn fully recovered</li>
+                            <li>Level surface achieved</li>
+                            <li>Normal mowing schedule</li>
+                            <li>Resume full use</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Watering Schedule</h2>
+            <div class="alert-box">
+                <strong>⚠️ Important:</strong> Proper watering helps the topdressing settle and integrate while keeping grass growing actively through the sand layer.
+            </div>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Frequency</th>
+                        <th>Duration</th>
+                        <th>Best Time</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Day 1-3</strong></td>
+                        <td>2x daily</td>
+                        <td>10-12 min</td>
+                        <td>Morning & afternoon</td>
+                        <td>Settle topdressing, keep moist</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Day 4-7</strong></td>
+                        <td>Daily</td>
+                        <td>15 min</td>
+                        <td>Early morning</td>
+                        <td>Encourage growth through sand</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 2</strong></td>
+                        <td>Every 2 days</td>
+                        <td>20 min</td>
+                        <td>Early morning</td>
+                        <td>Deep watering for roots</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 3+</strong></td>
+                        <td>2-3x weekly</td>
+                        <td>25-30 min</td>
+                        <td>Early morning</td>
+                        <td>Normal maintenance</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Mowing Guidelines</h2>
+            <div class="info-card">
+                <h3>First Mow After Topdressing</h3>
+                <p><strong>When:</strong> Only when grass reaches 50mm height (typically 10-14 days)</p>
+                <p><strong>Height:</strong> Set mower high - remove only top third of grass blade</p>
+                <p><strong>Important:</strong> Use sharp blades to avoid pulling grass through sand</p>
+                <p><strong>Direction:</strong> Mow in different direction than usual to help level sand</p>
+            </div>
+
+            <h2>Do's and Don'ts</h2>
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✓ DO:</h3>
+                    <ul>
+                        <li>Water gently to avoid washing sand</li>
+                        <li>Allow sand to settle naturally</li>
+                        <li>Wait for proper height before mowing</li>
+                        <li>Apply wetting agent if sand repels water</li>
+                        <li>Hand-water any dry patches</li>
+                        <li>Be patient with the process</li>
+                    </ul>
+                </div>
+                <div class="donts">
+                    <h3>✗ DON'T:</h3>
+                    <ul>
+                        <li>Walk on lawn for first week</li>
+                        <li>Rake or brush the topdressing</li>
+                        <li>Mow too early or too low</li>
+                        <li>Use high water pressure</li>
+                        <li>Apply fertiliser for 2 weeks</li>
+                        <li>Allow pets on lawn initially</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="visual-guide">
+                <h3>Visual Progress Guide</h3>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <div class="photo-placeholder">Sandy Surface</div>
+                        <div class="photo-label">Day 1</div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">Grass Emerging</div>
+                        <div class="photo-label">Week 1</div>
+                    </div>
+                    <div class="photo-item">
+                        <div class="photo-placeholder">Fully Integrated</div>
+                        <div class="photo-label">Week 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Special Considerations</h2>
+            <div class="two-column">
+                <div class="info-card">
+                    <h3>Low Spots</h3>
+                    <p>Some areas may need additional topdressing after initial settlement. We can arrange a follow-up application if needed after 3 weeks.</p>
+                </div>
+                <div class="info-card">
+                    <h3>High Traffic Areas</h3>
+                    <p>Keep children and pets off high-wear areas for at least 10 days to allow proper integration and avoid creating depressions.</p>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Fertilizer Application</h2>
+            <div class="info-card">
+                <p><strong>Week 2:</strong> Light liquid fertiliser or seaweed solution (half strength)</p>
+                <p><strong>Week 3:</strong> Standard granular fertiliser at recommended rates</p>
+                <p><strong>Ongoing:</strong> Resume normal fertilizing schedule</p>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Common Issues & Solutions</h2>
+            <div class="alert-box">
+                <p><strong>Sand washing into beds:</strong> Create small barrier with garden edging until settled</p>
+                <p><strong>Patchy growth:</strong> Usually indicates uneven watering - adjust sprinklers</p>
+                <p><strong>Sand not integrating:</strong> May need light brushing after 2 weeks (call us first)</p>
+                <p><strong>Water pooling:</strong> Reduce watering duration, increase frequency</p>
+            </div>
+
+            <div class="success-box">
+                <strong>💡 Pro Tip:</strong> Topdressing works best with consistent moisture. The sand acts like a mulch, helping retain water and moderate soil temperature. Your lawn will emerge stronger, more level, and healthier than before!
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Professional Lawn Care Perth Metro • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

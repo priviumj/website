@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Test Results & Recommendations | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --danger: #F44336;
+            --info: #2196F3;
+            --soil: #8B4513;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .results-table th {
+            background: var(--soil);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .results-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .results-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .ph-scale {
+            background: linear-gradient(90deg,
+                #FF0000 0%,
+                #FF8C00 14%,
+                #FFD700 28%,
+                #90EE90 42%,
+                #228B22 56%,
+                #4169E1 70%,
+                #8A2BE2 85%,
+                #4B0082 100%);
+            height: 30px;
+            border-radius: 5px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .ph-marker {
+            position: absolute;
+            top: -10px;
+            width: 4px;
+            height: 50px;
+            background: black;
+        }
+
+        .ph-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 10pt;
+        }
+
+        .nutrient-bars {
+            margin: 15px 0;
+        }
+
+        .nutrient-item {
+            margin-bottom: 12px;
+        }
+
+        .nutrient-label {
+            display: grid;
+            grid-template-columns: 100px 1fr 80px;
+            gap: 10px;
+            margin-bottom: 3px;
+            font-size: 10pt;
+        }
+
+        .nutrient-bar {
+            height: 20px;
+            background: var(--gray);
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .nutrient-fill-low {
+            background: var(--danger);
+        }
+
+        .nutrient-fill-optimal {
+            background: var(--success);
+        }
+
+        .nutrient-fill-high {
+            background: var(--warning);
+        }
+
+        .nutrient-fill {
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        .recommendation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .recommendation-card {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 4px solid var(--soil);
+        }
+
+        .recommendation-card h4 {
+            color: var(--soil);
+            margin-bottom: 8px;
+        }
+
+        .treatment-plan {
+            background: white;
+            border: 2px solid var(--success);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: var(--cream);
+            border-radius: 5px;
+        }
+
+        .timeline-when {
+            background: var(--dark-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .soil-texture {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .texture-card {
+            background: white;
+            border: 2px solid var(--tan);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .texture-percentage {
+            font-size: 18pt;
+            font-weight: bold;
+            color: var(--soil);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .interpretation-guide {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Soil Test Results</h1>
+                <p class="subtitle">Analysis & Treatment Recommendations</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <strong>🔬 Professional Analysis Complete:</strong> Your soil has been scientifically tested to determine its chemical and physical properties. This report provides specific recommendations to optimise your lawn and garden health.
+            </div>
+
+            <h2>Your Soil Test Results Summary</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Your Result</th>
+                        <th>Optimal Range</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>pH Level</strong></td>
+                        <td>7.8</td>
+                        <td>6.0 - 7.0</td>
+                        <td style="color: var(--warning);">High - Alkaline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nitrogen (N)</strong></td>
+                        <td>Low</td>
+                        <td>Medium-High</td>
+                        <td style="color: var(--danger);">Deficient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phosphorus (P)</strong></td>
+                        <td>Medium</td>
+                        <td>Medium-High</td>
+                        <td style="color: var(--success);">Adequate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potassium (K)</strong></td>
+                        <td>Low</td>
+                        <td>Medium-High</td>
+                        <td style="color: var(--danger);">Deficient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organic Matter</strong></td>
+                        <td>2.1%</td>
+                        <td>3-5%</td>
+                        <td style="color: var(--warning);">Below Optimal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Salinity (EC)</strong></td>
+                        <td>0.8 dS/m</td>
+                        <td>&lt; 2.0 dS/m</td>
+                        <td style="color: var(--success);">Good</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>pH Scale - Your Soil Position</h2>
+            <div class="ph-scale">
+                <div class="ph-marker" style="left: 78%;"></div>
+            </div>
+            <div class="ph-labels">
+                <span>3.0<br>Very Acid</span>
+                <span>5.0<br>Acid</span>
+                <span>6.5<br>Ideal</span>
+                <span>7.0<br>Neutral</span>
+                <span>8.0<br>Alkaline</span>
+                <span>10.0<br>Very Alkaline</span>
+            </div>
+
+            <h2>Nutrient Levels Visualization</h2>
+            <div class="nutrient-bars">
+                <div class="nutrient-item">
+                    <div class="nutrient-label">
+                        <strong>Nitrogen</strong>
+                        <span>Essential for leaf growth and green color</span>
+                        <span style="color: var(--danger);">LOW</span>
+                    </div>
+                    <div class="nutrient-bar">
+                        <div class="nutrient-fill nutrient-fill-low" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="nutrient-item">
+                    <div class="nutrient-label">
+                        <strong>Phosphorus</strong>
+                        <span>Root development and flowering</span>
+                        <span style="color: var(--success);">ADEQUATE</span>
+                    </div>
+                    <div class="nutrient-bar">
+                        <div class="nutrient-fill nutrient-fill-optimal" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="nutrient-item">
+                    <div class="nutrient-label">
+                        <strong>Potassium</strong>
+                        <span>Disease resistance and drought tolerance</span>
+                        <span style="color: var(--danger);">LOW</span>
+                    </div>
+                    <div class="nutrient-bar">
+                        <div class="nutrient-fill nutrient-fill-low" style="width: 30%;"></div>
+                    </div>
+                </div>
+                <div class="nutrient-item">
+                    <div class="nutrient-label">
+                        <strong>Organic Matter</strong>
+                        <span>Soil structure and nutrient retention</span>
+                        <span style="color: var(--warning);">BELOW</span>
+                    </div>
+                    <div class="nutrient-bar">
+                        <div class="nutrient-fill nutrient-fill-high" style="width: 42%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Soil Texture Analysis</h2>
+            <div class="soil-texture">
+                <div class="texture-card">
+                    <div class="texture-percentage">65%</div>
+                    <strong>Sand</strong>
+                    <p>Good drainage</p>
+                </div>
+                <div class="texture-card">
+                    <div class="texture-percentage">25%</div>
+                    <strong>Silt</strong>
+                    <p>Nutrient retention</p>
+                </div>
+                <div class="texture-card">
+                    <div class="texture-percentage">10%</div>
+                    <strong>Clay</strong>
+                    <p>Water holding</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <strong>Soil Type: Sandy Loam</strong> - Good drainage with moderate nutrient retention. Benefits from organic matter additions and regular fertilization.
+            </div>
+
+            <h2>What Your Results Mean</h2>
+            <div class="interpretation-guide">
+                <h3>Key Issues Identified:</h3>
+                <ul>
+                    <li><strong>High pH (7.8):</strong> Reduces availability of iron and other micronutrients, causing yellowing</li>
+                    <li><strong>Low Nitrogen:</strong> Explains poor color and slow growth</li>
+                    <li><strong>Low Potassium:</strong> Increases susceptibility to disease and drought stress</li>
+                    <li><strong>Low Organic Matter:</strong> Reduces water retention and microbial activity</li>
+                </ul>
+            </div>
+
+            <h2>Treatment Recommendations</h2>
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h4>pH Correction</h4>
+                    <p><strong>Apply:</strong> Sulfur 2kg/100m²</p>
+                    <p><strong>Frequency:</strong> Every 3 months</p>
+                    <p><strong>Target:</strong> Reduce to 6.5-7.0</p>
+                    <p>Monitor with retesting in 6 months</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Nitrogen Boost</h4>
+                    <p><strong>Apply:</strong> High-N fertiliser (25-5-10)</p>
+                    <p><strong>Rate:</strong> 3kg/100m²</p>
+                    <p><strong>Frequency:</strong> Every 6-8 weeks</p>
+                    <p>Water in thoroughly after application</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Potassium Supplement</h4>
+                    <p><strong>Apply:</strong> Sulfate of Potash</p>
+                    <p><strong>Rate:</strong> 2kg/100m²</p>
+                    <p><strong>Timing:</strong> Spring and autumn</p>
+                    <p>Improves stress tolerance</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Organic Matter</h4>
+                    <p><strong>Apply:</strong> Compost topdressing</p>
+                    <p><strong>Depth:</strong> 10-15mm layer</p>
+                    <p><strong>Frequency:</strong> Annually</p>
+                    <p>Improves all soil properties</p>
+                </div>
+            </div>
+
+            <h2>12-Month Treatment Plan</h2>
+            <div class="treatment-plan">
+                <h3>Customized Schedule for Your Soil</h3>
+                <div class="timeline-item">
+                    <div class="timeline-when">IMMEDIATE</div>
+                    <div>Apply sulphur for pH correction + High-N fertiliser for colour improvement</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 2</div>
+                    <div>Second nitrogen application + Liquid iron for quick green-up</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 3</div>
+                    <div>Sulfate of potash application + Second sulphur treatment</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 4-5</div>
+                    <div>Continue regular fertilization program + Monitor improvement</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 6</div>
+                    <div>Retest soil pH + Adjust program based on results</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 9</div>
+                    <div>Apply compost topdressing + Third sulphur treatment if needed</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-when">MONTH 12</div>
+                    <div>Complete soil retest to measure improvement</div>
+                </div>
+            </div>
+
+            <h2>Expected Improvements Timeline</h2>
+            <div class="success-box">
+                <strong>With Proper Treatment You Should See:</strong>
+                <ul>
+                    <li><strong>2-3 weeks:</strong> Improved color from nitrogen application</li>
+                    <li><strong>4-6 weeks:</strong> Increased growth rate and density</li>
+                    <li><strong>2-3 months:</strong> Better drought tolerance from potassium</li>
+                    <li><strong>4-6 months:</strong> pH correction showing nutrient availability improvement</li>
+                    <li><strong>12 months:</strong> Overall soil health transformation</li>
+                </ul>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Additional Recommendations</h2>
+            <div class="warning-box">
+                <strong>Important Considerations:</strong>
+                <ul>
+                    <li>Apply products when rain is not expected for 24 hours</li>
+                    <li>Water in granular products within 24 hours of application</li>
+                    <li>Keep children and pets off treated areas for 48 hours</li>
+                    <li>Consider installing irrigation if hand watering - critical for sandy soils</li>
+                    <li>Mulch garden beds to improve moisture retention</li>
+                </ul>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Why Soil Testing Matters</h2>
+            <div class="info-box">
+                <p><strong>Saves Money:</strong> Apply only what your soil needs, avoiding waste</p>
+                <p><strong>Better Results:</strong> Targeted treatments work faster and more effectively</p>
+                <p><strong>Environmental:</strong> Prevents over-application and nutrient runoff</p>
+                <p><strong>Long-term Health:</strong> Builds sustainable soil fertility over time</p>
+            </div>
+
+            <div class="danger-box">
+                <strong>⚠️ Critical Action Required:</strong> Your high pH and low nitrogen levels are significantly impacting lawn health. Begin treatment immediately for best results. We recommend professional application for optimal coverage and effectiveness.
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Soil Testing & Treatment Specialists • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

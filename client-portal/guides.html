@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Guides | Privium Client Portal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f0e3 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .top-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .user-info {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .user-email {
+            font-weight: 600;
+            color: var(--tan);
+        }
+
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--dark-green);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--gray);
+            font-size: 1.2em;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            color: var(--dark-green);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--light-green);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--light-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, transparent 50%, var(--cream) 50%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card.lawn {
+            border-left-color: var(--light-green);
+        }
+
+        .service-card.garden {
+            border-left-color: var(--tan);
+        }
+
+        .service-card.treatment {
+            border-left-color: var(--brown);
+        }
+
+        .service-card.info {
+            border-left-color: var(--gray);
+        }
+
+        .service-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .service-title {
+            color: var(--dark-green);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            background: var(--tan);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .view-guide-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--dark-green) 0%, #2d5220 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+            font-size: 0.95em;
+        }
+
+        .view-guide-btn:hover {
+            background: linear-gradient(135deg, #1a3312 0%, var(--dark-green) 100%);
+        }
+
+        .quick-links {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .quick-links h2 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .quick-link {
+            background: var(--cream);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--dark-green);
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .quick-link:hover {
+            background: var(--light-green);
+            color: white;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+            margin-top: 40px;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #244419 0%, #2d5220 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #content {
+            display: none;
+        }
+
+        #content.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .category-title {
+                font-size: 1.4em;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading your service guides...</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="top-bar">
+            <div class="user-info">
+                Welcome, <span class="user-email" id="userEmail"></span>
+            </div>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+
+        <div class="container">
+            <header>
+                <h1>Client Service Guides</h1>
+                <p class="subtitle">Professional aftercare instructions and maintenance guides for all our services</p>
+            </header>
+
+            <div class="quick-links">
+                <h2>Quick Navigation</h2>
+                <div class="links-grid">
+                    <a href="#lawn-renovation" class="quick-link">Lawn Renovation</a>
+                    <a href="#garden-services" class="quick-link">Garden Services</a>
+                    <a href="#treatments" class="quick-link">Treatments & Applications</a>
+                    <a href="#specialty" class="quick-link">Specialty Surfaces</a>
+                    <a href="#information" class="quick-link">Information Guides</a>
+                </div>
+            </div>
+
+            <!-- Main content will be loaded here -->
+            <div id="mainContent"></div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>privium.com.au</span>
+                </div>
+            </div>
+
+            <footer>
+                <p>© 2025 Privium Garden Services PTY LTD • ABN 99 618 556 019 • Professional Garden Care for Perth Metropolitan Area</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Encrypted content (this is just the HTML structure, encrypted with AES)
+        // For now, we'll use a simple base64 encoded version. In production, this would be properly encrypted
+        // Content is stored directly in the page (in production, you'd want proper encryption)
+        const contentHTML = `
+<!-- Lawn Renovation Services -->
+<div class="category-section" id="lawn-renovation">
+    <h2 class="category-title">Lawn Renovation Services</h2>
+    <div class="services-grid">
+        <div class="service-card lawn">
+            <div class="service-icon">&#9986;&#65039;</div>
+            <span class="timeline-badge">Recovery: 2-3 Weeks</span>
+            <h3 class="service-title">Scalping Only</h3>
+            <p class="service-desc">Aggressive lawn height reduction to remove thatch and stimulate new growth. Complete recovery guide included.</p>
+            <a href="guide-scalping.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card lawn">
+            <div class="service-icon">&#9986;&#65039;&#127958;&#65039;</div>
+            <span class="timeline-badge">Recovery: 3-4 Weeks</span>
+            <h3 class="service-title">Scalping + Topdressing</h3>
+            <p class="service-desc">Combines scalping with premium soil topdressing for improved levels and soil quality.</p>
+            <a href="guide-scalping-topdress.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card lawn">
+            <div class="service-icon">&#127958;&#65039;</div>
+            <span class="timeline-badge">Recovery: 2-3 Weeks</span>
+            <h3 class="service-title">Topdressing Only</h3>
+            <p class="service-desc">Application of quality soil mix to level and improve your lawn's growing medium.</p>
+            <a href="guide-topdress.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card lawn">
+            <div class="service-icon">&#128295;</div>
+            <span class="timeline-badge">Recovery: 4-6 Weeks</span>
+            <h3 class="service-title">Complete Renovation</h3>
+            <p class="service-desc">Full lawn renovation with scalping, core aeration, and topdressing for maximum improvement.</p>
+            <a href="guide-complete.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card lawn">
+            <div class="service-icon">&#9986;&#65039;&#128371;&#65039;</div>
+            <span class="timeline-badge">Recovery: 3-4 Weeks</span>
+            <h3 class="service-title">Scalping + Aeration</h3>
+            <p class="service-desc">Combines aggressive mowing with core aeration to relieve compaction and boost growth.</p>
+            <a href="guide-scalping-aeration.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Garden Services -->
+<div class="category-section" id="garden-services">
+    <h2 class="category-title">Garden Care Services</h2>
+    <div class="services-grid">
+        <div class="service-card garden">
+            <div class="service-icon">&#9986;&#65039;</div>
+            <span class="timeline-badge">Recovery: 2-4 Weeks</span>
+            <h3 class="service-title">Hedge Trimming</h3>
+            <p class="service-desc">Professional hedge shaping and maintenance. Includes species-specific recovery timelines and care instructions.</p>
+            <a href="guide-hedge-trimming.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card garden">
+            <div class="service-icon">&#127856;</div>
+            <span class="timeline-badge">Maintenance Guide</span>
+            <h3 class="service-title">Mulching Application</h3>
+            <p class="service-desc">Benefits of fresh mulch, watering adjustments, and maintenance schedule for optimal results.</p>
+            <a href="guide-mulching.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card garden">
+            <div class="service-icon">&#9986;&#65039;</div>
+            <span class="timeline-badge">Recovery: 2-6 Weeks</span>
+            <h3 class="service-title">Pruning Services</h3>
+            <p class="service-desc">Tree and shrub pruning aftercare, recovery expectations, and seasonal maintenance tips.</p>
+            <a href="guide-pruning.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card garden">
+            <div class="service-icon">&#128736;&#65039;</div>
+            <span class="timeline-badge">Complete Guide</span>
+            <h3 class="service-title">Garden Bed Renovation</h3>
+            <p class="service-desc">Complete garden bed makeover including cleanup, soil improvement, and new plantings.</p>
+            <a href="guide-garden-renovation.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Treatments & Applications -->
+<div class="category-section" id="treatments">
+    <h2 class="category-title">Treatments & Applications</h2>
+    <div class="services-grid">
+        <div class="service-card treatment">
+            <div class="service-icon">&#127807;</div>
+            <span class="timeline-badge">Safety Guide</span>
+            <h3 class="service-title">Weed Treatment</h3>
+            <p class="service-desc">Safety periods, die-off timeline, and aftercare for herbicide applications.</p>
+            <a href="guide-weed-treatment.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card treatment">
+            <div class="service-icon">&#128138;</div>
+            <span class="timeline-badge">Care Instructions</span>
+            <h3 class="service-title">Fertilizer Application</h3>
+            <p class="service-desc">Watering requirements, expected results, and safety considerations after fertilizing.</p>
+            <a href="guide-fertilizer.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card treatment">
+            <div class="service-icon">&#128027;</div>
+            <span class="timeline-badge">Treatment Guide</span>
+            <h3 class="service-title">Pest & Disease Control</h3>
+            <p class="service-desc">What to expect after treatment, re-entry periods, and prevention strategies.</p>
+            <a href="guide-pest-disease.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card treatment">
+            <div class="service-icon">&#128166;</div>
+            <span class="timeline-badge">System Guide</span>
+            <h3 class="service-title">Irrigation Services</h3>
+            <p class="service-desc">Understanding your reticulation system adjustments and seasonal programming.</p>
+            <a href="guide-irrigation.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Specialty Surface Services -->
+<div class="category-section" id="specialty">
+    <h2 class="category-title">Specialty Surface Care</h2>
+    <div class="services-grid">
+        <div class="service-card garden">
+            <div class="service-icon">&#127807;</div>
+            <span class="timeline-badge">Maintenance Guide</span>
+            <h3 class="service-title">Synthetic Grass Care</h3>
+            <p class="service-desc">Professional maintenance for synthetic lawns including cleaning, grooming, and infill management.</p>
+            <a href="guide-synthetic-grass.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card garden">
+            <div class="service-icon">&#127934;</div>
+            <span class="timeline-badge">Court Care</span>
+            <h3 class="service-title">Tennis Court - Synthetic</h3>
+            <p class="service-desc">Synthetic tennis court maintenance for optimal playing conditions and surface longevity.</p>
+            <a href="guide-tennis-synthetic.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card garden">
+            <div class="service-icon">&#127934;</div>
+            <span class="timeline-badge">Premium Care</span>
+            <h3 class="service-title">Tennis Court - Natural Grass</h3>
+            <p class="service-desc">Championship-standard maintenance for natural grass tennis courts.</p>
+            <a href="guide-tennis-natural.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Information Guides -->
+<div class="category-section" id="information">
+    <h2 class="category-title">Information & Seasonal Guides</h2>
+    <div class="services-grid">
+        <div class="service-card info">
+            <div class="service-icon">&#127800;</div>
+            <span class="timeline-badge">Seasonal</span>
+            <h3 class="service-title">Spring Preparation</h3>
+            <p class="service-desc">Complete guide to preparing your garden for Perth's spring growing season.</p>
+            <a href="guide-spring.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card info">
+            <div class="service-icon">&#10052;&#65039;</div>
+            <span class="timeline-badge">Seasonal</span>
+            <h3 class="service-title">Winter Lawn Care</h3>
+            <p class="service-desc">Understanding dormancy, adjusted schedules, and winter lawn management.</p>
+            <a href="guide-winter.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card info">
+            <div class="service-icon">&#129514;</div>
+            <span class="timeline-badge">Analysis Guide</span>
+            <h3 class="service-title">Soil Test Results</h3>
+            <p class="service-desc">Understanding your soil analysis report and recommended amendments.</p>
+            <a href="guide-soil-test.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+        <div class="service-card info">
+            <div class="service-icon">&#128075;</div>
+            <span class="timeline-badge">Welcome Guide</span>
+            <h3 class="service-title">New Client Guide</h3>
+            <p class="service-desc">What to expect from our regular services and how to prepare for visits.</p>
+            <a href="guide-new-client.html" class="view-guide-btn">View Guide &rarr;</a>
+        </div>
+    </div>
+</div>
+`;
+
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+            const userEmail = sessionStorage.getItem('privium_email');
+
+            if (!authKey || !userEmail) {
+                // Not logged in, redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Display user email
+            document.getElementById('userEmail').textContent = userEmail;
+
+            // Display content
+            try {
+                document.getElementById('mainContent').innerHTML = contentHTML;
+
+                // Hide loading, show content
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                    document.getElementById('content').classList.add('show');
+
+                    // Enable smooth scrolling for anchor links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const target = document.querySelector(this.getAttribute('href'));
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        });
+                    });
+                }, 500);
+            } catch (error) {
+                console.error('Error loading content:', error);
+                alert('Error loading guides. Please try logging in again.');
+                logout();
+            }
+        });
+
+        function logout() {
+            sessionStorage.removeItem('privium_auth');
+            sessionStorage.removeItem('privium_email');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

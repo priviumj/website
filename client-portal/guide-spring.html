@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Lawn & Garden Preparation | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --spring-green: #00FF7F;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+            --yellow: #FFD700;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .spring-timeline {
+            background: linear-gradient(90deg, #E8F5E9 0%, #FFF9C4 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .month-section {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .month-label {
+            background: var(--success);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .task-card {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 4px solid var(--success);
+        }
+
+        .task-card h4 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .checklist-table th {
+            background: var(--success);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .checklist-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checklist-table tr:nth-child(even) {
+            background: #F1F8E9;
+        }
+
+        .fertiliser-schedule {
+            background: #FFFDE7;
+            border: 2px solid var(--yellow);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .weather-watch {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .weather-card {
+            background: white;
+            border: 1px solid var(--info);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .weather-icon {
+            font-size: 20pt;
+            margin-bottom: 5px;
+        }
+
+        .lawn-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .lawn-card {
+            background: linear-gradient(135deg, #E8F5E9 0%, white 100%);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--dark-green);
+        }
+
+        .product-recommendations {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .product-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, var(--yellow) 0%, #FFF 30%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Spring Preparation</h1>
+                <p class="subtitle">September - November Lawn & Garden Care Guide</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="success-box">
+                <strong>🌸 Spring Service Completed:</strong> Your lawn and garden have been prepared for Perth's peak growing season. Spring is the most critical time for lawn care - proper preparation now ensures a healthy, lush lawn through summer.
+            </div>
+
+            <h2>Perth Spring Timeline</h2>
+            <div class="spring-timeline">
+                <div class="month-section">
+                    <div class="month-label">SEPTEMBER<br>Early Spring</div>
+                    <div>
+                        <strong>Focus: Wake-up & Feed</strong>
+                        <ul>
+                            <li>First fertiliser application</li>
+                            <li>Pre-emergent weed control</li>
+                            <li>Begin regular mowing</li>
+                            <li>Check irrigation system</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="month-section">
+                    <div class="month-label">OCTOBER<br>Mid Spring</div>
+                    <div>
+                        <strong>Focus: Growth & Repair</strong>
+                        <ul>
+                            <li>Lawn renovation if needed</li>
+                            <li>Pest monitoring begins</li>
+                            <li>Increase mowing frequency</li>
+                            <li>Plant summer annuals</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="month-section">
+                    <div class="month-label">NOVEMBER<br>Late Spring</div>
+                    <div>
+                        <strong>Focus: Summer Prep</strong>
+                        <ul>
+                            <li>Second fertiliser application</li>
+                            <li>Adjust irrigation for heat</li>
+                            <li>Apply wetting agents</li>
+                            <li>Mulch garden beds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Critical Spring Lawn Tasks</h2>
+            <table class="checklist-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Timing</th>
+                        <th>Why It's Important</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fertilizing</strong></td>
+                        <td>Sept & Nov</td>
+                        <td>Fuels spring growth surge</td>
+                        <td>Every 8 weeks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scarifying</strong></td>
+                        <td>Early October</td>
+                        <td>Removes thatch buildup</td>
+                        <td>Once yearly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Top Dressing</strong></td>
+                        <td>After scarifying</td>
+                        <td>Levels lawn, improves soil</td>
+                        <td>As needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weed Control</strong></td>
+                        <td>September</td>
+                        <td>Prevents summer weeds</td>
+                        <td>Pre-emergent once</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aeration</strong></td>
+                        <td>October</td>
+                        <td>Relieves compaction</td>
+                        <td>Heavy traffic areas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oversowing</strong></td>
+                        <td>Oct-Nov</td>
+                        <td>Fills bare patches</td>
+                        <td>As needed</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Spring Fertilizer Program</h2>
+            <div class="fertiliser-schedule">
+                <h3>Recommended NPK Ratios for Spring</h3>
+                <p><strong>Early Spring (Sept):</strong> High Nitrogen (e.g., 25-5-10) - Kickstart growth</p>
+                <p><strong>Mid Spring (Oct):</strong> Balanced (e.g., 16-4-8) - Sustain growth</p>
+                <p><strong>Late Spring (Nov):</strong> Lower Nitrogen (e.g., 15-5-20) - Prepare for summer stress</p>
+                <p style="margin-top: 10px;"><strong>Application Rate:</strong> 2-3kg per 100m² | Water in thoroughly within 24 hours</p>
+            </div>
+
+            <h2>Lawn Type Specific Care</h2>
+            <div class="lawn-types">
+                <div class="lawn-card">
+                    <h4>Buffalo/Sir Walter</h4>
+                    <ul>
+                        <li>Mow at 30-50mm height</li>
+                        <li>Dethatch if layer >15mm</li>
+                        <li>Iron supplement for color</li>
+                        <li>Watch for army worm</li>
+                    </ul>
+                </div>
+                <div class="lawn-card">
+                    <h4>Couch/Bermuda</h4>
+                    <ul>
+                        <li>Mow at 15-25mm height</li>
+                        <li>Can handle aggressive scarifying</li>
+                        <li>Higher nitrogen needs</li>
+                        <li>Monitor for couch mite</li>
+                    </ul>
+                </div>
+                <div class="lawn-card">
+                    <h4>Kikuyu</h4>
+                    <ul>
+                        <li>Mow at 30-40mm height</li>
+                        <li>Control spreading runners</li>
+                        <li>Vigorous growth in spring</li>
+                        <li>Edge regularly</li>
+                    </ul>
+                </div>
+                <div class="lawn-card">
+                    <h4>Zoysia</h4>
+                    <ul>
+                        <li>Mow at 20-40mm height</li>
+                        <li>Slow spring green-up</li>
+                        <li>Light fertiliser needs</li>
+                        <li>Excellent drought tolerance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Spring Weather Watch - Perth</h2>
+            <div class="weather-watch">
+                <div class="weather-card">
+                    <div class="weather-icon">🌡️</div>
+                    <strong>Temperature</strong>
+                    <p>15-25°C average</p>
+                    <p>Perfect for growth</p>
+                </div>
+                <div class="weather-card">
+                    <div class="weather-icon">🌧️</div>
+                    <strong>Rainfall</strong>
+                    <p>Decreasing</p>
+                    <p>Start irrigation</p>
+                </div>
+                <div class="weather-card">
+                    <div class="weather-icon">☀️</div>
+                    <strong>UV Index</strong>
+                    <p>Increasing</p>
+                    <p>Work early/late</p>
+                </div>
+            </div>
+
+            <h2>Garden Bed Spring Tasks</h2>
+            <div class="task-grid">
+                <div class="task-card">
+                    <h4>Planting</h4>
+                    <ul>
+                        <li>Summer annuals: Petunias, Marigolds</li>
+                        <li>Vegetables: Tomatoes, Capsicum</li>
+                        <li>Herbs: Basil, Coriander</li>
+                        <li>Apply slow-release fertiliser</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <h4>Pruning</h4>
+                    <ul>
+                        <li>Spring flowering shrubs after bloom</li>
+                        <li>Shape hedges before heat</li>
+                        <li>Deadhead winter flowers</li>
+                        <li>Remove dead growth</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <h4>Mulching</h4>
+                    <ul>
+                        <li>Top up to 75-100mm depth</li>
+                        <li>Pull back from plant stems</li>
+                        <li>Water before and after</li>
+                        <li>Use quality hardwood mulch</li>
+                    </ul>
+                </div>
+                <div class="task-card">
+                    <h4>Pest Control</h4>
+                    <ul>
+                        <li>Aphids on new growth</li>
+                        <li>Snails and slugs active</li>
+                        <li>Start citrus leaf miner control</li>
+                        <li>Monitor for caterpillars</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Irrigation Adjustment for Spring</h2>
+            <div class="info-box">
+                <strong>September:</strong> 1 day/week, 8 minutes per station<br>
+                <strong>October:</strong> 2 days/week, 10 minutes per station<br>
+                <strong>November:</strong> 2 days/week, 12 minutes per station<br>
+                <p style="margin-top: 10px;">⚠️ Always comply with Water Corporation restrictions. Adjust for rainfall and soil type.</p>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Product Recommendations</h2>
+            <div class="product-recommendations">
+                <div class="product-item">
+                    <div><strong>Wetting Agent</strong></div>
+                    <div>Apply before summer to prevent dry patches. Liquid or granular forms available.</div>
+                </div>
+                <div class="product-item">
+                    <div><strong>Pre-emergent</strong></div>
+                    <div>Prevents summer grass and broadleaf weeds. Apply early September.</div>
+                </div>
+                <div class="product-item">
+                    <div><strong>Soil Improver</strong></div>
+                    <div>Clay breaker for heavy soils, compost for sandy soils.</div>
+                </div>
+                <div class="product-item">
+                    <div><strong>Trace Elements</strong></div>
+                    <div>Iron for green color, manganese for disease resistance.</div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Spring Mowing Guidelines</h2>
+            <div class="warning-box">
+                <strong>Critical Mowing Rules:</strong>
+                <ul>
+                    <li>Never remove more than 1/3 of leaf blade</li>
+                    <li>Increase frequency as growth accelerates</li>
+                    <li>Keep blades sharp - torn grass invites disease</li>
+                    <li>Mow when dry to prevent clumping</li>
+                    <li>Alternate mowing patterns each week</li>
+                </ul>
+            </div>
+
+            <div class="tips-section">
+                <h3>🌟 Pro Spring Tips</h3>
+                <ul>
+                    <li><strong>The 10-day rule:</strong> Most spring lawn tasks show results within 10 days</li>
+                    <li><strong>Morning is best:</strong> Water and apply products in early morning</li>
+                    <li><strong>Feed lightly, frequently:</strong> Better than heavy, infrequent applications</li>
+                    <li><strong>Act early:</strong> Spring problems become summer disasters</li>
+                    <li><strong>Test soil:</strong> Spring is ideal for soil testing to guide your program</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <strong>💚 Remember:</strong> Spring sets the foundation for your lawn's entire year. The effort you invest now in feeding, weeding, and preparing will determine how well your lawn handles Perth's harsh summer. A healthy spring lawn is a resilient summer lawn!
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Spring Lawn & Garden Specialists • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

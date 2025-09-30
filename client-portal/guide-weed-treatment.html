@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weed Treatment Aftercare Guide | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+            --critical: #D32F2F;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--dark-green);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .critical-box {
+            background: #FFEBEE;
+            border-left: 4px solid var(--critical);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .alert-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: var(--cream); /* Brand cream color */
+            border-left: 4px solid var(--info);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .safety-card {
+            background: #FFEBEE;
+            border: 2px solid var(--critical);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .safety-card h4 {
+            color: var(--critical);
+            margin-bottom: 8px;
+        }
+
+        .weed-timeline {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .timeline-item {
+            text-align: center;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .timeline-day {
+            font-weight: bold;
+            color: var(--dark-green);
+            font-size: 14pt;
+        }
+
+        .timeline-desc {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .treatment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .treatment-table th {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .treatment-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .treatment-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .info-card {
+            background: var(--cream);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--light-green);
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .dos {
+            background: #E8F5E9;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--success);
+        }
+
+        .donts {
+            background: #FFEBEE;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #F44336;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Weed Treatment</h1>
+                <p class="subtitle">Safety & Aftercare Instructions</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="critical-box">
+                <strong>⚠️ SAFETY FIRST:</strong> Herbicides have been applied to your lawn/garden. Follow ALL safety guidelines below. Keep children and pets off treated areas for the specified withholding period.
+            </div>
+
+            <h2>Treatment Applied</h2>
+            <p>We've applied professional-grade herbicides specifically selected for your weed types and lawn/garden situation. The treatment targets weeds while minimizing impact on desired plants.</p>
+
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <h4>🚸 Children & Pets</h4>
+                    <ul>
+                        <li><strong>Selective herbicide:</strong> 24-48 hours off lawn</li>
+                        <li><strong>Non-selective:</strong> 72 hours minimum</li>
+                        <li><strong>Pre-emergent:</strong> Until watered in</li>
+                        <li>No bare feet for 7 days</li>
+                    </ul>
+                </div>
+                <div class="safety-card">
+                    <h4>⏰ Re-entry Times</h4>
+                    <ul>
+                        <li><strong>Spray has dried:</strong> 2-4 hours</li>
+                        <li><strong>Light activity:</strong> 24 hours</li>
+                        <li><strong>Normal use:</strong> 48-72 hours</li>
+                        <li><strong>Eating herbs/veggies:</strong> Check specific withholding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Weed Die-Off Timeline</h2>
+            <div class="weed-timeline">
+                <h3>Expected Visual Changes</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 1-2</div>
+                        <div class="timeline-desc">Weeds look normal, chemical absorbing</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 3-5</div>
+                        <div class="timeline-desc">Wilting, yellowing begins</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 7-10</div>
+                        <div class="timeline-desc">Brown, dying weeds visible</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-day">Day 14-21</div>
+                        <div class="timeline-desc">Complete die-off, ready for removal</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Treatment Types & Expectations</h2>
+            <table class="treatment-table">
+                <thead>
+                    <tr>
+                        <th>Weed Type</th>
+                        <th>Treatment Used</th>
+                        <th>Die-off Time</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bindii</strong></td>
+                        <td>Selective broadleaf</td>
+                        <td>7-14 days</td>
+                        <td>May need second application</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clover</strong></td>
+                        <td>Selective broadleaf</td>
+                        <td>10-14 days</td>
+                        <td>Deep roots may resprout</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Winter Grass</strong></td>
+                        <td>Selective grass herbicide</td>
+                        <td>14-21 days</td>
+                        <td>Multiple treatments often needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nutgrass</strong></td>
+                        <td>Specialized treatment</td>
+                        <td>21-28 days</td>
+                        <td>Very persistent, expect regrowth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>General Weeds</strong></td>
+                        <td>Glyphosate (non-selective)</td>
+                        <td>7-14 days</td>
+                        <td>Kills everything - avoid overspray</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Watering Instructions</h2>
+            <div class="alert-box">
+                <strong>Critical:</strong> Watering requirements vary by treatment type
+            </div>
+
+            <div class="two-column">
+                <div class="info-card">
+                    <h3>Post-Emergent (Existing Weeds)</h3>
+                    <ul>
+                        <li>NO watering for 24-48 hours</li>
+                        <li>No rain expected for 6 hours minimum</li>
+                        <li>Let chemical absorb fully</li>
+                        <li>Resume normal watering after 48 hours</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Pre-Emergent (Prevention)</h3>
+                    <ul>
+                        <li>Water IN within 24 hours</li>
+                        <li>10-15mm irrigation required</li>
+                        <li>Creates barrier in soil</li>
+                        <li>Maintain moisture for activation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Do's and Don'ts Post-Treatment</h2>
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✓ DO:</h3>
+                    <ul>
+                        <li>Follow all safety withholding periods</li>
+                        <li>Mark calendar for re-entry dates</li>
+                        <li>Remove dead weeds after 2-3 weeks</li>
+                        <li>Monitor for new weed growth</li>
+                        <li>Maintain healthy lawn to prevent weeds</li>
+                        <li>Report any unexpected plant damage</li>
+                    </ul>
+                </div>
+                <div class="donts">
+                    <h3>✗ DON'T:</h3>
+                    <ul>
+                        <li>Mow for 48-72 hours</li>
+                        <li>Water immediately (unless pre-emergent)</li>
+                        <li>Allow pets to eat grass for 7 days</li>
+                        <li>Fertilize for 2 weeks</li>
+                        <li>Overseed for 4-6 weeks</li>
+                        <li>Disturb soil if pre-emergent applied</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Lawn Care After Treatment</h2>
+            <div class="info-card">
+                <p><strong>First Mow:</strong> Wait 3-4 days minimum, mow high</p>
+                <p><strong>Fertilizing:</strong> Wait 2 weeks, then apply to strengthen lawn</p>
+                <p><strong>Overseeding:</strong> Wait 4-6 weeks for herbicide to break down</p>
+                <p><strong>Next Treatment:</strong> Usually 6-8 weeks if needed</p>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Common Concerns</h2>
+            <div class="two-column">
+                <div class="info-card">
+                    <h3>Lawn Yellowing</h3>
+                    <p>Some temporary discoloration is normal with selective herbicides. Lawn will recover in 2-3 weeks with proper care.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Weeds Not Dying</h3>
+                    <p>Some resistant weeds need 14-21 days or multiple treatments. Contact us if no change after 3 weeks.</p>
+                </div>
+                <div class="info-card">
+                    <h3>New Weeds Appearing</h3>
+                    <p>Treatment kills existing weeds only (unless pre-emergent used). New seeds may germinate - regular treatment needed.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Rain After Treatment</h3>
+                    <p>Light rain after 6 hours is okay. Heavy rain within 24 hours may reduce effectiveness - we'll reapply if needed.</p>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Follow-up Schedule</h2>
+            <div class="success-box">
+                <p><strong>Week 2:</strong> Assess treatment effectiveness</p>
+                <p><strong>Week 3:</strong> Remove dead weeds, overseed bare patches</p>
+                <p><strong>Week 6-8:</strong> Second treatment if required</p>
+                <p><strong>Ongoing:</strong> Regular treatments every 8-12 weeks for best results</p>
+            </div>
+
+            <div class="critical-box">
+                <strong>🚨 Emergency Contact:</strong> If anyone experiences adverse reactions, call Poisons Information Centre: 13 11 26
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Professional Garden Care Perth Metro • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>

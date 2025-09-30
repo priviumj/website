@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Lawn Care Guide | Privium Garden Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #244419;
+            --light-green: #A3B583;
+            --tan: #A58062;
+            --brown: #5E483A;
+            --gray: #9C9BA1;
+            --cream: #F5F3F0;
+            --winter-blue: #4682B4;
+            --frost: #E0F2F7;
+            --warning: #FF9800;
+            --success: #4CAF50;
+            --info: #2196F3;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
+            /* Enhanced print header styles */
+            header {
+                background: linear-gradient(90deg, white 0%, white 45%, #244419 45%, #244419 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px 15px !important;
+            }
+
+            .logo {
+                height: 25px !important;
+            }
+
+            h1 {
+                font-size: 16pt !important;
+            }
+
+            .subtitle {
+                font-size: 10pt !important;
+            }
+
+            /* Ensure sections stay together */
+            h2:last-of-type,
+            h2:last-of-type + *,
+            h2:nth-last-of-type(2) + *,
+            h2:nth-last-of-type(2) + * + * {
+                page-break-inside: avoid !important;
+                page-break-before: avoid !important;
+            }
+            h2 {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                break-after: avoid !important;
+                min-height: 2em;
+                margin-top: 15px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Keep intro paragraphs with headings */
+            /* Aggressive page break prevention for h2 sections */
+            h2 {
+                page-break-before: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Force h2 and its following content to stay together */
+            h2, h2 + *, h2 + * + * {
+                page-break-inside: avoid !important;
+                break-inside: avoid-page !important;
+            }
+
+            /* Wrap sections to prevent breaks */
+            .two-column {
+                page-break-inside: avoid !important;
+                page-break-after: auto !important;
+            }
+
+            /* Ensure Troubleshooting section stays together */
+            h2:nth-last-of-type(1),
+            h2:nth-last-of-type(1) + * {
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            /* Keep any content following h2 headings */
+            /* Prevent orphaned headings at page end */
+            .two-column + h2,
+            .info-card + h2,
+            .visual-guide + h2,
+            div + h2 {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 20px !important;
+            }
+
+            /* Keep last element before h2 together if possible */
+
+            h2 + * {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+            }
+
+            /* Specific rules for common patterns */
+            h2 + div,
+            h2 + .info-card,
+            h2 + .timeline,
+            h2 + .two-column,
+            h2 + .alert-box,
+            h2 + .warning-box,
+            h2 + .success-box,
+            h2 + table {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                margin-top: 8px !important;
+            }
+
+            h2 + p {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* Prevent breaking inside important elements */
+            .timeline-item,
+            .treatment-card,
+            .info-card,
+            .care-card,
+            .alert-box,
+            .warning-box,
+            .success-box,
+            .info-box,
+            .timeline,
+            .dos-donts,
+            .two-column,
+            .visual-guide,
+            .checklist,
+            .schedule-table {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Keep timeline items together */
+            .timeline-item:first-child,
+            .timeline-item:first-child + .timeline-item {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* Table handling */
+            table {
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            /* Reduce spacing for print */
+            .content {
+                padding: 10px !important;
+            }
+
+            .warning-box, .info-box, .success-box, .alert-box {
+                margin: 10px 0 !important;
+                padding: 10px !important;
+            }
+
+            /* Force color preservation */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.4;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: linear-gradient(90deg, white 0%, white 45%, var(--dark-green) 45%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 0 20px 20px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            font-size: 14pt;
+            margin: 20px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        h3 {
+            color: var(--brown);
+            font-size: 12pt;
+            margin: 15px 0 8px 0;
+        }
+
+        .info-box {
+            background: var(--frost);
+            border-left: 4px solid var(--winter-blue);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #F5EDE6; /* Lighter tint of tan */
+            border-left: 4px solid var(--warning);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #E8F2E0; /* Lighter tint of light-green */
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .winter-timeline {
+            background: linear-gradient(90deg, var(--frost) 0%, white 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .month-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .month-badge {
+            background: var(--winter-blue);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .lawn-comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .lawn-comparison th {
+            background: var(--winter-blue);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .lawn-comparison td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .lawn-comparison tr:nth-child(even) {
+            background: var(--frost);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .problem-card {
+            background: white;
+            border: 2px solid var(--warning);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .problem-card h4 {
+            color: var(--warning);
+            margin-bottom: 8px;
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .dos {
+            background: #E8F5E9;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--success);
+        }
+
+        .donts {
+            background: #FFEBEE;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #F44336;
+        }
+
+        .fertiliser-box {
+            background: #FFF8E1;
+            border: 2px solid var(--tan);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .task-checklist {
+            background: var(--cream);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .checklist-item {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .check-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--winter-blue);
+            border-radius: 3px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .weather-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .stat-card {
+            background: var(--frost);
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .stat-number {
+            font-size: 18pt;
+            font-weight: bold;
+            color: var(--winter-blue);
+        }
+
+        .renovation-timing {
+            background: linear-gradient(135deg, var(--success) 0%, var(--light-green) 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .contact-bar {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 9pt;
+            margin-top: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guideContent"></div>
+
+    <script>
+        // Protected content - only displayed to authenticated users
+        const contentHTML = `
+    <div class="container">
+        <header>
+            <img src="privium-long-logo.png" alt="Privium Garden Services" class="logo">
+            <div class="header-text">
+                <h1>Winter Lawn Care</h1>
+                <p class="subtitle">June - August Perth Maintenance Guide</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <strong>❄️ Winter Service Focus:</strong> Your lawn enters dormancy during Perth's winter. Proper care now prevents disease, maintains appearance, and prepares for explosive spring growth.
+            </div>
+
+            <h2>Perth Winter Climate Impact</h2>
+            <div class="weather-stats">
+                <div class="stat-card">
+                    <div class="stat-number">8-19°C</div>
+                    <div>Avg Temperature</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150mm</div>
+                    <div>Monthly Rain</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5hrs</div>
+                    <div>Daily Sunshine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80%+</div>
+                    <div>Humidity</div>
+                </div>
+            </div>
+
+            <h2>Winter Watering Ban - Critical Information</h2>
+            <div class="warning-box">
+                <strong>⚠️ SPRINKLER BAN: June 1 - August 31</strong>
+                <ul>
+                    <li>All automatic reticulation must be turned OFF</li>
+                    <li>Hand watering only if absolutely necessary</li>
+                    <li>Winter rainfall typically provides adequate moisture</li>
+                    <li>Fines apply for non-compliance: $100+ individuals, $500+ businesses</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>Controller Setting:</strong> Set to "OFF" or "Rain Delay" - do not just reduce days</p>
+            </div>
+
+            <h2>Monthly Winter Tasks</h2>
+            <div class="winter-timeline">
+                <div class="month-row">
+                    <div class="month-badge">JUNE</div>
+                    <div>
+                        <strong>Transition Month</strong>
+                        <ul>
+                            <li>Turn off reticulation system</li>
+                            <li>Final autumn fertiliser (if needed)</li>
+                            <li>Reduce mowing frequency</li>
+                            <li>Start moss control</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="month-row">
+                    <div class="month-badge">JULY</div>
+                    <div>
+                        <strong>Deep Winter</strong>
+                        <ul>
+                            <li>Minimal mowing (3-4 week intervals)</li>
+                            <li>Monitor for fungal diseases</li>
+                            <li>Service mower for spring</li>
+                            <li>Plan spring renovations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="month-row">
+                    <div class="month-badge">AUGUST</div>
+                    <div>
+                        <strong>Pre-Spring Prep</strong>
+                        <ul>
+                            <li>Check irrigation system</li>
+                            <li>Light fertiliser late month</li>
+                            <li>Weed control before spring</li>
+                            <li>Prepare for September 1 watering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Lawn Type Winter Behaviour</h2>
+            <table class="lawn-comparison">
+                <thead>
+                    <tr>
+                        <th>Lawn Type</th>
+                        <th>Winter Appearance</th>
+                        <th>Growth Rate</th>
+                        <th>Special Care</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Buffalo</strong></td>
+                        <td>Purple tinge, slower growth</td>
+                        <td>Very slow</td>
+                        <td>Prone to moss, needs sun</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Couch</strong></td>
+                        <td>Brown/dormant patches</td>
+                        <td>Near dormant</td>
+                        <td>Avoid heavy traffic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kikuyu</strong></td>
+                        <td>Yellowing, thin</td>
+                        <td>Minimal</td>
+                        <td>Recovers quickly in spring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zoysia</strong></td>
+                        <td>Straw colored</td>
+                        <td>Dormant</td>
+                        <td>Very low maintenance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ryegrass</strong></td>
+                        <td>Green, lush</td>
+                        <td>Active growth</td>
+                        <td>Regular mowing needed</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Common Winter Lawn Problems</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h4>Moss Growth</h4>
+                    <p><strong>Cause:</strong> Shade, poor drainage, compaction</p>
+                    <p><strong>Solution:</strong> Improve drainage, increase sunlight, apply iron sulfate</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Winter Grass Weeds</h4>
+                    <p><strong>Common:</strong> Winter grass, clover, bindii</p>
+                    <p><strong>Control:</strong> Hand pull or selective herbicide before seeding</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Fungal Diseases</h4>
+                    <p><strong>Types:</strong> Dollar spot, brown patch</p>
+                    <p><strong>Prevention:</strong> Improve air flow, avoid overwatering</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Compaction</h4>
+                    <p><strong>Signs:</strong> Pooling water, poor growth</p>
+                    <p><strong>Fix:</strong> Core aeration in late winter/early spring</p>
+                </div>
+            </div>
+
+            <h2>Winter Mowing Guidelines</h2>
+            <div class="info-box">
+                <h3>Adjust Your Mowing Practice:</h3>
+                <ul>
+                    <li><strong>Frequency:</strong> Every 3-4 weeks (warm season grasses) or 2 weeks (ryegrass)</li>
+                    <li><strong>Height:</strong> Raise mower 10-15mm higher than summer setting</li>
+                    <li><strong>Timing:</strong> Only mow when dry - avoid morning dew</li>
+                    <li><strong>Clippings:</strong> Leave on lawn for nutrients unless diseased</li>
+                    <li><strong>Edges:</strong> Keep neat for maintained appearance despite slow growth</li>
+                </ul>
+            </div>
+
+            <h2>Winter Fertilizer Program</h2>
+            <div class="fertiliser-box">
+                <h3>Minimal Feeding Required</h3>
+                <p><strong>June:</strong> No fertiliser needed - growth slowing</p>
+                <p><strong>July:</strong> Avoid fertilizing - promotes soft growth susceptible to frost</p>
+                <p><strong>Late August:</strong> Light application (1kg/100m²) slow-release to prepare for spring</p>
+                <p style="margin-top: 10px;"><strong>Winter Mix:</strong> Low nitrogen (e.g., 8-4-10), higher potassium for cold hardiness</p>
+                <p><strong>Iron Application:</strong> Liquid iron maintains green color without promoting growth</p>
+            </div>
+
+            <h2>Do's and Don'ts for Winter</h2>
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✓ DO:</h3>
+                    <ul>
+                        <li>Keep leaves off lawn</li>
+                        <li>Monitor drainage issues</li>
+                        <li>Service equipment</li>
+                        <li>Control moss early</li>
+                        <li>Plan spring renovations</li>
+                        <li>Sharpen mower blades</li>
+                        <li>Check for grubs (birds pecking)</li>
+                    </ul>
+                </div>
+                <div class="donts">
+                    <h3>✗ DON'T:</h3>
+                    <ul>
+                        <li>Use sprinklers June-August</li>
+                        <li>Fertilize heavily</li>
+                        <li>Scalp the lawn</li>
+                        <li>Ignore pooling water</li>
+                        <li>Heavy traffic when wet</li>
+                        <li>Plant new lawn</li>
+                        <li>Apply pre-emergents</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Winter Task Checklist</h2>
+            <div class="task-checklist">
+                <h3>Essential Winter Maintenance</h3>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Turn off reticulation controller by June 1</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Clear storm drains and improve drainage</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Remove fallen leaves weekly</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Treat moss if present</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Service mower and equipment</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Control winter weeds</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Test irrigation system in late August</div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-box"></div>
+                    <div>Order spring fertiliser and products</div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            <h2>Planning Winter Renovations</h2>
+            <div class="renovation-timing">
+                <h3>🌱 Winter is Planning Time - Spring is Action Time!</h3>
+                <p><strong>Best Renovation Window:</strong> September to November</p>
+                <p><strong>Winter Planning Tasks:</strong></p>
+                <ul>
+                    <li>Identify problem areas needing renovation</li>
+                    <li>Get quotes for major work</li>
+                    <li>Order materials for spring delivery</li>
+                    <li>Book contractors early - spring is busy!</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Don't attempt major lawn work in winter - poor recovery and establishment</strong></p>
+            </div>
+
+            <div style="page-break-inside: avoid; -webkit-column-break-inside: avoid; break-inside: avoid; display: block;">
+            </div>
+
+            <h2>Garden Bed Winter Care</h2>
+            <div class="success-box">
+                <strong>Winter Garden Opportunities:</strong>
+                <ul>
+                    <li>Plant winter annuals: Pansies, Primulas, Snapdragons</li>
+                    <li>Prune roses and deciduous plants</li>
+                    <li>Add compost and mulch to beds</li>
+                    <li>Plant new trees and shrubs - ideal establishment time</li>
+                    <li>Divide perennials</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>💚 Winter Wisdom:</strong> While your lawn sleeps, focus on other garden tasks. Winter's slower pace allows time for planning, equipment maintenance, and preparing for spring's burst of growth. A well-rested winter lawn explodes with vigor when warm weather returns!
+            </div>
+
+            </div>
+
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <strong>0490 841 667</strong>
+                </div>
+                <div class="contact-item">
+                    <span>👤</span>
+                    <span>Ask for Jarod</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>office@privium.com.au</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PRIVIUM GARDEN SERVICES PTY LTD • Winter Lawn Care Specialists Perth • © 2025</p>
+        </footer>
+    </div>
+`;
+
+        // Authentication check and content loading
+        window.addEventListener('DOMContentLoaded', () => {
+            const authKey = sessionStorage.getItem('privium_auth');
+
+            if (!authKey) {
+                // Not authenticated - redirect to login
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Authenticated - display content
+            document.getElementById('guideContent').innerHTML = contentHTML;
+        });
+    </script>
+</body>
+</html>
