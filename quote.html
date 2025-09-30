@@ -1453,6 +1453,70 @@
             }
         });
         
+        // Save form data to localStorage
+        function saveFormData() {
+            const form = document.getElementById('bookingForm');
+            if (!form) return;
+
+            const formData = {
+                name: form.name?.value || '',
+                phone: form.phone?.value || '',
+                email: form.email?.value || '',
+                address: form.address?.value || '',
+                message: form.message?.value || '',
+                contactMethod: form.contactMethod?.value || 'phone',
+                referralSource: form.referralSource?.value || '',
+                services: Array.from(form.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value),
+                subscription: form.subscription?.checked || false
+            };
+            localStorage.setItem('priviumQuoteForm', JSON.stringify(formData));
+        }
+
+        // Restore form data from localStorage
+        function restoreFormData() {
+            const saved = localStorage.getItem('priviumQuoteForm');
+            if (!saved) return;
+
+            try {
+                const formData = JSON.parse(saved);
+                const form = document.getElementById('bookingForm');
+                if (!form) return;
+
+                // Restore text inputs
+                if (formData.name && form.name) form.name.value = formData.name;
+                if (formData.phone && form.phone) form.phone.value = formData.phone;
+                if (formData.email && form.email) form.email.value = formData.email;
+                if (formData.address && form.address) form.address.value = formData.address;
+                if (formData.message && form.message) form.message.value = formData.message;
+
+                // Restore radio buttons
+                if (formData.contactMethod) {
+                    const radio = form.querySelector(`input[name="contactMethod"][value="${formData.contactMethod}"]`);
+                    if (radio) radio.checked = true;
+                }
+
+                // Restore dropdown
+                if (formData.referralSource && form.referralSource) {
+                    form.referralSource.value = formData.referralSource;
+                }
+
+                // Restore checkboxes (services)
+                if (formData.services && Array.isArray(formData.services)) {
+                    formData.services.forEach(service => {
+                        const checkbox = form.querySelector(`input[name="services"][value="${service}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+
+                // Restore subscription checkbox
+                if (form.subscription) {
+                    form.subscription.checked = formData.subscription;
+                }
+            } catch (e) {
+                console.error('Error restoring form data:', e);
+            }
+        }
+
         // Form submission handler
         function handleSubmit(event) {
             event.preventDefault();
@@ -1542,6 +1606,9 @@
                     submitButton.textContent = '✓ Sent Successfully!';
                     submitButton.style.background = '#28a745';
 
+                    // Clear saved form data
+                    localStorage.removeItem('priviumQuoteForm');
+
                     // Reset form after a delay
                     setTimeout(() => {
                         form.reset();
@@ -1574,11 +1641,25 @@
             return false;
         }
 
-        // Handle collapsible arrow rotation
+        // Initialize form persistence on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Restore saved form data
+            restoreFormData();
+
+            // Add event listeners for auto-save
+            const form = document.getElementById('bookingForm');
+            if (form) {
+                // Save on input change for text fields
+                form.addEventListener('input', saveFormData);
+
+                // Save on change for checkboxes, radios, and selects
+                form.addEventListener('change', saveFormData);
+            }
+
+            // Handle collapsible arrow rotation
             const details = document.querySelector('.services-collapsible');
             const arrow = document.querySelector('.collapse-arrow');
-            
+
             if (details && arrow) {
                 details.addEventListener('toggle', function() {
                     if (details.open) {
