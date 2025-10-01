@@ -13,6 +13,7 @@ Disallow: /value-prop-test.html
 # Specific crawler instructions
 User-agent: Googlebot
 Allow: /
+Allow: /client-portal/
 Crawl-delay: 0
 
 User-agent: Bingbot
