@@ -43,8 +43,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Monitoring logs
+monitor-log.json
+monitor-cron.log
+
 # Backup files
 *.backup
 *-backup.html
 backup/
 backups/
+
+# Working directory
+working/
