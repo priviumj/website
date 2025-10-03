@@ -1,0 +1,13 @@
+# Pagefind Configuration
+# Only index main site pages, exclude client-portal and working directories
+
+site = "."
+output_subdir = "pagefind"
+
+# Only index these specific HTML files at the root
+glob = "*.html"
+
+# Exclude patterns
+exclude_selectors = [
+    "[data-pagefind-ignore]"
+]

@@ -12,10 +12,12 @@ if ! command -v pagefind &> /dev/null; then
     npm install -g pagefind
 fi
 
-# Run Pagefind to index the site
+# Run Pagefind to index the site (only index main 4 pages)
 echo "Running Pagefind indexer..."
-npx -y pagefind --site . --output-subdir pagefind
+# Configuration is in pagefind.toml
+npx -y pagefind --site . --glob "*.html"
 
 echo "✓ Search index built successfully!"
 echo "  - Indexed pages are in ./pagefind/"
+echo "  - Only main site pages indexed (not client-portal or working)"
 echo "  - Ready for deployment"

@@ -1806,6 +1806,7 @@
     <script>
         let pagefindInstance = null;
         let searchOpen = false;
+        let currentSearchQuery = '';
 
         // Toggle Pagefind search visibility
         function togglePagefindSearch() {
@@ -1825,8 +1826,26 @@
                         showSubResults: true,
                         excerptLength: 15,
                         resetStyles: false,
-                        autofocus: true
+                        autofocus: true,
+                        processResult: function(result) {
+                            // Add Text Fragment to URL for browser-native scroll-to-text
+                            if (currentSearchQuery) {
+                                const encodedTerm = encodeURIComponent(currentSearchQuery);
+                                result.url = `${result.url}#:~:text=${encodedTerm}`;
+                            }
+                            return result;
+                        }
                     });
+
+                    // Capture search query
+                    setTimeout(() => {
+                        const input = document.querySelector('#pagefind-search input');
+                        if (input) {
+                            input.addEventListener('input', (e) => {
+                                currentSearchQuery = e.target.value.trim();
+                            });
+                        }
+                    }, 100);
                 }
 
                 // Focus the search input
@@ -1847,19 +1866,6 @@
                 togglePagefindSearch();
             }
         });
-
-        // Initialize page
-        window.addEventListener('DOMContentLoaded', () => {
-            // Handle anchor scrolling on page load
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const element = document.querySelector(window.location.hash);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 100);
-            }
-        });
     </script>
     <style>
         /* Pagefind custom styling */
@@ -1874,6 +1880,8 @@
             border-radius: 20px !important;
             font-family: 'Lato', sans-serif !important;
             padding: 8px 16px !important;
+            background-image: none !important;
+            padding-left: 16px !important;
         }
         #pagefind-search .pagefind-ui__result-link {
             color: #244419 !important;
