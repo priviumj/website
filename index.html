@@ -1826,18 +1826,10 @@
                         showSubResults: true,
                         excerptLength: 15,
                         resetStyles: false,
-                        autofocus: true,
-                        processResult: function(result) {
-                            // Add Text Fragment to URL for browser-native scroll-to-text
-                            if (currentSearchQuery) {
-                                const encodedTerm = encodeURIComponent(currentSearchQuery);
-                                result.url = `${result.url}#:~:text=${encodedTerm}`;
-                            }
-                            return result;
-                        }
+                        autofocus: true
                     });
 
-                    // Capture search query
+                    // Capture search query and modify result links
                     setTimeout(() => {
                         const input = document.querySelector('#pagefind-search input');
                         if (input) {
@@ -1845,6 +1837,38 @@
                                 currentSearchQuery = e.target.value.trim();
                             });
                         }
+
+                        // Watch for result links being added to DOM
+                        const observer = new MutationObserver(() => {
+                            const input = document.querySelector('#pagefind-search input');
+                            const searchQuery = input ? input.value.trim() : '';
+
+                            if (searchQuery) {
+                                const results = document.querySelectorAll('#pagefind-search .pagefind-ui__result');
+                                results.forEach(result => {
+                                    const excerpt = result.querySelector('.pagefind-ui__result-excerpt');
+                                    const link = result.querySelector('.pagefind-ui__result-link');
+
+                                    if (excerpt && link && !link.href.includes('#:~:text=')) {
+                                        // Find full word containing search query in excerpt
+                                        const words = excerpt.textContent.split(/\s+/);
+                                        const matchedWord = words.find(w =>
+                                            w.toLowerCase().includes(searchQuery.toLowerCase())
+                                        );
+
+                                        if (matchedWord) {
+                                            const cleanWord = matchedWord.replace(/[.,;:!?]/g, '');
+                                            link.href = `${link.href.split('#')[0]}#:~:text=${encodeURIComponent(cleanWord)}`;
+                                        }
+                                    }
+                                });
+                            }
+                        });
+
+                        observer.observe(searchContainer, {
+                            childList: true,
+                            subtree: true
+                        });
                     }, 100);
                 }
 
@@ -1879,9 +1903,16 @@
             border: 1px solid #6B8250 !important;
             border-radius: 20px !important;
             font-family: 'Lato', sans-serif !important;
-            padding: 8px 16px !important;
-            background-image: none !important;
-            padding-left: 16px !important;
+            padding: 8px 16px 8px 40px !important;
+            font-weight: 400 !important;
+            background: transparent !important;
+        }
+        #pagefind-search .pagefind-ui__search-clear {
+            padding: 4px 8px !important;
+            font-size: 12px !important;
+            background: transparent !important;
+            border: none !important;
+            color: #6B8250 !important;
         }
         #pagefind-search .pagefind-ui__result-link {
             color: #244419 !important;
