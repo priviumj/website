@@ -875,7 +875,14 @@
                 <span class="call-text">Call Jarod <span style="color: #666; font-weight: 300;">or</span> <a href="sms:0490841667" style="color: #A58062; text-decoration: none; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#8d6d52'" onmouseout="this.style.color='#A58062'">TEXT</a></span>
                 <a href="tel:0490841667" class="phone-number" style="color: #A58062; text-decoration: none; font-size: 16px;">0490 841 667</a>
             </div>
-            <div id="pagefind-search" style="margin-right: 20px;"></div>
+            <div class="search-container" style="position: relative; margin-right: 20px;">
+                <button id="searchToggle" onclick="togglePagefindSearch()" style="background: none; border: none; padding: 8px; cursor: pointer; display: flex; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <svg style="width: 20px; height: 20px;" fill="#244419" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <div id="pagefind-search" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 5px; width: 400px; z-index: 1000;"></div>
+            </div>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -1242,16 +1249,55 @@
             }
         });
     </script>
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-    <script src="/pagefind/pagefind-ui.js"></script>
+    <link href="pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="pagefind/pagefind-ui.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            new PagefindUI({
-                element: "#pagefind-search",
-                showSubResults: true,
-                resetStyles: false
-            });
+        let pagefindInstance = null;
+        let searchOpen = false;
 
+        // Toggle Pagefind search visibility
+        function togglePagefindSearch() {
+            const searchContainer = document.getElementById('pagefind-search');
+            const searchToggle = document.getElementById('searchToggle');
+
+            if (!searchOpen) {
+                searchContainer.style.display = 'block';
+                searchToggle.style.opacity = '0.5';
+                searchOpen = true;
+
+                // Initialize Pagefind on first open
+                if (!pagefindInstance) {
+                    pagefindInstance = new PagefindUI({
+                        element: "#pagefind-search",
+                        showImages: false,
+                        showSubResults: true,
+                        excerptLength: 15,
+                        resetStyles: false,
+                        autofocus: true
+                    });
+                }
+
+                // Focus the search input
+                setTimeout(() => {
+                    const input = document.querySelector('#pagefind-search input');
+                    if (input) input.focus();
+                }, 100);
+            } else {
+                searchContainer.style.display = 'none';
+                searchToggle.style.opacity = '1';
+                searchOpen = false;
+            }
+        }
+
+        // Close search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (searchOpen && !e.target.closest('.search-container')) {
+                togglePagefindSearch();
+            }
+        });
+
+        // Initialize page
+        window.addEventListener('DOMContentLoaded', () => {
             // Handle anchor scrolling on page load
             if (window.location.hash) {
                 setTimeout(() => {
@@ -1265,33 +1311,27 @@
     </script>
     <style>
         /* Pagefind custom styling */
+        #pagefind-search {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 10px;
+        }
         #pagefind-search .pagefind-ui__search-input {
             border: 1px solid #6B8250 !important;
             border-radius: 20px !important;
-            font-family: 'Open Sans', Arial, sans-serif !important;
-            font-size: 14px !important;
-            padding: 8px 12px !important;
+            font-family: 'Lato', sans-serif !important;
+            padding: 8px 16px !important;
         }
-
-        #pagefind-search .pagefind-ui__search-clear {
-            color: #244419 !important;
-        }
-
         #pagefind-search .pagefind-ui__result-link {
             color: #244419 !important;
         }
-
         #pagefind-search .pagefind-ui__result-link:hover {
             color: #6B8250 !important;
         }
-
-        #pagefind-search .pagefind-ui__result-excerpt {
-            color: #5E483A !important;
-        }
-
-        #pagefind-search mark {
-            background-color: #A58062 !important;
-            color: white !important;
+        #pagefind-search .pagefind-ui__results-area {
+            max-height: 400px;
+            overflow-y: auto;
         }
     </style>
 </body>
