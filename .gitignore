@@ -55,3 +55,6 @@ backups/
 
 # Working directory
 working/
+
+# Pagefind search index (regenerated on build)
+pagefind/

@@ -1062,15 +1062,7 @@
                 <span class="call-text">Call Jarod <span style="color: #666; font-weight: 300;">or</span> <a href="sms:0490841667" style="color: #A58062; text-decoration: none; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#8d6d52'" onmouseout="this.style.color='#A58062'">TEXT</a></span>
                 <a href="tel:0490841667" class="phone-number" style="color: #A58062; text-decoration: none; font-size: 16px;">0490 841 667</a>
             </div>
-            <div class="search-container" style="position: relative; margin-right: 20px;">
-                <button id="searchToggle" onclick="toggleSearch()" style="background: none; border: none; padding: 8px; cursor: pointer; display: flex; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    <svg style="width: 20px; height: 20px;" fill="#244419" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-                    </svg>
-                </button>
-                <input type="text" id="siteSearch" placeholder="Search..." style="display: none; position: absolute; right: 0; top: 0; padding: 8px 35px 8px 12px; border: 1px solid #6B8250; border-radius: 20px; font-family: 'Lato', sans-serif; font-size: 14px; width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div id="searchResults" style="display: none; position: absolute; top: 100%; right: 0; width: 300px; background: white; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;"></div>
-            </div>
+            <div id="pagefind-search" style="margin-right: 20px;"></div>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="services.html" class="active">Services</a>
@@ -1699,6 +1691,47 @@
             }
         });
     </script>
-    <script src="site-search.js"></script>
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+    // Initialize Pagefind
+    window.addEventListener('DOMContentLoaded', () => {
+        new PagefindUI({
+            element: "#pagefind-search",
+            showImages: false,
+            showSubResults: true,
+            excerptLength: 15,
+            resetStyles: false
+        });
+
+        // Handle anchor scrolling on page load (keep existing code)
+        if (window.location.hash) {
+            setTimeout(() => {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+    });
+</script>
+<style>
+    /* Pagefind custom styling */
+    #pagefind-search {
+        max-width: 350px;
+    }
+    #pagefind-search .pagefind-ui__search-input {
+        border: 1px solid #6B8250;
+        border-radius: 20px;
+        font-family: 'Lato', sans-serif;
+        padding: 8px 16px;
+    }
+    #pagefind-search .pagefind-ui__result-link {
+        color: #244419;
+    }
+    #pagefind-search .pagefind-ui__result-link:hover {
+        color: #6B8250;
+    }
+</style>
 </body>
 </html>
