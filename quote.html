@@ -1643,6 +1643,13 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    // Google Ads conversion tracking
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17615899355/_Q1CCNWsmrAbENuV9c9B',
+                        'value': 1.0,
+                        'currency': 'AUD'
+                    });
+
                     // Show success message with animation
                     document.getElementById('successMessage').style.display = 'block';
                     document.getElementById('errorMessage').style.display = 'none';
