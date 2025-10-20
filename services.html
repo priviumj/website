@@ -10,6 +10,23 @@
 
       gtag('config', 'AW-17615899355');
     </script>
+    <!-- Event snippet for Click to call conversion -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17615899355/M_ekCPKcnrAbENuV9c9B',
+          'value': 80.0,
+          'currency': 'AUD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garden Care Services Perth | Lawn Mowing, Hedge Trimming & More | Privium</title>
@@ -1069,7 +1086,7 @@
             </a>
             <div class="header-phone">
                 <span class="call-text">Call Jarod <span style="color: #666; font-weight: 300;">or</span> <a href="sms:0490841667" style="color: #A58062; text-decoration: none; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#8d6d52'" onmouseout="this.style.color='#A58062'">TEXT</a></span>
-                <a href="tel:0490841667" class="phone-number" style="color: #A58062; text-decoration: none; font-size: 16px;">0490 841 667</a>
+                <a href="tel:0490841667" onclick="return gtag_report_conversion('tel:0490841667')" class="phone-number" style="color: #A58062; text-decoration: none; font-size: 16px;">0490 841 667</a>
             </div>
             <div class="search-container" style="position: relative; margin-right: 20px;">
                 <button id="searchToggle" onclick="togglePagefindSearch()" style="background: none; border: none; padding: 8px; cursor: pointer; display: flex; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
@@ -1628,7 +1645,7 @@
                 Experience the difference that professional garden care makes
             </p>
             <div style="display: flex; gap: 30px; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="tel:0490841667" class="cta-phone-link">0490 841 667</a>
+                <a href="tel:0490841667" onclick="return gtag_report_conversion('tel:0490841667')" class="cta-phone-link">0490 841 667</a>
                 <a href="quote.html" class="cta-button secondary" style="margin: 0;">Get Your Free Quote</a>
             </div>
             <p style="margin-top: 15px; font-size: 13px; color: #666; font-weight: 300;">Call or text Jarod about your garden needs</p>
@@ -1647,7 +1664,7 @@
                 <div class="footer-links">
                     <div class="footer-column">
                         <h5>Contact</h5>
-                        <a href="tel:0490841667" class="footer-phone">0490 841 667</a>
+                        <a href="tel:0490841667" onclick="return gtag_report_conversion('tel:0490841667')" class="footer-phone">0490 841 667</a>
                         <a href="mailto:office@privium.com.au">office@privium.com.au</a>
                     </div>
                     <div class="footer-column">
