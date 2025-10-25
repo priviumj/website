@@ -987,7 +987,29 @@
                 padding: 0 10px;
             }
         }
-        
+
+        @media (max-width: 1024px) {
+            .footer-links {
+                gap: 30px;
+            }
+
+            .footer-column {
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .footer-main {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 92%;
@@ -1005,29 +1027,29 @@
             .trust-badges {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
-            
+
             .logo img {
                 height: 20px;
             }
-            
+
             .header-phone {
                 font-size: 14px !important;
                 margin-left: 15px !important;
                 margin-right: 10px !important;
             }
-            
+
             .header-phone .call-text {
                 font-size: 10px;
             }
-            
+
             .header-phone .phone-number {
                 font-size: 13px;
             }
-            
+
             .footer-main {
                 flex-direction: column;
             }
-            
+
             .footer-links {
                 flex-direction: column;
                 gap: 30px;
