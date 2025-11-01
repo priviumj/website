@@ -480,104 +480,10 @@
             document.body.classList.add('fonts-loaded');
         }, 1000);
 
-        // Enhanced conversion tracking with user data
-        (function() {
-            // Retrieve user data from sessionStorage
-            const userData = sessionStorage.getItem('priviumUserData');
-
-            if (userData) {
-                try {
-                    const data = JSON.parse(userData);
-
-                    // Prepare enhanced conversion data
-                    const enhancedConversionData = {};
-
-                    // Add email if available
-                    if (data.email && data.email !== 'Not provided') {
-                        enhancedConversionData.email = data.email;
-                    }
-
-                    // Add phone if available
-                    if (data.phone && data.phone !== 'Not provided') {
-                        enhancedConversionData.phone_number = data.phone;
-                    }
-
-                    // Parse name into first and last name
-                    if (data.name) {
-                        const nameParts = data.name.trim().split(' ');
-                        if (nameParts.length > 0) {
-                            enhancedConversionData.address = enhancedConversionData.address || {};
-                            enhancedConversionData.address.first_name = nameParts[0];
-                            if (nameParts.length > 1) {
-                                enhancedConversionData.address.last_name = nameParts.slice(1).join(' ');
-                            }
-                        }
-                    }
-
-                    // Parse address if available
-                    if (data.address && data.address !== 'Not provided') {
-                        enhancedConversionData.address = enhancedConversionData.address || {};
-
-                        // Simple parsing - assumes address format includes suburb and postcode
-                        const addressLower = data.address.toLowerCase();
-
-                        // Extract city (suburb) - Perth suburbs
-                        const perthSuburbs = ['cottesloe', 'dalkeith', 'nedlands', 'claremont', 'peppermint grove',
-                                             'mosman park', 'swanbourne', 'city beach', 'floreat', 'shenton park',
-                                             'mount claremont', 'south perth', 'como', 'kensington', 'applecross',
-                                             'mount pleasant', 'salter point', 'attadale', 'bicton'];
-
-                        for (let suburb of perthSuburbs) {
-                            if (addressLower.includes(suburb)) {
-                                enhancedConversionData.address.city = suburb.charAt(0).toUpperCase() + suburb.slice(1);
-                                break;
-                            }
-                        }
-
-                        // Extract postcode (4 digits)
-                        const postcodeMatch = data.address.match(/\b(60\d{2}|61\d{2})\b/);
-                        if (postcodeMatch) {
-                            enhancedConversionData.address.postal_code = postcodeMatch[0];
-                        }
-
-                        // Set region and country
-                        enhancedConversionData.address.region = 'WA';
-                        enhancedConversionData.address.country = 'AU';
-
-                        // Full street address
-                        enhancedConversionData.address.street = data.address;
-                    }
-
-                    // Fire Google Ads conversion event with enhanced data
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17615899355/_Q1CCNWcnrAbENuV9c9B',
-                        'value': 1.0,
-                        'currency': 'AUD',
-                        'enhanced_conversion_data': enhancedConversionData
-                    });
-
-                    // Clear the session data after successful tracking
-                    sessionStorage.removeItem('priviumUserData');
-
-                } catch (e) {
-                    console.error('Error processing enhanced conversion data:', e);
-
-                    // Fire basic conversion event as fallback
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17615899355/_Q1CCNWcnrAbENuV9c9B',
-                        'value': 1.0,
-                        'currency': 'AUD'
-                    });
-                }
-            } else {
-                // Fire basic conversion event if no user data
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17615899355/_Q1CCNWcnrAbENuV9c9B',
-                    'value': 1.0,
-                    'currency': 'AUD'
-                });
-            }
-        })();
+        // Simple confirmation page tracking
+        // Enhanced conversions are handled automatically by Google on the quote.html page
+        // This page just shows the thank you message to the user
+        // No conversion tracking needed here - it already fired on the previous page
     </script>
 </body>
 </html>

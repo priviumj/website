@@ -8,7 +8,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'AW-17615899355');
+      gtag('config', 'AW-17615899355', {
+        'allow_enhanced_conversions': true
+      });
     </script>
     <!-- Event snippet for Click to call conversion -->
     <script>
@@ -1723,20 +1725,25 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Store user data in sessionStorage for enhanced conversion tracking
-                    const userData = {
-                        email: formData.get('email') || 'Not provided',
-                        phone: formData.get('phone') || 'Not provided',
-                        name: formData.get('name') || '',
-                        address: formData.get('address') || 'Not provided'
-                    };
-                    sessionStorage.setItem('priviumUserData', JSON.stringify(userData));
+                    // Fire conversion event with automatic enhanced conversions
+                    // Google will automatically detect and hash form data from this page
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17615899355/_Q1CCNWcnrAbENuV9c9B',
+                        'value': 1.0,
+                        'currency': 'AUD',
+                        'event_callback': function() {
+                            // Clear saved form data from localStorage
+                            localStorage.removeItem('priviumQuoteForm');
+                            // Redirect to thank you page after conversion is tracked
+                            window.location.href = 'quote-thank-you.html';
+                        }
+                    });
 
-                    // Clear saved form data from localStorage
-                    localStorage.removeItem('priviumQuoteForm');
-
-                    // Redirect to thank you page (conversion tracking happens there)
-                    window.location.href = 'quote-thank-you.html';
+                    // Fallback redirect in case event_callback doesn't fire
+                    setTimeout(function() {
+                        localStorage.removeItem('priviumQuoteForm');
+                        window.location.href = 'quote-thank-you.html';
+                    }, 1000);
                 } else {
                     // Show error message
                     document.getElementById('errorMessage').textContent = 'There was a problem sending your request. Please call us at 0490 841 667.';
