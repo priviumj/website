@@ -1054,11 +1054,16 @@
                 flex-direction: column;
                 gap: 30px;
             }
-            
+
+            /* Hide desktop search on mobile */
+            .search-container {
+                display: none !important;
+            }
+
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             .nav-links {
                 display: none;
                 position: fixed;
@@ -1071,19 +1076,59 @@
                 padding: 30px;
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 z-index: 1000;
+                gap: 15px;
             }
-            
+
             .nav-links.active {
                 display: flex;
+            }
+
+            /* Add search to mobile menu */
+            .mobile-search {
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid #e0e0e0;
+                margin-bottom: 10px;
             }
 
             h1 {
                 font-size: 32px;
             }
-            
+
             .contact-fields {
                 grid-template-columns: 1fr !important;
             }
+        }
+
+        /* Mobile search styling */
+        .mobile-search {
+            display: none;
+        }
+
+        .mobile-search button {
+            background: #F5F3F0;
+            border: 1px solid #d5ddd5;
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #244419;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .mobile-search button:hover {
+            background: white;
+            border-color: #A58062;
+        }
+
+        .mobile-search button svg {
+            width: 18px;
+            height: 18px;
         }
     </style>
 </head>
@@ -1107,6 +1152,14 @@
                 <div id="pagefind-search" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 5px; width: 400px; z-index: 1000;"></div>
             </div>
             <div class="nav-links" id="navLinks">
+                <div class="mobile-search">
+                    <button onclick="togglePagefindSearch(); toggleMobileMenu();" style="background: #F5F3F0; border: 1px solid #d5ddd5; width: 100%; padding: 10px 15px; border-radius: 8px; color: #244419; font-weight: 500; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+                        <svg style="width: 18px; height: 18px;" fill="#244419" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                        </svg>
+                        Search
+                    </button>
+                </div>
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">About</a>
@@ -1670,38 +1723,20 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Google Ads conversion tracking
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-17615899355/_Q1CCNWsmrAbENuV9c9B',
-                        'value': 1.0,
-                        'currency': 'AUD'
-                    });
+                    // Store user data in sessionStorage for enhanced conversion tracking
+                    const userData = {
+                        email: formData.get('email') || 'Not provided',
+                        phone: formData.get('phone') || 'Not provided',
+                        name: formData.get('name') || '',
+                        address: formData.get('address') || 'Not provided'
+                    };
+                    sessionStorage.setItem('priviumUserData', JSON.stringify(userData));
 
-                    // Show success message with animation
-                    document.getElementById('successMessage').style.display = 'block';
-                    document.getElementById('errorMessage').style.display = 'none';
-
-                    // Scroll to success message
-                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                    // Reset button
-                    submitButton.textContent = '✓ Sent Successfully!';
-                    submitButton.style.background = '#28a745';
-
-                    // Clear saved form data
+                    // Clear saved form data from localStorage
                     localStorage.removeItem('priviumQuoteForm');
 
-                    // Reset form after a delay
-                    setTimeout(() => {
-                        form.reset();
-                        submitButton.textContent = originalText;
-                        submitButton.disabled = false;
-                        submitButton.style.background = '';
-                        // Hide success message after 5 seconds
-                        setTimeout(() => {
-                            document.getElementById('successMessage').style.display = 'none';
-                        }, 3000);
-                    }, 2000);
+                    // Redirect to thank you page (conversion tracking happens there)
+                    window.location.href = 'quote-thank-you.html';
                 } else {
                     // Show error message
                     document.getElementById('errorMessage').textContent = 'There was a problem sending your request. Please call us at 0490 841 667.';
